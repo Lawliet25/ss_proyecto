@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PreregistroController extends Controller
+class FichaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PreregistroController extends Controller
      */
     public function index()
     {
-      return view('welcome');
+        //
     }
 
     /**
@@ -23,8 +23,7 @@ class PreregistroController extends Controller
      */
     public function create()
     {
-        return view('pre.create');
-        
+        return view('Ficha.Fichagrande');
     }
 
     /**

@@ -44,7 +44,7 @@
 
               </li>
               <li class="dropdown">
-                <a href="{{route('pre.create')}}">Registro de ficha</a>
+                <a href="{{route('Ficha.Fichagrande')}}">Registro de ficha</a>
 
               </li>
               <li class="dropdown">
