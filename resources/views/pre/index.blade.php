@@ -16,6 +16,7 @@
                     {{session('status')}}
                   </div>
                 @endif
+                
                 <br>
                 <table class="table table-striped table-bordered table-hover" id="tabla">
                     <thead>
