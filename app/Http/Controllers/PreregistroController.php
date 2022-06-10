@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Preregistro;
 
 class PreregistroController extends Controller
 {
@@ -13,7 +14,8 @@ class PreregistroController extends Controller
      */
     public function index()
     {
-      return view('welcome');
+      $preregistros=Preregistro::all();
+      return view('pre.index',['preregistros'=>$preregistros]);
     }
 
     /**
@@ -24,7 +26,7 @@ class PreregistroController extends Controller
     public function create()
     {
         return view('pre.create');
-        
+
     }
 
     /**
@@ -35,7 +37,19 @@ class PreregistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $preregistro= new Preregistro();
+
+      $preregistro->Nombres=$request->Nombres;
+      $preregistro->Apellidos=$request->Apellidos;
+      $preregistro->NIE=$request->NIE;
+      $preregistro->DUI=$request->DUI;
+      $preregistro->FechaRecepcion=$request->FechaRecepcion;
+      $preregistro->Estado=$request->Estado;
+      $preregistro->PersonaRecibido=$request->PersonaRecibido;
+      $preregistro->Grado=$request->Grado;
+      $preregistro->Observacion=$request->Observacion;
+      $preregistro->save();
+      return redirect()->route('pre.index');
     }
 
     /**

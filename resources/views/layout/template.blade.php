@@ -36,8 +36,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active">
-                <a href="{{route('welcome')}}">Inicio</a>
+                <li class="dropdown">
+                <a href="{{route('pre.index')}}">Inicio</a>
                 </li>
               <li class="dropdown">
                 <a href="{{route('pre.create')}}">Preregistro</a>

@@ -18,11 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::controller(PreregistroController::class)->group(function(){
+  Route::get('/pre/index','index')->name('pre.index');
   Route::get('/pre/create','create')->name('pre.create');
-  Route::get('welcome','index')->name('welcome');
+  Route::post('/pre','store')->name('pre.store');
 
 });
 Route::controller(FichaController::class)->group(function(){
   Route::get('/Ficha/Fichagrande','create')->name('Ficha.Fichagrande');
-  
+
 });
