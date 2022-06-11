@@ -71,7 +71,8 @@ class PreregistroController extends Controller
      */
     public function edit($id)
     {
-        //
+      $preregistro=Preregistro::find($id);
+      return view('pre.edit', compact('preregistro'));
     }
 
     /**
@@ -83,7 +84,30 @@ class PreregistroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $preregistro= Preregistro::find($id);
+
+      $preregistro->Nombres=$request->Nombres;
+      $preregistro->Apellidos=$request->Apellidos;
+      $preregistro->NIE=$request->NIE;
+      $preregistro->DUI=$request->DUI;
+      $preregistro->FechaRecepcion=$request->FechaRecepcion;
+      $preregistro->Estado=$request->Estado;
+      $preregistro->PersonaRecibido=$request->PersonaRecibido;
+      $preregistro->Grado=$request->Grado;
+      $preregistro->Observacion=$request->Observacion;
+
+      $preregistro->FichaRegistro=$request->FichaRegistro;
+      $preregistro->FotoCertificado=$request->FotoCertificado;
+      $preregistro->FotoTitulo=$request->FotoTitulo;
+      $preregistro->PartidaNacimiento=$request->PartidaNacimiento;
+      $preregistro->CopiaDUI=$request->CopiaDUI;
+      $preregistro->DeclaracionJurada=$request->DeclaracionJurada;
+      $preregistro->CopiaDUIResponsable=$request->CopiaDUIResponsable;
+      $preregistro->CertificadoOriginal=$request->CertificadoOriginal;
+      $preregistro->CertificadoNotas=$request->CertificadoNotas;
+      $preregistro->save();
+      return redirect()->route('pre.index');
+
     }
 
     /**
@@ -94,6 +118,41 @@ class PreregistroController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $preregistro=Preregistro::destroy($id);
+      return redirect()->route('pre.index');
     }
+
+    public function documentos($id)
+    {
+      $preregistro=Preregistro::find($id);
+      return view('pre.documentos', compact('preregistro'));
+    }
+  /*public function documentosup(Request $request,$id)
+    {
+      $preregistro= Preregistro::find($id);
+
+      $preregistro->Nombres=$request->Nombres;
+      $preregistro->Apellidos=$request->Apellidos;
+      $preregistro->NIE=$request->NIE;
+      $preregistro->DUI=$request->DUI;
+      $preregistro->FechaRecepcion=$request->FechaRecepcion;
+      $preregistro->Estado=$request->Estado;
+      $preregistro->PersonaRecibido=$request->PersonaRecibido;
+      $preregistro->Grado=$request->Grado;
+      $preregistro->Observacion=$request->Observacion;
+
+      $preregistro->FichaRegistro=$request->FichaRegistro;
+      $preregistro->FotoCertificado=$request->FotoCertificado;
+      $preregistro->FotoTitulo=$request->FotoTitulo;
+      $preregistro->PartidaNacimiento=$request->PartidaNacimiento;
+      $preregistro->CopiaDUI=$request->CopiaDUI;
+      $preregistro->DeclaracionJurada=$request->DeclaracionJurada;
+      $preregistro->CopiaDUIResponsable=$request->CopiaDUIResponsable;
+      $preregistro->CertificadoOriginal=$request->CertificadoOriginal;
+      $preregistro->CertificadoNotas=$request->CertificadoNotas;
+      $preregistro->save();
+      return redirect()->route('pre.documentos');
+
+    }*/
+
 }
