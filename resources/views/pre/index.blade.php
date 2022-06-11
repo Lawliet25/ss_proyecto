@@ -16,6 +16,7 @@
                     {{session('status')}}
                   </div>
                 @endif
+
                 <br>
                 <table class="table table-striped table-bordered table-hover" id="tabla">
                     <thead>
@@ -38,8 +39,9 @@
                     <td>{{$preregistro->Apellidos}}</td>
                     <td>{{$preregistro->NIE}}</td>
                     <td>{{$preregistro->Estado}}</td>
-                    <td><a title="Editar" class="btn btn-primary btn-circle" href=""><span class="glyphicon glyphicon-edit"></span></a>
-                        <a title="Eliminar" class="btn btn-danger btn-circle" href=""><span class="glyphicon glyphicon-trash"></span></a>
+                    <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('pre.edit', $preregistro->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('pre.destroy', $preregistro->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
+                        <a title="Añadir documentos" class="btn btn-success btn-circle" href="{{route('pre.documentos', $preregistro->id)}}"><span class="	glyphicon glyphicon-file"></span></a>
                     </td>
                     </tr>
                   @endforeach
