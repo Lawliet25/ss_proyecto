@@ -23,15 +23,16 @@
                   <div class="panel panel-info">
                     <div class="panel-heading">Información y documentación general del alumno</div>
                     <div class="panel-body">
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="" class="form-label">Ficha de registro</label>
                         <select id="FichaRegistro" name="FichaRegistro" class="form-control">
                           <option>{{$preregistro->FichaRegistro}}</option>
                           <option>Si</option>
                           <option>No</option>
+
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="" class="form-label">Foto de certificado</label>
                         <select id="FotoCertificado" name="FotoCertificado" class="form-control">
                           <option>{{$preregistro->FotoCertificado}}</option>
@@ -39,7 +40,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Foto de título</label>
                         <select id="FotoTitulo" name="FotoTitulo" class="form-control">
                           <option>{{$preregistro->FotoTitulo}}</option>
@@ -47,7 +48,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Partida de nacimiento</label>
                         <select id="PartidaNacimiento" name="PartidaNacimiento" class="form-control">
                           <option>{{$preregistro->PartidaNacimiento}}</option>
@@ -55,7 +56,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Copia de DUI</label>
                         <select id="CopiaDui" name="CopiaDui" class="form-control">
                           <option>{{$preregistro->CopiaDui}}</option>
@@ -63,7 +64,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Declaración jurada</label>
                         <select id="DeclaracionJurada" name="DeclaracionJurada" class="form-control">
                           <option>{{$preregistro->DeclaracionJurada}}</option>
@@ -71,7 +72,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Copia DUI de responsable</label>
                         <select id="CopiaDuiResponsable" name="CopiaDuiResponsable" class="form-control">
                           <option>{{$preregistro->CopiaDuiResponsable}}</option>
@@ -79,7 +80,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Certificado original</label>
                         <select id="CertificadoOriginal" name="CertificadoOriginal" class="form-control">
                           <option>{{$preregistro->CertificadoOriginal}}</option>
@@ -87,7 +88,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Certificado de notas</label>
                         <select id="CertificadoNotas" name="CertificadoNotas" class="form-control">
                           <option>{{$preregistro->CertificadoNotas}}</option>
@@ -95,7 +96,7 @@
                           <option>No</option>
                         </select>
                       </div>
-                      <div class="form-group col-md-12">
+                      <div class="form-group col-md-6">
                           <label for="DocumentoPdf" class="form-label">Documentos Escaneados</label>
                           <input type="file" id="DocumentoPdf" name="DocumentoPdf" class="form-control">
                           @error ('DocumentoPdf')
@@ -139,7 +140,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputZip">Estado del estudiante</label>
-                        <select readonly id="Estado" name="Estado" class="form-control">
+                        <select disabled id="Estado" name="Estado" class="form-control">
                           <option>{{$preregistro->Estado}}</option>
                           <option>Activo</option>
                           <option>Inactivo</option>

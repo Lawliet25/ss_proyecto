@@ -13,11 +13,13 @@
   crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="{PATH}/alertify.min.js"></script>
-    <!-- include the style -->
-    <link rel="stylesheet" href="{PATH}/css/alertify.min.css" />
-    <!-- include a theme -->
-    <link rel="stylesheet" href="{PATH}/css/themes/default.min.css" />
+    <!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 </head>
 <body>
     <style media="screen">

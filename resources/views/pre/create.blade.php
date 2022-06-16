@@ -12,12 +12,13 @@
         @csrf
         <div class="panel panel-info">
           <div class="panel-heading">Formulario de preregistro</div>
-          <div class="panel-body">
+          <div class="panel-body" >
 
-        <div class="form-group">
+        <div class="form-group" style="margin-bottom:95px;">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Nombres</label>
             <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Digite los nombres" value="{{old('Nombres')}}">
+
             @error ('Nombres')
               <span class="error text-danger">{{$message}}</span>
             @enderror
@@ -26,13 +27,14 @@
           <div class="form-group col-md-6">
             <label for="inputPassword4">Apellidos</label>
             <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Digite los apellidos" value="{{old('Apellidos')}}">
+
             @error ('Apellidos')
               <span class="error text-danger">{{$message}}</span>
             @enderror
           </div>
 
         </div>
-        <div class="form-group">
+        <div class="form-row" style="margin-bottom:190px">
         <div class="form-group col-md-6">
           <label for="inputAddress">Grado al que se inscribe</label>
           <select id="Grado" name="Grado" class="form-control">
@@ -55,7 +57,7 @@
           @enderror
         </div>
         </div>
-        <div class="form-group">
+        <div class="form-row" style="margin-bottom:285px">
           <div class="form-group col-md-6">
             <label for="inputCity">Fecha de recepción</label>
             <input type="datetime-local" class="form-control" id="FechaRecepcion" name="FechaRecepcion" value="{{old('FechaRecepcion')}}">
@@ -72,7 +74,7 @@
           </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-row" style="margin-bottom:380px">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nombre de quién recibe</label>
               <input type="text" class="form-control" id="PersonaRecibido" name="PersonaRecibido" placeholder="Digite el nombre del recepcionista" value="{{old('PersonaRecibido')}}">
@@ -94,7 +96,7 @@
               @enderror
             </div>
           </div>
-            <div class="form-group">
+            <div class="form-row" style="margin-bottom:100px">
             <div class="form-group col-md-6">
               <label for="inputPassword4">Observaciones</label>
               <textarea class="form-control" id="Observacion" name="Observacion" rows="3"></textarea>
