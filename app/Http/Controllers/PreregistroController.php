@@ -100,11 +100,18 @@ class PreregistroController extends Controller
       $preregistro->FotoCertificado=$request->FotoCertificado;
       $preregistro->FotoTitulo=$request->FotoTitulo;
       $preregistro->PartidaNacimiento=$request->PartidaNacimiento;
-      $preregistro->CopiaDUI=$request->CopiaDUI;
+      $preregistro->CopiaDui=$request->CopiaDui;
       $preregistro->DeclaracionJurada=$request->DeclaracionJurada;
-      $preregistro->CopiaDUIResponsable=$request->CopiaDUIResponsable;
+      $preregistro->CopiaDuiResponsable=$request->CopiaDuiResponsable;
       $preregistro->CertificadoOriginal=$request->CertificadoOriginal;
       $preregistro->CertificadoNotas=$request->CertificadoNotas;
+
+      if($request->hasFile('DocumentoPdf')){
+        $preregistro['DocumentoPdf'] = time() . '_' . $request->file('DocumentoPdf')->getClientOriginalName();
+        $request->file('DocumentoPdf')
+        ->storeAs('archivos',  $preregistro['DocumentoPdf']);
+      }
+
       $preregistro->save();
       return redirect()->route('pre.index');
 

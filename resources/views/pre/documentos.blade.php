@@ -18,48 +18,86 @@
                 @endif
 
                 <br>
-                <form style="" action="{{route('pre.update',$preregistro->id)}}" method="POST">
+                <form style="" action="{{route('pre.update',$preregistro->id)}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="panel panel-info">
                     <div class="panel-heading">Información y documentación general del alumno</div>
                     <div class="panel-body">
                       <div class="form-group col-md-6">
                         <label for="" class="form-label">Ficha de registro</label>
-                        <input class="form-control" type="file" id="FichaRegistro" name="FichaRegistro">
-                        {{$preregistro->FichaRegistro}}
+                        <select id="FichaRegistro" name="FichaRegistro" class="form-control">
+                          <option>{{$preregistro->FichaRegistro}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="" class="form-label">Foto de certificado</label>
-                        <input class="form-control" type="file" id="FotoCertificado" name="FotoCertificado">
-                        {{$preregistro->FotoCertificado}}
+                        <select id="FotoCertificado" name="FotoCertificado" class="form-control">
+                          <option>{{$preregistro->FotoCertificado}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Foto de título</label>
-                        <input class="form-control" type="file" id="FotoTitulo" name="FotoTitulo">
+                        <select id="FotoTitulo" name="FotoTitulo" class="form-control">
+                          <option>{{$preregistro->FotoTitulo}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Partida de nacimiento</label>
-                        <input class="form-control" type="file" id="PartidaNacimiento" name="PartidaNacimiento">
+                        <select id="PartidaNacimiento" name="PartidaNacimiento" class="form-control">
+                          <option>{{$preregistro->PartidaNacimiento}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Copia de DUI</label>
-                        <input class="form-control" type="file" id="CopiaDUI" name="CopiaDUI">
+                        <select id="CopiaDui" name="CopiaDui" class="form-control">
+                          <option>{{$preregistro->CopiaDui}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Declaración jurada</label>
-                        <input class="form-control" type="file" id="DeclaracionJurada" name="DeclaracionJurada">
+                        <select id="DeclaracionJurada" name="DeclaracionJurada" class="form-control">
+                          <option>{{$preregistro->DeclaracionJurada}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Copia DUI de responsable</label>
-                        <input class="form-control" type="file" id="CopiaDUIResponsable" name="CopiaDUIResponsable">
+                        <select id="CopiaDuiResponsable" name="CopiaDuiResponsable" class="form-control">
+                          <option>{{$preregistro->CopiaDuiResponsable}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Certificado original</label>
-                        <input class="form-control" type="file" id="CertificadoOriginal" name="CertificadoOriginal">
+                        <select id="CertificadoOriginal" name="CertificadoOriginal" class="form-control">
+                          <option>{{$preregistro->CertificadoOriginal}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="formFile" class="form-label">Certificado de notas</label>
-                        <input class="form-control" type="file" id="CertificadoNotas" name="CertificadoNotas">
+                        <select id="CertificadoNotas" name="CertificadoNotas" class="form-control">
+                          <option>{{$preregistro->CertificadoNotas}}</option>
+                          <option>Si</option>
+                          <option>No</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-12">
+                          <label for="DocumentoPdf" class="form-label">Documentos Escaneados</label>
+                          <input type="file" id="DocumentoPdf" name="DocumentoPdf" class="form-control">
                       </div>
                       <div class="form-group col-md-6">
                       <br>
