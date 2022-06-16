@@ -37,6 +37,17 @@ class PreregistroController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        'Nombres'=>['required','string'],
+        'Apellidos'=>['required','string'],
+        'NIE'=>['unique:preregistro', 'required'],
+        'DUI'=>['required', 'regex: /^[0][0-9]{7}-[0-9]{1}/','unique:preregistro'],
+        'FechaRecepcion'=>'required',
+        'Estado'=>'required',
+        'PersonaRecibido'=>'required',
+        'Grado'=>'required'
+      ]);
+
       $preregistro= new Preregistro();
 
       $preregistro->Nombres=$request->Nombres;
@@ -106,6 +117,10 @@ class PreregistroController extends Controller
       $preregistro->CertificadoOriginal=$request->CertificadoOriginal;
       $preregistro->CertificadoNotas=$request->CertificadoNotas;
 
+      $request->validate([
+        'DocumentoPdf'=>['mimes:pdf']
+      ]);
+
       if($request->hasFile('DocumentoPdf')){
         $preregistro['DocumentoPdf'] = time() . '_' . $request->file('DocumentoPdf')->getClientOriginalName();
         $request->file('DocumentoPdf')
@@ -114,6 +129,7 @@ class PreregistroController extends Controller
 
       $preregistro->save();
       return redirect()->route('pre.index');
+      return redirect()->route('editoriales.index')->with('status', alertify.success('Success notification message.'));
 
     }
 

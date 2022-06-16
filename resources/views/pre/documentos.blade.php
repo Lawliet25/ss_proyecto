@@ -98,6 +98,9 @@
                       <div class="form-group col-md-12">
                           <label for="DocumentoPdf" class="form-label">Documentos Escaneados</label>
                           <input type="file" id="DocumentoPdf" name="DocumentoPdf" class="form-control">
+                          @error ('DocumentoPdf')
+                            <span class="error text-danger">{{$message}}</span>
+                          @enderror
                       </div>
                       <div class="form-group col-md-6">
                       <br>

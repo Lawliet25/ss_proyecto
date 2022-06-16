@@ -42,6 +42,11 @@
                     <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('pre.edit', $preregistro->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
                         <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('pre.destroy', $preregistro->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
                         <a title="Añadir documentos" class="btn btn-success btn-circle" href="{{route('pre.documentos', $preregistro->id)}}"><span class="	glyphicon glyphicon-file"></span></a>
+                        <?php if (($preregistro->DocumentoPdf)!=null): ?>
+                        <a title="Ver documento" class="btn btn-warning btn-circle" href="../../storage/app/public/archivos/{{$preregistro->DocumentoPdf}}"><span class="	glyphicon glyphicon-eye-open"></span></a>
+                        <?php endif; ?>
+
+                    </td>
                     </td>
                     </tr>
                   @endforeach

@@ -6,8 +6,8 @@
 
 <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-      
-      <form style=""> 
+
+      <form style="">
           <div class="form-inline">
               <div class="panel panel-info">
                   <div class="panel-heading text-center"><strong>Registro Ficha</strong></div>
@@ -19,12 +19,12 @@
                              <label for="inputEmail4">Nombres</label>
                              <input type="text" class="form-control" id="nombres" placeholder="Nombres">
                          </div>
-        
+
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Apellidos</label>
                              <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
                           </div>
-        
+
                           <div class="form-group col-md-4">
                              <label for="inputEmail4">Edad:</label>
                              <input type="text" class="form-control" id="Edades" placeholder="Edad">
@@ -37,12 +37,12 @@
                           <label class="radio-inline">
                               <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Masculino
                          </label>
-        
+
                          <label class="radio-inline">
                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Femenino
                          </label>
                      </div>
-        
+
                      <div class="form-group col-md-8">
                           <label>Identidad de Género</label>
                           <label class="radio-inline">
@@ -120,7 +120,7 @@
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
                              </label>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Tipo de Discapacidad:</label>
@@ -138,7 +138,7 @@
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
                              </label>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">País:</label>
@@ -151,7 +151,7 @@
                          <div class="form-group col-md-8">
                              <label for="inputEmail4">Enfermedades o alergias que padece</label>
                              <textarea class="form-control" rows="2"></textarea>
-                         </div> 
+                         </div>
                       </div>
 
                       <!---Octava fila"--->
@@ -171,12 +171,12 @@
                              <label for="inputEmail4">Nombres</label>
                              <input type="text" class="form-control" id="nombres" placeholder="Nombres">
                          </div>
-        
+
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Apellidos</label>
                              <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
                           </div>
-        
+
                           <div class="form-group col-md-4">
                              <label for="inputEmail4">Parentesco</label>
                              <select class="form-control">
@@ -259,7 +259,7 @@
                          <label class="radio-inline">
                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Urbano
                          </label>
-                     </div> 
+                     </div>
                      </div>
 
                      <!---Cuarta fila"--->
@@ -268,7 +268,7 @@
                              <label for="inputEmail4">Tel.Residencia</label>
                              <input type="text" class="form-control" id="nombres" placeholder="Telefono Residencia">
                          </div>
-        
+
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Tel.Celular</label>
                              <input type="text" class="form-control" id="apellidos" placeholder="Telefono Celular">
@@ -281,7 +281,7 @@
                              <label for="inputEmail4">Tel.Trabajo</label>
                              <input type="text" class="form-control" id="nombres" placeholder="Telefono Trabajo">
                          </div>
-        
+
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Correo electrónico</label>
                              <input type="text" class="form-control" id="apellidos" placeholder="Correo electronico">
@@ -324,7 +324,7 @@
                                  <option>Padre y Madre</option>
                                  <option>Hermanos</option>
                                  <option>Otros</option>
-                                 
+
                              </select>
                          </div>
 
@@ -353,7 +353,7 @@
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> No
                              </label>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-3">
                              <label for="inputEmail4">Cantidad de hijos:</label>
@@ -377,7 +377,7 @@
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Hijo 2</label>
@@ -400,7 +400,7 @@
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                              </select>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Hijo 4</label>
@@ -422,8 +422,8 @@
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                              </select>
-                         </div> 
-                     </div> 
+                         </div>
+                     </div>
                       <hr>
 
                       <!---PARTE DE ESTUDIOS REALIZADOS--->
@@ -434,7 +434,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Ultimo grado cursado</label>
                              <input type="text" class="form-control"  placeholder="">
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Año en que lo curso</label>
@@ -447,7 +447,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Institución en que lo curso</label>
                              <input type="text" class="form-control"  placeholder="">
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Nombre del Centro Educativo</label>
@@ -470,7 +470,7 @@
                                  <option>Mañana y tarde</option>
                                  <option>Nocturno</option>
                             </select>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-3">
                              <label for="inputEmail4">Jornada</label>
@@ -526,7 +526,7 @@
                                  <option>2° Grado</option>
                                  <option>3° Grado</option>
                              </select>
-                         </div> 
+                         </div>
 
                          <div class="form-group col-md-4">
                              <label class="radio-inline">
@@ -596,7 +596,7 @@
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Carnet de residente
                              </label>
-                             
+
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Pasaporte
                              </label>
@@ -604,11 +604,11 @@
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Certificación de notas
                              </label>
-                             
+
                              <label class="radio-inline">
                                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Resolución por equivalencia
                              </label>
-                         </div> 
+                         </div>
                      </div>
                  </div>
              </div>

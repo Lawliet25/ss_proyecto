@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-1">
 
         <h3>Formulario de preregistro</h3>
       <form style="" action="{{route('pre.store')}}" method="POST">
@@ -14,60 +14,92 @@
           <div class="panel-heading">Formulario de preregistro</div>
           <div class="panel-body">
 
-        <div class="form-row">
+        <div class="form-group">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Nombres</label>
-            <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Digite los nombres">
+            <input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Digite los nombres" value="{{old('Nombres')}}">
+            @error ('Nombres')
+              <span class="error text-danger">{{$message}}</span>
+            @enderror
           </div>
+
           <div class="form-group col-md-6">
             <label for="inputPassword4">Apellidos</label>
-            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Digite los apellidos">
+            <input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Digite los apellidos" value="{{old('Apellidos')}}">
+            @error ('Apellidos')
+              <span class="error text-danger">{{$message}}</span>
+            @enderror
           </div>
+
         </div>
-        <div class="form-row">
+        <div class="form-group">
         <div class="form-group col-md-6">
           <label for="inputAddress">Grado al que se inscribe</label>
-          <input type="text" class="form-control" id="Grado" name="Grado" placeholder="Digite el grado al que se inscribe">
+          <select id="Grado" name="Grado" class="form-control">
+            <option>{{old('Grado')}}</option>
+            <option>7° grado</option>
+            <option>8° grado</option>
+            <option>9° grado</option>
+            <option>1er año</option>
+            <option>2do año</option>
+          </select>
+          @error ('Grado')
+            <span class="error text-danger">{{$message}}</span>
+          @enderror
         </div>
         <div class="form-group col-md-6">
           <label for="inputAddress2">NIE</label>
-          <input type="text" class="form-control" id="NIE" name="NIE" placeholder="Digite el NIE">
+          <input type="text" class="form-control" id="NIE" name="NIE" placeholder="Digite el NIE" value="{{old('NIE')}}">
+          @error ('NIE')
+            <span class="error text-danger">{{$message}}</span>
+          @enderror
         </div>
         </div>
-        <div class="form-row">
+        <div class="form-group">
           <div class="form-group col-md-6">
             <label for="inputCity">Fecha de recepción</label>
-            <input type="datetime-local" class="form-control" id="FechaRecepcion" name="FechaRecepcion">
+            <input type="datetime-local" class="form-control" id="FechaRecepcion" name="FechaRecepcion" value="{{old('FechaRecepcion')}}">
+            @error ('FechaRecepcion')
+              <span class="error text-danger">{{$message}}</span>
+            @enderror
           </div>
           <div class="form-group col-md-6">
             <label for="">DUI</label>
-            <input type="text" class="form-control" id="DUI" name="DUI" placeholder="Digite el DUI">
+            <input type="text" class="form-control" id="DUI" name="DUI" placeholder="Digite el DUI" value="{{old('DUI')}}">
+            @error ('DUI')
+              <span class="error text-danger">{{$message}}</span>
+            @enderror
           </div>
           </div>
-          <div class="form-row">
+
+          <div class="form-group">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nombre de quién recibe</label>
-              <input type="text" class="form-control" id="PersonaRecibido" name="PersonaRecibido" placeholder="Digite el nombre del recepcionista">
+              <input type="text" class="form-control" id="PersonaRecibido" name="PersonaRecibido" placeholder="Digite el nombre del recepcionista" value="{{old('PersonaRecibido')}}">
+              @error ('PersonaRecibido')
+                <span class="error text-danger">{{$message}}</span>
+              @enderror
             </div>
 
             <div class="form-group col-md-6">
               <label for="inputZip">Estado del estudiante</label>
               <select id="Estado" name="Estado" class="form-control">
-                <option value=""></option>
+                <option>{{old('Estado')}}</option>
                 <option>Activo</option>
                 <option>Inactivo</option>
 
               </select>
-
+              @error ('Estado')
+                <span class="error text-danger">{{$message}}</span>
+              @enderror
             </div>
           </div>
-          <div class="form-row">
+            <div class="form-group">
             <div class="form-group col-md-6">
               <label for="inputPassword4">Observaciones</label>
               <textarea class="form-control" id="Observacion" name="Observacion" rows="3"></textarea>
             </div>
-        </div>
-        <div class="form-group">
+
           <div class="form-group col-md-6">
           <br>
           <input type="submit" class="btn btn-primary" value="Siguiente" name="Guardar">
