@@ -106,7 +106,7 @@
                       <div class="form-group col-md-6">
                       <br>
                       <input type="submit" class="btn btn-primary" value="Guardar" name="Guardar">
-                      <br><br>
+                      <br><br><br>
                       </div>
 
                     <div class="form-group col-md-6">
@@ -140,7 +140,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputZip">Estado del estudiante</label>
-                        <select disabled id="Estado" name="Estado" class="form-control">
+                        <select id="Estado" name="Estado" class="form-control">
                           <option>{{$preregistro->Estado}}</option>
                           <option>Activo</option>
                           <option>Inactivo</option>
