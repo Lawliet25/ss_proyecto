@@ -17,7 +17,7 @@
                       <div class="row">
                           <div class="form-group col-md-4">
                              <label for="inputEmail4">Nombres</label>
-                             <input type="text" class="form-control" id="nombres" placeholder="Nombres">
+                             <input type="text" class="form-control" id="nombres" placeholder="Nombres" value="">
                          </div>
 
                          <div class="form-group col-md-4">

@@ -27,6 +27,7 @@
                             <th>NIE</th>
                             <th>Estado</th>
                             <th>Operaciones</th>
+                            <th>Ficha de matrícula</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +48,7 @@
                         <?php endif; ?>
 
                     </td>
+                    <th><a class="btn btn-primary" href="{{route('Ficha.Fichagrande')}}" role="button">Registro de ficha</a></th>
                     </td>
                     </tr>
                   @endforeach
