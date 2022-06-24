@@ -32,5 +32,6 @@ Route::controller(PreregistroController::class)->group(function(){
 Route::controller(FichaController::class)->group(function(){
   Route::get('/Ficha/create/{id}','create')->name('Ficha.create');
   Route::get('/Ficha/index','index')->name('Ficha.index');
-
+  Route::post('/Ficha','store')->name('Ficha.store');
+  Route::post('/Ficha/{id}','update')->name('Ficha.update');
 });

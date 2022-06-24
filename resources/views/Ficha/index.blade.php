@@ -22,12 +22,12 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>NIE</th>
-                            <th>Estado</th>
+                            <th>Sexo</th>
+                            <th>Sección</th>
+                            <th>Fecha de nacimiento</th>
+                            <th>Nacionalidad</th>
+                            <th>ID_Preregistrado</th>
                             <th>Operaciones</th>
-                            <th>Ficha de matrícula</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,16 +40,7 @@
                     <td>{{$alumno->Seccion}}</td>
                     <td>{{$alumno->FechaNacimiento}}</td>
                     <td>{{$alumno->Nacionalidad}}</td>
-                    <!--td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('pre.edit', $preregistro->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('pre.destroy', $preregistro->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
-                        <a title="Añadir documentos" class="btn btn-success btn-circle" href="{{route('pre.documentos', $preregistro->id)}}"><span class="	glyphicon glyphicon-file"></span></a>
-                        <?php //if (($preregistro->DocumentoPdf)!=null): ?>
-                        <a title="Ver documento" class="btn btn-warning btn-circle" href="../../storage/app/public/archivos/{{$preregistro->DocumentoPdf}}"><span class="	glyphicon glyphicon-eye-open"></span></a>
-                        <?php //endif; ?>
-
-                    </td-->
-                    <!--th><a class="btn btn-primary" href="{{route('Ficha.Fichagrande',$preregistro->id)}}" role="button">Registro de ficha</a></th-->
-                    </td>
+                    <td>{{$alumno->id_preregistro}}</td>
                     </tr>
                   @endforeach
                     </tbody>

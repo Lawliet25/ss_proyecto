@@ -7,11 +7,21 @@
 <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
 
-      <form style="">
+      <form style="" action="{{route('Ficha.store')}}" method="POST">
+        @csrf
           <div class="form-inline">
               <div class="panel panel-info">
-                  <div class="panel-heading text-center"><strong>Registro Ficha</strong></div>
+                  <div class="panel-heading text-center"><strong>Registro de ficha</strong></div>
                   <div class="panel-body">
+
+                    <label for="inputAddress">ID de preregistro:</label>
+                    <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$preregistro->id}}" class="form-control"><br><br>
+                    <label for="inputAddress">Nombre completo:</label>
+                    <input style="margin-left:3px;" readonly type="text" name="" value="{{$preregistro->Nombres . ' ' .  $preregistro->Apellidos }}" class="form-control"><br><br>
+                    <label for="inputAddress">NIE:</label>
+                    <input style="margin-left:100px;" readonly type="text" name="" value="{{$preregistro->NIE}}" class="form-control">
+                    <hr>
+
                       <h3><strong>1.DATOS PERSONALES</strong></h3>
                      <!---Primera fila"--->
 
@@ -224,10 +234,27 @@
                       </div>
 
                      <!---Segunda fila"--->
+                     <?php
+                     $usuario = 'root';
+                     $password = '';
+                     $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
+                     ?>
                      <div class="row">
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Departamento</label>
-                             <select class="form-control"><option>Seleccionar</option></select>
+                             <select class="form-control">
+                               <option>Seleccionar</option>
+                               <?php
+                                $query = $db->prepare("SELECT * FROM departamento");
+                                $query->execute();
+                                $data = $query->fetchAll();
+
+                                foreach ($data as $valores):
+                                echo '<option value="'.$valores["id"].'">'.$valores["Departamento"].'</option>';
+                                endforeach;
+                                ?>
+                             </select>
+
                          </div>
 
                          <div class="form-group col-md-4">
@@ -496,7 +523,7 @@
                       <div class="row">
                          <label for="">Grados disponibles:</label>
                              <select class="form-control" name="GradoMatricular">
-                                 <option>Seleccionar grado</option>
+                                 <option>Seleccionar</option>
                                  <option>7° Grado</option>
                                  <option>8° Grado</option>
                                  <option>9° Grado</option>
@@ -511,7 +538,11 @@
                      <div class="row">
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Sección:</label>
-                             <input type="text" class="form-control" name="Seccion" placeholder="Sección">
+                             <select class="form-control" name="Seccion">
+                                 <option>Seleccionar</option>
+                                 <option>A</option>
+                                 <option>B</option>
+                                 <option>C</option>
                          </div>
                       </div>
                       <hr>
@@ -536,6 +567,7 @@
                  </div>
              </div>
          </div>
+         <input type="submit" class="btn btn-primary" value="Matricular" name="Guardar">
      </form>
 
 @endsection
