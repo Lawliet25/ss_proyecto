@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\DatosAlumno;
 use App\Models\Encargado;
-use App\Models\Hijos;
-use App\Models\HistorialAcademico;
-use App\Models\Matricula;
-use App\Models\Residencia;
+use Illuminate\Http\Request;
 
-class FichaController extends Controller
+class EncargadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +24,7 @@ class FichaController extends Controller
      */
     public function create()
     {
-        return view('Ficha.Fichagrande');
+        //
     }
 
     /**
@@ -40,25 +35,16 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
-        //Alumnosfr
-        $alumno= new Alumno();
-
-        $alumno->Sexo=$request->Nombres;
-        $alumno->FechaNacimiento=$request->FechaNacimiento;
-        $alumno->Nacionalidad=$request->Nacionalidad;
-        $alumno->EstadoFamiliar=$request->EstadoFamiliar;
-        $alumno->MedioTransporte=$request->MedioTransporte;
-        $alumno->save();
-        return redirect()->route('pre.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Encargado  $encargado
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Encargado $encargado)
     {
         //
     }
@@ -66,10 +52,10 @@ class FichaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Encargado  $encargado
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Encargado $encargado)
     {
         //
     }
@@ -78,10 +64,10 @@ class FichaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Encargado  $encargado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Encargado $encargado)
     {
         //
     }
@@ -89,10 +75,10 @@ class FichaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Encargado  $encargado
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Encargado $encargado)
     {
         //
     }
