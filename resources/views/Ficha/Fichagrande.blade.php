@@ -82,9 +82,24 @@
 
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Distancia entre la sede y la residencia:</label>
-                           <input type="text" class="form-control" name="DistanciaSede" value=""><label>KM</label>
+                           <input type="text" class="form-control" name="DistanciaSede" placeholder="Distancia a sede"><label for="">KM</label>
                           </div>
                      </div>
+                     <div class="row">
+                         <div class="form-group col-md-3">
+                           <label for="inputEmail4">Trabaja:</label>
+                           <select class="form-control" name="Trabaja">
+                               <option>Saleccionar</option>
+                               <option>Sí</option>
+                               <option>No</option>
+                           </select>
+                         </div>
+
+                         <div class="form-group col-md-6">
+                            <label for="inputEmail4">Ocupación:</label>
+                             <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación">
+                         </div>
+                      </div>
                      <!---Quinta fila"--->
                      <div class="row">
                          <div class="form-group col-md-3">
@@ -169,7 +184,7 @@
                      <div class="row">
                           <div class="form-group col-md-10">
                              <label for="inputEmail4">Lugar de trabajo:</label>
-                             <input type="text" class="form-control" id="LugarTrabajoEncargado" name="LugarTrabajoEncargado" placeholder="">
+                             <input type="text" class="form-control" id="LugarTrabajoEncargado" name="LugarTrabajoEncargado" placeholder="Lugar de trabajo">
                          </div>
                      </div>
 
@@ -310,7 +325,7 @@
                      <div class="row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">N° de miembros de la familia:</label>
-                             <input type="text" class="form-control" name="NumFamiliares"  placeholder="">
+                             <input type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
                          </div>
                      </div>
 
@@ -414,7 +429,7 @@
 
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Nombre del Centro Educativo:</label>
-                             <input type="text" class="form-control" name="CentroEducativo" placeholder="">
+                             <input type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo">
                          </div>
                       </div>
                       <hr>
@@ -455,8 +470,8 @@
                                  <option>Semipresencial</option>
                                  <option>Virtual</option>
                                  <option>Prueba de suficiencia</option>
-                                 <option>Nivelación Académica</option>
-                                 <option>Modalidad Flexible integrada</option>
+                                 <option>Nivelación académica</option>
+                                 <option>Modalidad flexible integrada</option>
                              </select>
                          </div>
                       </div>
@@ -501,6 +516,16 @@
                       </div>
                       <hr>
 
+                      <div class="row">
+                          <div class="form-group col-md-6">
+                          <label for="inputCity">Fecha de registro de ficha::</label>
+                          <input type="datetime-local" class="form-control" id="FechaFR" name="FechaFR">
+                          </div>
+                          <div class="form-group col-md-5">
+                              <label for="inputEmail4">Persona que recibió la ficha:</label>
+                              <input type="text" class="form-control" name="PersonaRegistro" placeholder="">
+                          </div>
+                      </div>
                       <!---Sexta fila GRADO A MATRICULAR--->
                       <h4><strong>Datos adicionales:</strong></h4>
                       <div class="row">
