@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DatosAlumno;
-use App\Models\Encargado;
-use App\Models\Hijos;
-use App\Models\HistorialAcademico;
-use App\Models\Matricula;
-use App\Models\Residencia;
+use App\Models\Preregistro;
 
 class FichaController extends Controller
 {
@@ -19,7 +15,8 @@ class FichaController extends Controller
      */
     public function index()
     {
-        //
+      $alumnos=DatosAlumno::all();
+      return view('Ficha.index',['alumnos'=>$alumnos]);
     }
 
     /**
@@ -27,9 +24,10 @@ class FichaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('Ficha.Fichagrande');
+        //$preregistro=Preregistro::find($id);
+        return view('Ficha.create');
     }
 
     /**

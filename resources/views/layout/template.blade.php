@@ -50,7 +50,7 @@
 
               </li>
               <li class="dropdown">
-                <a href="{{route('Ficha.Fichagrande')}}">Registro de ficha</a>
+                <a href="{{route('Ficha.index')}}">Alumnos matriculados</a>
 
               </li>
               <li class="dropdown">
