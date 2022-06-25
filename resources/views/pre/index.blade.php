@@ -48,7 +48,8 @@
                         <?php endif; ?>
 
                     </td>
-                    <th><a class="btn btn-primary" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registro de ficha</a></th>
+                    <th>
+                      <a class="btn btn-primary" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registro de ficha</a></th>
                     </td>
                     </tr>
                   @endforeach

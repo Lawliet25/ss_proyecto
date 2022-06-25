@@ -16,6 +16,7 @@ class PreregistroController extends Controller
     public function index()
     {
       $preregistros=Preregistro::all();
+      $alumnos= DatosAlumno::all();
       return view('pre.index',['preregistros'=>$preregistros]);
     }
 
@@ -26,6 +27,7 @@ class PreregistroController extends Controller
      */
     public function create()
     {
+        $alumno=DatosAlumno::all();
         return view('pre.create');
 
     }

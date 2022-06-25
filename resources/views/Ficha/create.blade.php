@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title','Formulario de Ficha grande')
+@section('title','Formulario de ficha de matrícula')
 
 @section('content')
 
@@ -242,7 +242,7 @@
                      <div class="row">
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Departamento</label>
-                             <select class="form-control">
+                             <select class="form-control" name="Departamento">
                                <option>Seleccionar</option>
                                <?php
                                 $query = $db->prepare("SELECT * FROM departamento");
