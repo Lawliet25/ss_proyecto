@@ -113,6 +113,7 @@ class FichaController extends Controller
         $alumno->Sexo3=$request->Sexo3;
         $alumno->Edad4=$request->Edad4;
         $alumno->Sexo4=$request->Sexo4;
+        $alumno->PersonaRegistro=$request->PersonaRegistro;
 
         //Foránea
         $alumno->id_preregistro=$request->id_preregistro;
@@ -141,7 +142,9 @@ class FichaController extends Controller
      */
     public function edit($id)
     {
-        //
+      //$preregistro = Preregistro::find($id);
+      $alumno=DatosAlumno::find($id);
+      return view('Ficha.edit', compact('alumno'));
     }
 
     /**
@@ -153,8 +156,8 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $preregistro= Preregistro::find($id);
-      $alumno= new DatosAlumno();
+      //$preregistro= Preregistro::find($id);
+      $alumno=  DatosAlumno::find($id);
 
       //Alumnosfr
       $alumno->Sexo=$request->Sexo;
@@ -224,10 +227,11 @@ class FichaController extends Controller
       $alumno->Sexo3=$request->Sexo3;
       $alumno->Edad4=$request->Edad4;
       $alumno->Sexo4=$request->Sexo4;
+      $alumno->PersonaRegistro=$request->PersonaRegistro;
 
       //Foránea
+      $alumno->id_preregistro=$request->id_preregistro;
 
-      $alumno->id_preregistro=$preregistro;
 
       $alumno->save();
       return redirect()->route('Ficha.index');
@@ -241,6 +245,7 @@ class FichaController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $alumno=DatosAlumno::destroy($id);
+      return redirect()->route('Ficha.index');
     }
 }

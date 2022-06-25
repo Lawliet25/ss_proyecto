@@ -7,7 +7,7 @@
 <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
 
-      <form style="" action="{{route('Ficha.store')}}" method="POST">
+      <form style="" action="{{route('Ficha.update',$alumno->id)}}" method="POST">
         @csrf
           <div class="form-inline">
               <div class="panel panel-info">
@@ -15,11 +15,9 @@
                   <div class="panel-body">
 
                     <label for="inputAddress">ID de preregistro:</label>
-                    <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$preregistro->id}}" class="form-control"><br><br>
+                    <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br><br>
                     <label for="inputAddress">Nombre completo:</label>
-                    <input style="margin-left:3px;" readonly type="text" name="" value="{{$preregistro->Nombres . ' ' .  $preregistro->Apellidos }}" class="form-control"><br><br>
-                    <label for="inputAddress">NIE:</label>
-                    <input style="margin-left:100px;" readonly type="text" name="" value="{{$preregistro->NIE}}" class="form-control">
+              
                     <hr>
 
                       <h3><strong>1.DATOS PERSONALES</strong></h3>
@@ -554,7 +552,7 @@
                           </div>
                           <div class="form-group col-md-5">
                               <label for="inputEmail4">Persona que recibió la ficha:</label>
-                              <input type="text" class="form-control" id="PersonaRegistro" name="PersonaRegistro" placeholder="">
+                              <input type="text" class="form-control" name="PersonaRegistro" placeholder="">
                           </div>
                       </div>
                       <!---Sexta fila GRADO A MATRICULAR--->
