@@ -27,8 +27,13 @@ Route::controller(PreregistroController::class)->group(function(){
   Route::get('/pre/documentos/{id}','documentos')->name('pre.documentos');
   Route::get('/pre/','documentosup')->name('pre.documentosup');
 
+
 });
 Route::controller(FichaController::class)->group(function(){
-  Route::get('/Ficha/Fichagrande','create')->name('Ficha.Fichagrande');
-
+  Route::get('/Ficha/create/{id}','create')->name('Ficha.create');
+  Route::get('/Ficha/index','index')->name('Ficha.index');
+  Route::post('/Ficha','store')->name('Ficha.store');
+    Route::get('/Ficha/edit/{id}','edit')->name('Ficha.edit');
+  Route::post('/Ficha/{id}','update')->name('Ficha.update');
+  Route::get('/Ficha/{id}','destroy')->name('Ficha.destroy');
 });

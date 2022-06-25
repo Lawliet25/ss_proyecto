@@ -38,7 +38,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-              <a class="navbar-brand" href="#">Bachillerato Virtual</a>
+              <a class="navbar-brand" href="{{route('pre.index')}}">Bachillerato Virtual</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -50,11 +50,8 @@
 
               </li>
               <li class="dropdown">
-                <a href="{{route('Ficha.Fichagrande')}}">Registro de ficha</a>
+                <a href="{{route('Ficha.index')}}">Alumnos matriculados</a>
 
-              </li>
-              <li class="dropdown">
-                <a href="#">Ingresar documentos</a>
               </li>
 
             </ul>

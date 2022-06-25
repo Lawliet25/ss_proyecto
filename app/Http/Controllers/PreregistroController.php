@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Preregistro;
+use App\Models\DatosAlumno;
 
 class PreregistroController extends Controller
 {
@@ -15,6 +16,7 @@ class PreregistroController extends Controller
     public function index()
     {
       $preregistros=Preregistro::all();
+      $alumnos= DatosAlumno::all();
       return view('pre.index',['preregistros'=>$preregistros]);
     }
 
@@ -25,6 +27,7 @@ class PreregistroController extends Controller
      */
     public function create()
     {
+        $alumno=DatosAlumno::all();
         return view('pre.create');
 
     }
@@ -150,32 +153,5 @@ class PreregistroController extends Controller
       $preregistro=Preregistro::find($id);
       return view('pre.documentos', compact('preregistro'));
     }
-  /*public function documentosup(Request $request,$id)
-    {
-      $preregistro= Preregistro::find($id);
-
-      $preregistro->Nombres=$request->Nombres;
-      $preregistro->Apellidos=$request->Apellidos;
-      $preregistro->NIE=$request->NIE;
-      $preregistro->DUI=$request->DUI;
-      $preregistro->FechaRecepcion=$request->FechaRecepcion;
-      $preregistro->Estado=$request->Estado;
-      $preregistro->PersonaRecibido=$request->PersonaRecibido;
-      $preregistro->Grado=$request->Grado;
-      $preregistro->Observacion=$request->Observacion;
-
-      $preregistro->FichaRegistro=$request->FichaRegistro;
-      $preregistro->FotoCertificado=$request->FotoCertificado;
-      $preregistro->FotoTitulo=$request->FotoTitulo;
-      $preregistro->PartidaNacimiento=$request->PartidaNacimiento;
-      $preregistro->CopiaDUI=$request->CopiaDUI;
-      $preregistro->DeclaracionJurada=$request->DeclaracionJurada;
-      $preregistro->CopiaDUIResponsable=$request->CopiaDUIResponsable;
-      $preregistro->CertificadoOriginal=$request->CertificadoOriginal;
-      $preregistro->CertificadoNotas=$request->CertificadoNotas;
-      $preregistro->save();
-      return redirect()->route('pre.documentos');
-
-    }*/
 
 }

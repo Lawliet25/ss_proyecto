@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DatosAlumno;
+use App\Models\Preregistro;
 
 class FichaController extends Controller
 {
@@ -13,7 +15,10 @@ class FichaController extends Controller
      */
     public function index()
     {
-        //
+      $preregistros=Preregistro::all();
+      $alumnos=DatosAlumno::all();
+      return view('Ficha.index',['alumnos'=>$alumnos]);
+
     }
 
     /**
@@ -21,9 +26,12 @@ class FichaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('Ficha.Fichagrande');
+        //$preregistro=Preregistro::find($id);
+        //$preregistros=Preregistro::pluck('id');
+        $preregistro=Preregistro::find($id);
+        return view('Ficha.create', compact('preregistro'));
     }
 
     /**
@@ -34,7 +42,85 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $alumno= new DatosAlumno();
+
+        //Alumnosfr
+        $alumno->Sexo=$request->Sexo;
+        $alumno->IdentidadGenero=$request->IdentidadGenero;
+        $alumno->FechaNacimiento=$request->FechaNacimiento;
+        $alumno->Nacionalidad=$request->Nacionalidad;
+        $alumno->EstadoFamiliar=$request->EstadoFamiliar;
+        $alumno->MedioTransporte=$request->MedioTransporte;
+        $alumno->DistanciaSede=$request->DistanciaSede;
+        $alumno->Trabaja=$request->Trabaja;
+        $alumno->Ocupacion=$request->Ocupacion;
+        $alumno->Discapacidad=$request->Discapacidad;
+        $alumno->TipoDiscapacidad=$request->TipoDiscapacidad;
+        $alumno->Retornado=$request->Retornado;
+        $alumno->PaisRetornado=$request->PaisRetornado;
+        $alumno->ConvivenciaFamiliar=$request->ConvivenciaFamiliar;
+        $alumno->DependenciaEconomica=$request->DependenciaEconomica;
+        $alumno->EspecifiqueConv=$request->EspecifiqueConv;
+        $alumno->EspecifiqueEcon=$request->EspecifiqueEcon;
+        $alumno->NumFamiliares=$request->NumFamiliares;
+        $alumno->Enfermedades=$request->Enfermedades;
+        $alumno->Medicamentos=$request->Medicamentos;
+        $alumno->FechaFR=$request->FechaFR;
+
+        //Historial
+        $alumno->InstitucionAcademica=$request->InstitucionAcademica;
+        $alumno->AñoCursado=$request->AñoCursado;
+        $alumno->GradoCursado=$request->GradoCursado;
+        $alumno->CentroEducativo=$request->CentroEducativo;
+
+        //Encargado
+        $alumno->NombresEncargado=$request->NombresEncargado;
+        $alumno->ApellidosEncargado=$request->ApellidosEncargado;
+        $alumno->ParentescoEncargado=$request->ParentescoEncargado;
+        $alumno->LugarTrabajoEncargado=$request->LugarTrabajoEncargado;
+        $alumno->TelefonoEncargado=$request->TelefonoEncargado;
+        $alumno->DUIEncargado=$request->DUIEncargado;
+        $alumno->ProfesionEncargado=$request->ProfesionEncargado;
+        $alumno->DireccionEncargado=$request->DireccionEncargado;
+
+        //Matrícula
+        $alumno->Turno=$request->Turno;
+        $alumno->Modalidad=$request->Modalidad;
+        $alumno->Jornada=$request->Jornada;
+        $alumno->TipoIngreso=$request->TipoIngreso;
+        $alumno->GradoMatricular=$request->GradoMatricular;
+        $alumno->Seccion=$request->Seccion;
+        $alumno->DatosAdicionales=$request->DatosAdicionales;
+
+        //Residencia
+        $alumno->Direccion=$request->Direccion;
+        $alumno->Zona=$request->Zona;
+        $alumno->TelefonoResidencia=$request->TelefonoResidencia;
+        $alumno->TelefonoTrabajo=$request->TelefonoTrabajo;
+        $alumno->Celular=$request->Celular;
+        $alumno->Email=$request->Email;
+        $alumno->Departamento=$request->Departamento;
+        $alumno->Municipio=$request->Municipio;
+
+        //Hijos
+        $alumno->CantidadHijos=$request->CantidadHijos;
+        $alumno->Edad1=$request->Edad1;
+        $alumno->Sexo1=$request->Sexo1;
+        $alumno->Edad2=$request->Edad2;
+        $alumno->Sexo2=$request->Sexo2;
+        $alumno->Edad3=$request->Edad3;
+        $alumno->Sexo3=$request->Sexo3;
+        $alumno->Edad4=$request->Edad4;
+        $alumno->Sexo4=$request->Sexo4;
+        $alumno->PersonaRegistro=$request->PersonaRegistro;
+
+        //Foránea
+        $alumno->id_preregistro=$request->id_preregistro;
+
+
+        $alumno->save();
+        return redirect()->route('Ficha.index');
     }
 
     /**
@@ -56,7 +142,9 @@ class FichaController extends Controller
      */
     public function edit($id)
     {
-        //
+      //$preregistro = Preregistro::find($id);
+      $alumno=DatosAlumno::find($id);
+      return view('Ficha.edit', compact('alumno'));
     }
 
     /**
@@ -68,7 +156,85 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      //$preregistro= Preregistro::find($id);
+      $alumno=  DatosAlumno::find($id);
+
+      //Alumnosfr
+      $alumno->Sexo=$request->Sexo;
+      $alumno->IdentidadGenero=$request->IdentidadGenero;
+      $alumno->FechaNacimiento=$request->FechaNacimiento;
+      $alumno->Nacionalidad=$request->Nacionalidad;
+      $alumno->EstadoFamiliar=$request->EstadoFamiliar;
+      $alumno->MedioTransporte=$request->MedioTransporte;
+      $alumno->DistanciaSede=$request->DistanciaSede;
+      $alumno->Trabaja=$request->Trabaja;
+      $alumno->Ocupacion=$request->Ocupacion;
+      $alumno->Discapacidad=$request->Discapacidad;
+      $alumno->TipoDiscapacidad=$request->TipoDiscapacidad;
+      $alumno->Retornado=$request->Retornado;
+      $alumno->PaisRetornado=$request->PaisRetornado;
+      $alumno->ConvivenciaFamiliar=$request->ConvivenciaFamiliar;
+      $alumno->DependenciaEconomica=$request->DependenciaEconomica;
+      $alumno->EspecifiqueConv=$request->EspecifiqueConv;
+      $alumno->EspecifiqueEcon=$request->EspecifiqueEcon;
+      $alumno->NumFamiliares=$request->NumFamiliares;
+      $alumno->Enfermedades=$request->Enfermedades;
+      $alumno->Medicamentos=$request->Medicamentos;
+      $alumno->FechaFR=$request->FechaFR;
+
+      //Historial
+      $alumno->InstitucionAcademica=$request->InstitucionAcademica;
+      $alumno->AñoCursado=$request->AñoCursado;
+      $alumno->GradoCursado=$request->GradoCursado;
+      $alumno->CentroEducativo=$request->CentroEducativo;
+
+      //Encargado
+      $alumno->NombresEncargado=$request->NombresEncargado;
+      $alumno->ApellidosEncargado=$request->ApellidosEncargado;
+      $alumno->ParentescoEncargado=$request->ParentescoEncargado;
+      $alumno->LugarTrabajoEncargado=$request->LugarTrabajoEncargado;
+      $alumno->TelefonoEncargado=$request->TelefonoEncargado;
+      $alumno->DUIEncargado=$request->DUIEncargado;
+      $alumno->ProfesionEncargado=$request->ProfesionEncargado;
+      $alumno->DireccionEncargado=$request->DireccionEncargado;
+
+      //Matrícula
+      $alumno->Turno=$request->Turno;
+      $alumno->Modalidad=$request->Modalidad;
+      $alumno->Jornada=$request->Jornada;
+      $alumno->TipoIngreso=$request->TipoIngreso;
+      $alumno->GradoMatricular=$request->GradoMatricular;
+      $alumno->Seccion=$request->Seccion;
+      $alumno->DatosAdicionales=$request->DatosAdicionales;
+
+      //Residencia
+      $alumno->Direccion=$request->Direccion;
+      $alumno->Zona=$request->Zona;
+      $alumno->TelefonoResidencia=$request->TelefonoResidencia;
+      $alumno->TelefonoTrabajo=$request->TelefonoTrabajo;
+      $alumno->Celular=$request->Celular;
+      $alumno->Email=$request->Email;
+      $alumno->Departamento=$request->Departamento;
+      $alumno->Municipio=$request->Municipio;
+
+      //Hijos
+      $alumno->CantidadHijos=$request->CantidadHijos;
+      $alumno->Edad1=$request->Edad1;
+      $alumno->Sexo1=$request->Sexo1;
+      $alumno->Edad2=$request->Edad2;
+      $alumno->Sexo2=$request->Sexo2;
+      $alumno->Edad3=$request->Edad3;
+      $alumno->Sexo3=$request->Sexo3;
+      $alumno->Edad4=$request->Edad4;
+      $alumno->Sexo4=$request->Sexo4;
+      $alumno->PersonaRegistro=$request->PersonaRegistro;
+
+      //Foránea
+      $alumno->id_preregistro=$request->id_preregistro;
+
+
+      $alumno->save();
+      return redirect()->route('Ficha.index');
     }
 
     /**
@@ -79,6 +245,7 @@ class FichaController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $alumno=DatosAlumno::destroy($id);
+      return redirect()->route('Ficha.index');
     }
 }
