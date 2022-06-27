@@ -15,8 +15,7 @@
                   <div class="panel-body">
 
                     <label for="inputAddress">ID de preregistro:</label>
-                    <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br><br>
-                    <label for="inputAddress">Nombre completo:</label>
+                    <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br>
 
                     <hr>
 
@@ -50,7 +49,7 @@
                      <div class="row">
                          <div class="form-group col-md-6">
                          <label for="inputCity">Fecha de nacimiento</label>
-                         <input type="datetime-local" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{$alumno->FechaNacimiento}}">
+                         <input type="text" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{$alumno->FechaNacimiento}}">
                          </div>
 
                      </div>
@@ -176,7 +175,7 @@
                           <div class="form-group col-md-4">
                              <label for="inputEmail4">Parentesco:</label>
                              <select class="form-control" name="ParentescoEncargado">
-                                 <option>{{$alumno->Parentesco}}</option>
+                                 <option>{{$alumno->ParentescoEncargado}}</option>
                                  <option>Madre</option>
                                  <option>Padre</option>
                                  <option>Hermano/a</option>
@@ -228,7 +227,7 @@
                       <!---Primera fila"--->
                       <div class="group">
                          <label for="inputEmail4">Dirección:</label>
-                           <input value="{{$alumno->DireccionEncargado}}" type="text" class="form-control" id="nombres" placeholder="Dirección">
+                           <input value="{{$alumno->Direccion}}" type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
                       </div>
 
                      <!---Segunda fila"--->
@@ -248,7 +247,7 @@
                                 $data = $query->fetchAll();
 
                                 foreach ($data as $valores):
-                                echo '<option value="'.$valores["id"].'">'.$valores["Departamento"].'</option>';
+                                echo '<option value="'.$valores["Departamento"].'">'.$valores["Departamento"].'</option>';
                                 endforeach;
                                 ?>
                              </select>
@@ -257,7 +256,7 @@
 
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Municipio</label>
-                             <select class="form-control"><option>Seleccionar</option></select>
+                             <input type="text" class="form-control" name="Municipio" id="nombres" placeholder="Municipio" value="{{$alumno->Municipio}}">
                          </div>
                      </div>
 
@@ -265,8 +264,8 @@
                      <div class="row">
                      <div class="form-group col-md-5">
                          <label for="inputEmail4">Zona de residencia:</label>
-                         <select class="form-control" name="Retornado">
-                             <option>{{$alumno->Municipio}}</option>
+                         <select class="form-control" name="Zona">
+                             <option>{{$alumno->Zona}}</option>
                              <option>Rural</option>
                              <option>Urbana</option>
 
@@ -308,7 +307,7 @@
                      <div class="row">
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Convivencia:</label>
-                             <select class="form-control" name="Convivencia">
+                             <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
                              <option>{{$alumno->ConvivenciaFamiliar}}</option>
                              <option>Con madre</option>
                              <option>Con padre</option>
@@ -321,9 +320,10 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" placeholder="Especifique">
+                             <input value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique">
                          </div>
                      </div>
+                     
 
                      <!---Segunda fila"--->
                      <div class="row">
@@ -350,7 +350,7 @@
                      <div class="row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">N° de miembros de la familia:</label>
-                             <input value="NumFamiliares" type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
+                             <input value="{{$alumno->NumFamiliares}}" type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
                          </div>
                      </div>
 
@@ -407,7 +407,7 @@
 
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Hijo 4</label>
-                             <input value="Edad4" type="text" class="form-control" name="Edad4"  placeholder="Edad">
+                             <input value="{{$alumno->Edad4}}" type="text" class="form-control" name="Edad4"  placeholder="Edad4">
                              <select class="form-control" name="Sexo4">
                                  <option>{{$alumno->Sexo4}}</option>
                                  <option>Femenino</option>
@@ -548,8 +548,8 @@
 
                       <div class="row">
                           <div class="form-group col-md-6">
-                          <label for="inputCity">Fecha de registro de ficha::</label>
-                          <input value="{{$alumno->FechaFR}}" type="datetime-local" class="form-control" id="FechaFR" name="FechaFR">
+                          <label for="inputEmail4">Fecha de registro de ficha:</label>
+                          <input value="{{$alumno->FechaFR}}" type="text" class="form-control" id="FechaFR" name="FechaFR">
                           </div>
                           <div class="form-group col-md-5">
                               <label for="inputEmail4">Persona que recibió la ficha:</label>

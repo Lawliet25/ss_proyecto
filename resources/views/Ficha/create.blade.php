@@ -3,7 +3,6 @@
 @section('title','Formulario de ficha de matrícula')
 
 @section('content')
-
 <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
 
@@ -30,7 +29,7 @@
                      <div class="form-group col-md-3">
                        <label for="inputAddress">Sexo:</label>
                        <select id="Grado" name="Sexo" class="form-control">
-                         <option>Seleccionar</option>
+                         <option></option>
                          <option>Masculino</option>
                          <option>Femenino</option>
                        </select>
@@ -39,7 +38,7 @@
                      <div class="form-group col-md-8">
                        <label for="inputAddress">Identidad de género:</label>
                        <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
-                         <option>Seleccionar</option>
+                         <option></option>
                          <option>Lesbianas</option>
                          <option>Gays</option>
                          <option>Bisexuales</option>
@@ -61,7 +60,7 @@
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Nacionalidad</label>
                              <select class="form-control" name="Nacionalidad">
-                                 <option>Saleccionar</option>
+                                 <option></option>
                                  <option>Salvadoreña</option>
                                  <option>Extranjera</option>
                              </select>
@@ -70,7 +69,7 @@
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Estado familiar:</label>
                            <select id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
-                             <option>Seleccionar</option>
+                             <option></option>
                              <option>Soltero(a)</option>
                              <option>Casado(a)</option>
                              <option>Acompañado(a)</option>
@@ -82,7 +81,7 @@
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Medio de transporte:</label>
                              <select class="form-control" name="MedioTransporte">
-                                 <option>Saleccionar</option>
+                                 <option></option>
                                  <option>Propio</option>
                                  <option>Público</option>
                                  <option>Familiar</option>
@@ -99,7 +98,7 @@
                          <div class="form-group col-md-3">
                            <label for="inputEmail4">Trabaja:</label>
                            <select class="form-control" name="Trabaja">
-                               <option>Saleccionar</option>
+                               <option></option>
                                <option>Sí</option>
                                <option>No</option>
                            </select>
@@ -115,7 +114,7 @@
                          <div class="form-group col-md-3">
                            <label for="inputEmail4">Tiene discapacidad:</label>
                            <select class="form-control" name="Discapacidad">
-                               <option>Saleccionar</option>
+                               <option></option>
                                <option>Sí</option>
                                <option>No</option>
                            </select>
@@ -131,7 +130,7 @@
                          <div class="form-group col-md-3">
                            <label for="inputEmail4">Retornado:</label>
                            <select class="form-control" name="Retornado">
-                               <option>Saleccionar</option>
+                               <option></option>
                                <option>Sí</option>
                                <option>No</option>
 
@@ -178,7 +177,7 @@
                           <div class="form-group col-md-4">
                              <label for="inputEmail4">Parentesco:</label>
                              <select class="form-control" name="ParentescoEncargado">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Madre</option>
                                  <option>Padre</option>
                                  <option>Hermano/a</option>
@@ -230,7 +229,7 @@
                       <!---Primera fila"--->
                       <div class="group">
                          <label for="inputEmail4">Dirección:</label>
-                           <input type="text" class="form-control" id="nombres" placeholder="Dirección">
+                           <input type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
                       </div>
 
                      <!---Segunda fila"--->
@@ -243,7 +242,7 @@
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Departamento</label>
                              <select class="form-control" name="Departamento">
-                               <option>Seleccionar</option>
+                               <option></option>
                                <?php
                                 $query = $db->prepare("SELECT * FROM departamento");
                                 $query->execute();
@@ -259,7 +258,7 @@
 
                          <div class="form-group col-md-4">
                              <label for="inputEmail4">Municipio</label>
-                             <select class="form-control"><option>Seleccionar</option></select>
+                             <input type="text" class="form-control" name="Municipio" id="nombres" placeholder="Municipio">
                          </div>
                      </div>
 
@@ -267,8 +266,8 @@
                      <div class="row">
                      <div class="form-group col-md-5">
                          <label for="inputEmail4">Zona de residencia:</label>
-                         <select class="form-control" name="Retornado">
-                             <option>Saleccionar</option>
+                         <select class="form-control" name="Zona">
+                             <option></option>
                              <option>Rural</option>
                              <option>Urbana</option>
 
@@ -310,8 +309,8 @@
                      <div class="row">
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Convivencia:</label>
-                             <select class="form-control" name="Convivencia">
-                             <option>Seleccionar</option>
+                             <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
+                             <option></option>
                              <option>Con madre</option>
                              <option>Con padre</option>
                              <option>Padre y madre</option>
@@ -323,7 +322,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input type="text" class="form-control" name="EspecifiqueConv" placeholder="Especifique">
+                             <input type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique">
                          </div>
                      </div>
 
@@ -332,7 +331,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">De quién depende económicamente:</label>
                              <select class="form-control" name="DependenciaEconomica">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Padre</option>
                                  <option>Madre</option>
                                  <option>Padre y madre</option>
@@ -377,7 +376,7 @@
                              <label for="inputEmail4">Hijo 1</label>
                              <input type="text" class="form-control" name="Edad1" placeholder="Edad">
                              <select class="form-control" name="Sexo1">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
@@ -387,7 +386,7 @@
                              <label for="inputEmail4">Hijo 2</label>
                              <input type="text" class="form-control" name="Edad2" placeholder="Edad">
                              <select class="form-control" name="Sexo2">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
@@ -400,7 +399,7 @@
                              <label for="inputEmail4">Hijo 3</label>
                              <input type="text" class="form-control" name="Edad3" placeholder="Edad">
                              <select class="form-control" name="Sexo3">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                              </select>
@@ -410,7 +409,7 @@
                              <label for="inputEmail4">Hijo 4</label>
                              <input type="text" class="form-control" name="Edad4"  placeholder="Edad">
                              <select class="form-control" name="Sexo4">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
@@ -426,7 +425,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Último grado cursado:</label>
                              <select id="Grado" name="GradoCursado" class="form-control">
-                               <option>Seleccionar</option>
+                               <option></option>
                                <option>6° grado</option>
                                <option>7° grado</option>
                                <option>8° grado</option>
@@ -446,7 +445,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Institución en que lo cursó:</label>
                              <select class="form-control" name="InstitucionAcademica">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Modalidad flexible</option>
                                  <option>Regular</option>
                                  <option>Extranjero</option>
@@ -469,7 +468,7 @@
                          <div class="form-group col-md-3">
                              <label for="inputEmail4">Turno:</label>
                              <select class="form-control" name="Turno">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Mañana</option>
                                  <option>Tarde</option>
                                  <option>Mañana y tarde</option>
@@ -480,7 +479,7 @@
                          <div class="form-group col-md-3">
                              <label for="inputEmail4">Jornada:</label>
                              <select class="form-control" name="Jornada">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Lunes a viernes</option>
                                  <option>Sábado</option>
                                  <option>Domingo</option>
@@ -490,7 +489,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Modalidad de atención:</label>
                              <select class="form-control" name="Modalidad">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Nocturno</option>
                                  <option>Distancia</option>
                                  <option>Acelerada</option>
@@ -508,7 +507,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Tipo de ingreso:</label>
                              <select class="form-control" name="TipoIngreso">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>Certificado Escolar</option>
                                  <option>Certificación de Notas</option>
                                  <option>Prueba de suficiencia</option>
@@ -523,7 +522,7 @@
                       <div class="row">
                          <label for="">Grados disponibles:</label>
                              <select class="form-control" name="GradoMatricular">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>7° Grado</option>
                                  <option>8° Grado</option>
                                  <option>9° Grado</option>
@@ -539,7 +538,7 @@
                          <div class="form-group col-md-5">
                              <label for="inputEmail4">Sección:</label>
                              <select class="form-control" name="Seccion">
-                                 <option>Seleccionar</option>
+                                 <option></option>
                                  <option>A</option>
                                  <option>B</option>
                                  <option>C</option>
@@ -549,7 +548,7 @@
 
                       <div class="row">
                           <div class="form-group col-md-6">
-                          <label for="inputCity">Fecha de registro de ficha::</label>
+                          <label for="inputEmail4">Fecha de registro de ficha:</label>
                           <input type="datetime-local" class="form-control" id="FechaFR" name="FechaFR">
                           </div>
                           <div class="form-group col-md-5">
