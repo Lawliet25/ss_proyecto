@@ -22,7 +22,8 @@ class FichaController extends Controller
                ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
                 'datosalumnofr.PersonaRegistro')
-               ->get();
+               ->paginate(2);
+
                return view('Ficha.index',['data'=>$data],['alumnos'=>$alumnos]);
 
     }

@@ -15,7 +15,7 @@ class PreregistroController extends Controller
      */
     public function index()
     {
-      $preregistros=Preregistro::all();
+      $preregistros=Preregistro::paginate(5);
       $alumnos= DatosAlumno::all();
       return view('pre.index',['preregistros'=>$preregistros]);
     }
