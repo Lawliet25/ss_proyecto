@@ -17,7 +17,14 @@ class FichaController extends Controller
     {
       $preregistros=Preregistro::all();
       $alumnos=DatosAlumno::all();
-      return view('Ficha.index',['alumnos'=>$alumnos]);
+      //return view('Ficha.index',['alumnos'=>$alumnos]);
+      $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
+               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
+                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
+                'datosalumnofr.PersonaRegistro')
+               ->paginate(2);
+
+               return view('Ficha.index',['data'=>$data],['alumnos'=>$alumnos]);
 
     }
 

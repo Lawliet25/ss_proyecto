@@ -8,7 +8,7 @@
                 <h3>Lista de alumnos matriculados</h3>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-14">
 
                 <br>
                 @if (session('status'))
@@ -22,37 +22,42 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Sexo</th>
+                            <th>NIE</th>
+                            <th>Nombre completo</th>
                             <th>Sección</th>
                             <th>Turno</th>
                             <th>Modalidad</th>
-                            <th>Fecha de nacimiento</th>
                             <th>Fecha de registro</th>
                             <th>Persona que recibió</th>
-                            <th>ID de preregistrado</th>
                             <th>Operaciones</th>
+
                         </tr>
                     </thead>
                     <tbody>
-
                     @foreach($alumnos as $alumno)
+                    @endforeach
+                    @foreach($data as $dato)
 
                     <tr>
-                    <td>{{$alumno->id}}</td>
-                    <td>{{$alumno->Sexo}}</td>
-                    <td>{{$alumno->Seccion}}</td>
-                    <td>{{$alumno->Turno}}</td>
-                    <td>{{$alumno->Modalidad}}</td>
-                    <td>{{$alumno->FechaNacimiento}}</td>
-                    <td>{{$alumno->FechaFR}}</td>
-                    <td>{{$alumno->PersonaRegistro}}</td>
-                    <td>{{$alumno->id_preregistro}}</td>
-                    <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('Ficha.edit', $alumno->id, $alumno->id_preregistro)}}"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('Ficha.destroy', $alumno->id)}}"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td>{{$dato->id}}</td>
+                    <td>{{$dato->NIE}}</td>
+                    <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
+                    <td>{{$dato->Seccion}}</td>
+                    <td>{{$dato->Turno}}</td>
+                    <td>{{$dato->Modalidad}}</td>
+                    <td>{{$dato->FechaFR}}</td>
+                    <td>{{$dato->PersonaRegistro}}</td>
+                    <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('Ficha.edit', $dato->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('Ficha.destroy', $dato->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
+
+                    </td>
+
                     </tr>
-                  @endforeach
+
+                    @endforeach
                     </tbody>
                 </table>
+                {{$data->links('pagination::bootstrap-4')}}
                 </div>
             </div>
         </div>
