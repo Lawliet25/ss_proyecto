@@ -52,7 +52,7 @@
 
                      <!---Segunda fila"--->
                      <div class="form-row" >
-                         <div class="form-group col-md-6">
+                         <div class="form-group col-md-12">
                             <label for="inputCity">Fecha de nacimiento</label>
                             <input type="datetime-local" class="form-control" id="FechaNacimiento" name="FechaNacimiento">
                          </div>
