@@ -3,6 +3,8 @@
 @section('title','Formulario de ficha de matrícula')
 
 @section('content')
+
+
 <div class="row">
       <div class="col-md-8 col-md-offset-2">
 
@@ -22,7 +24,7 @@
                     <input style="margin-left:100px;" readonly type="text" name="" value="{{$preregistro->NIE}}" class="form-control">
                   </div>
                     <hr>
-
+                      <!---SECCION DE DATOS PERSONALES--->
                       <h3><strong>1.DATOS PERSONALES</strong></h3>
                     
 
@@ -150,7 +152,13 @@
                      <div class="form-row">
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Enfermedades o alergias que padece:</label>
-                             <textarea class="form-control" name="Enfermedades" rows="2"></textarea>
+                             <textarea  style="display: block;
+                              width: 100%;
+                              resize: none;
+                              padding: 20px;
+                              border: 1.5px solid #b2b2b2;
+                              border-radius: 5px;"
+                              placeholder="Escriba aquí" name="Enfermedades" rows="3"></textarea>
                          </div>
                       </div>
 
@@ -158,12 +166,19 @@
                       <div class="form-row">
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Medicamentos prescrito de carácter permanente:</label>
-                             <textarea class="form-control" rows="2" name="Medicamentos"></textarea>
+                             <textarea style="display: block;
+                              width: 100%;
+                              resize: none;
+                              padding: 20px;
+                              color: #202020;
+                              border: 1.5px solid #b2b2b2;
+                              border-radius: 5px;"
+                              placeholder="Escriba aquí" rows="3" name="Medicamentos"></textarea>
                          </div>
                      </div>
                       <hr>
 
-                       <!---PARTE DE DATOS FAMILIARES--->
+                       <!---SECCION  DE DATOS FAMILIARES--->
                       <h4><strong>Datos familiares o responsable</strong></h4>
                       <!---Primera fila"--->
                      <div class="form-row">
@@ -227,7 +242,7 @@
                      </div>
                     
 
-                      <!---PARTE DE LOS DATOS DE RESIDENCIA--->
+                      <!---SECCION  DE LOS DATOS DE RESIDENCIA--->
                       <h3><strong>2.DATOS DE RESIDENCIA</strong></h3>
                       <!---Primera fila"--->
                       <div class="form-row">
@@ -304,7 +319,7 @@
                      </div>
                      <hr>
 
-                     <!---PARTE DE LOS DATOS SOBRE SITUACION FAMILIAR--->
+                     <!---SECCION  DE LOS DATOS SOBRE SITUACION FAMILIAR--->
                      <h3><strong>3.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
 
                      <!---Primera fila"--->
@@ -330,7 +345,7 @@
 
                      <!---Segunda fila"--->
                      <div class="form-row">
-                         <div class="form-group col-md-5">
+                         <div class="form-group col-md-6">
                              <label for="inputEmail4">De quién depende económicamente:</label>
                              <select class="form-control" name="DependenciaEconomica">
                                  <option></option>
@@ -416,7 +431,7 @@
                       </div>
                       <hr>
 
-                      <!---PARTE DE ESTUDIOS REALIZADOS--->
+                      <!---SECCION  DE ESTUDIOS REALIZADOS--->
                      <h3><strong>4.ESTUDIOS REALIZADOS</strong></h3>
 
                      <!---Primera fila--->
@@ -459,7 +474,7 @@
                       </div>
                       
 
-                       <!---PARTE DE DATOS MATRICULA--->
+                       <!---SECCION  DE DATOS MATRICULA--->
                      <h3><strong>5.DATOS DE MATRICULA</strong></h3>
 
                      <!---Primera fila--->
@@ -560,7 +575,15 @@
                       <h4><strong>Datos adicionales:</strong></h4>
                       <div class="row">
                          <div class="form-group col-md-12">
-                             <textarea name="DatosAdicionales" class="form-control"rows="3" cols="80"></textarea>
+                             <textarea name="DatosAdicionales" 
+                             style="display: block;
+                              width: 100%;
+                              resize: none;
+                              padding: 20px;
+                              color: #202020;
+                              border: 1.5px solid #b2b2b2;
+                              border-radius: 5px;"
+                              placeholder="Escriba aquí" rows="3" ></textarea>
                          </div>
                      </div>
 
@@ -572,6 +595,6 @@
          </div>
          
      </form>
+   
 
 @endsection
-
