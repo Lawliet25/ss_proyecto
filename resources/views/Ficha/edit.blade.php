@@ -11,43 +11,44 @@
         @csrf
          
               <div class="panel panel-info">
-                  <div class="panel-heading text-center"><strong>Registro de ficha</strong></div>
+                  <div class="panel-heading text-center"><strong>Editando Registro de ficha</strong></div>
                   <div class="panel-body">
+
                   <div  class="form-inline">
-                    <label for="inputAddress">ID de preregistro:</label>
-                    <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br>
+                     <label for="inputAddress">ID de preregistro:</label>
+                     <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br>
                    </div>
                     <hr>
-
+                      <!---SECCION DE DATOS PERSONALES---> 
                       <h3><strong>1.DATOS PERSONALES</strong></h3>
                     
                      <!---Primera fila"--->
                      <div class="form-row">
-                     <div class="form-group col-md-6">
-                       <label for="inputAddress">Sexo:</label>
-                       <select id="Sexo" name="Sexo" class="form-control">
-                         <option>{{$alumno->Sexo}}</option>
-                         <option>Masculino</option>
-                         <option>Femenino</option>
-                       </select>
-                     </div>
+                         <div class="form-group col-md-6">
+                             <label for="inputAddress">Sexo:</label>
+                             <select id="Sexo" name="Sexo" class="form-control">
+                                 <option>{{$alumno->Sexo}}</option>
+                                 <option>Masculino</option>
+                                 <option>Femenino</option>
+                             </select>
+                         </div>
 
-                     <div class="form-group col-md-6">
-                       <label for="inputAddress">Identidad de género:</label>
-                       <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
-                         <option>{{$alumno->IdentidadGenero}}</option>
-                         <option>Lesbianas</option>
-                         <option>Gays</option>
-                         <option>Bisexuales</option>
-                         <option>Transexuales</option>
-                         <option>Intersexuales</option>
-                      </select>
-                     </div>
+                         <div class="form-group col-md-6">
+                              <label for="inputAddress">Identidad de género:</label>
+                              <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
+                             <option>{{$alumno->IdentidadGenero}}</option>
+                             <option>Lesbianas</option>
+                              <option>Gays</option>
+                             <option>Bisexuales</option>
+                             <option>Transexuales</option>
+                              <option>Intersexuales</option>
+                             </select>
+                         </div>
                      </div>
                      
                     <!---Segunda fila"--->
                      <div class="form-row" >
-                         <div class="form-group col-md-6">
+                         <div class="form-group col-md-12">
                          <label for="inputCity">Fecha de nacimiento</label>
                          <input type="text" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{$alumno->FechaNacimiento}}">
                          </div>
@@ -151,7 +152,13 @@
                      <div class="form-row">
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Enfermedades o alergias que padece:</label>
-                             <textarea class="form-control" name="Enfermedades" rows="2">{{$alumno->Enfermedades}}</textarea>
+                             <textarea style="display: block;
+                              width: 100%;
+                              resize: none;
+                              padding: 20px;
+                              border: 1.5px solid #b2b2b2;
+                              border-radius: 5px;"
+                              placeholder="Escriba aquí" name="Enfermedades" rows="3">{{$alumno->Enfermedades}}</textarea>
                          </div>
                       </div>
 
@@ -160,12 +167,18 @@
                       
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Medicamentos prescrito de carácter permanente:</label>
-                             <textarea class="form-control" rows="2" name="Medicamentos">{{$alumno->Medicamentos}}</textarea>
+                             <textarea style="display: block;
+                              width: 100%;
+                              resize: none;
+                              padding: 20px;
+                              border: 1.5px solid #b2b2b2;
+                              border-radius: 5px;"
+                              placeholder="Escriba aquí" rows="3" name="Medicamentos">{{$alumno->Medicamentos}}</textarea>
                          </div>
                      </div>
                       
 
-                       <!---PARTE DE DATOS FAMILIARES--->
+                       <!---SECCION DE DATOS FAMILIARES--->
                       <h4><strong>Datos familiares o responsable</strong></h4>
                       <!---Primera fila"--->
                      <div class="form-row">
@@ -203,7 +216,7 @@
                      </div>
 
                      <!---Tercera fila"--->
-                     <div class="form-row"
+                     <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Número de DUI:</label>
                              <input value="{{$alumno->DUIEncargado}}" type="text" class="form-control" id="DUIEncargado" name="DUIEncargado" placeholder="DUI">
@@ -229,12 +242,12 @@
                      </div>
                      
 
-                      <!---PARTE DE LOS DATOS DE RESIDENCIA--->
+                      <!---SECCION DE LOS DATOS DE RESIDENCIA--->
                       <h3><strong>2.DATOS DE RESIDENCIA</strong></h3>
                       
                       <!---Primera fila"--->
-                      <div class="form-row"
-                          <div class=form-group col-md-6">
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Dirección:</label>
                              <input value="{{$alumno->Direccion}}" type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
                           </div>
@@ -293,7 +306,7 @@
                      </div>
 
                     <!---Cuarta fila"--->
-                     <div class="form-row"
+                     <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Trabajo:</label>
                              <input value="{{$alumno->TelefonoTrabajo}}" type="text" class="form-control" id="TelefonoTrabajo" name="TelefonoTrabajo" placeholder="Telefono trabajo">
@@ -306,7 +319,7 @@
                      </div>
                      <hr>
 
-                     <!---PARTE DE LOS DATOS SOBRE SITUACION FAMILIAR--->
+                     <!---SECCION DE LOS DATOS SOBRE SITUACION FAMILIAR--->
                      <h3><strong>3.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
 
                      <!---Primera fila"--->
@@ -420,7 +433,7 @@
                       </div>
                       
 
-                      <!---PARTE DE ESTUDIOS REALIZADOS--->
+                      <!---SECCION DE ESTUDIOS REALIZADOS--->
                      <h3><strong>4.ESTUDIOS REALIZADOS</strong></h3>
 
                      <!---Primera fila--->
@@ -463,7 +476,7 @@
                       </div>
                      
 
-                       <!---PARTE DE DATOS MATRICULA--->
+                       <!---SECCION DE DATOS MATRICULA--->
                      <h3><strong>5.DATOS DE MATRICULA</strong></h3>
 
                      <!---Primera fila--->
@@ -576,5 +589,8 @@
              </div>
          </div>
      </form>
+
+                            
+
 
 @endsection
