@@ -54,8 +54,8 @@
               <label for="inputZip">Estado del estudiante</label>
               <select  id="Estado" name="Estado" class="form-control">
                 <option>{{$preregistro->Estado}}</option>
-                <option>Activo</option>
-                <option>Inactivo</option>
+                <option>Aprobado</option>
+                <option>Reprobado</option>
 
               </select>
 

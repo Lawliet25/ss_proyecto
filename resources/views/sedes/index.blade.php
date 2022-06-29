@@ -39,8 +39,8 @@
                     <td>{{$sede->Sede}}</td>
                     <td>{{$sede->Departamento}}</td>
                     <td>{{$sede->Municipio}}</td>
-                    <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('sede.edit', $sede->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('sede.destroy', $sede->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
+                    <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('sedes.edit', $sede->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('sedes.destroy', $sede->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
                     </td>
 
                     </tr>
