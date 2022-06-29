@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title','Formulario de preregistro')
+@section('title','Formulario de editar preregistro')
 
 @section('content')
 

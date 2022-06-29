@@ -53,6 +53,10 @@
                 <a href="{{route('Ficha.index')}}">Alumnos matriculados</a>
 
               </li>
+              <li class="dropdown">
+                <a href="{{route('sedes.index')}}">Sedes</a>
+
+              </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
