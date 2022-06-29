@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Preregistro;
 
 class DatosAlumno extends Model
 {
@@ -18,4 +19,10 @@ class DatosAlumno extends Model
     'TipoIngreso','GradoMatricular', 'Seccion', 'DatosAdicionales', 'Direccion','Zona','TelefonoResidencia',
     'TelefonoTrabajo','Celular','Email', 'Departamento', 'Municipio', 'PersonaRegistro',
     'id_preregistro'];
+
+    public function scopeBuscarpor($query, $tipo, $buscar) {
+    	if ( ($tipo) && ($buscar) ) {
+    		return $query->where('preregistro'.$tipo,'like',"%$buscar%");
+    	}
+}
 }

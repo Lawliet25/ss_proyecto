@@ -4,6 +4,28 @@
 
 @section('content')
 <div class="container">
+
+  <div class="row">
+      <div class="form-group col-md-3">
+        <form class="" action="" method="">
+        <label for="username">Filtros de búsqueda</label>
+        <select class="form-control" name="tipo">
+          <option></option>
+          <option>Nombres</option>
+          <option>Apellidos</option>
+          <option>NIE</option>
+        </select>
+      </div>
+      <div class="form-group col-md-3" style="margin-top:25px;">
+        <input type="text" name="buscarpor" placeholder="Búsqueda" class="form-control">
+      </div>
+      <div class="form-group col-md-3">
+        <button type="submit" class="btn btn-warning" value="Buscar" name="Filtrar" style="margin-top:25px;">
+        <span class="glyphicon glyphicon-search"></span>
+      </form>
+    </div>
+  </div>
+
             <div class="row">
                 <h3>Lista de alumnos matriculados</h3>
             </div>
@@ -24,11 +46,12 @@
                             <th>ID</th>
                             <th>NIE</th>
                             <th>Nombre completo</th>
+                            <th>Grado</th>
                             <th>Sección</th>
                             <th>Turno</th>
                             <th>Modalidad</th>
+                            <th>Sede</th>
                             <th>Fecha de registro</th>
-                            <th>Persona que recibió</th>
                             <th>Operaciones</th>
 
                         </tr>
@@ -42,11 +65,13 @@
                     <td>{{$dato->id}}</td>
                     <td>{{$dato->NIE}}</td>
                     <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
+                    <td>{{$dato->GradoMatricular}}</td>
                     <td>{{$dato->Seccion}}</td>
                     <td>{{$dato->Turno}}</td>
                     <td>{{$dato->Modalidad}}</td>
+                    <td>{{$dato->Sede}}</td>
                     <td>{{$dato->FechaFR}}</td>
-                    <td>{{$dato->PersonaRegistro}}</td>
+
                     <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('Ficha.edit', $dato->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
                         <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('Ficha.destroy', $dato->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
 

@@ -13,6 +13,7 @@
             <select class="form-control" name="tipo">
               <option></option>
               <option>Nombres</option>
+              <option>Apellidos</option>
               <option>NIE</option>
             </select>
           </div>
