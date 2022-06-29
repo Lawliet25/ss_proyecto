@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DatosAlumno;
 use App\Models\Preregistro;
+use App\Models\SedesModel;
 
 class FichaController extends Controller
 {
@@ -13,18 +14,24 @@ class FichaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $preregistros=Preregistro::all();
       $alumnos=DatosAlumno::all();
+      $sedes=SedesModel::all();
+      $buscar = $request->get('buscarpor');
+      $tipo = $request->get('tipo');
+      $tipo2 = DatosAlumno::get('Sede');
+      //$preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(5);
       //return view('Ficha.index',['alumnos'=>$alumnos]);
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
-               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
+              ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
-                'datosalumnofr.PersonaRegistro')
-               ->paginate(5);
+                'datosalumnofr.PersonaRegistro','datosalumnofr.Sede','datosalumnofr.GradoMatricular')
+              ->Buscarpor($tipo, $buscar)
+              ->paginate(5);
 
-               return view('Ficha.index',['data'=>$data],['alumnos'=>$alumnos]);
+               return view('Ficha.index',['buscar'=>$buscar],['data'=>$data],['buscar'=>$buscar]);
 
     }
 
