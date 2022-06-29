@@ -7,25 +7,27 @@
 
 
       <div class="row">
-        <div class="col-md-3">
-          <form class="" action="" method="">
+          <div class="form-group col-md-3">
+            <form class="" action="" method="">
             <label for="username">Filtros de búsqueda</label>
-            <br>
             <select class="form-control" name="tipo">
               <option></option>
               <option>Nombres</option>
               <option>NIE</option>
             </select>
-            <br>
+          </div>
+          <div class="form-group col-md-3" style="margin-top:25px;">
             <input type="text" name="buscarpor" placeholder="Búsqueda" class="form-control">
-            <input type="submit" class="btn btn-info" value="Buscar" name="Filtrar" style="margin-top:10px;">
+          </div>
+          <div class="form-group col-md-3">
+            <button type="submit" class="btn btn-warning" value="Buscar" name="Filtrar" style="margin-top:25px;">
+            <span class="glyphicon glyphicon-search"></span>
           </form>
         </div>
-
       </div>
             <div class="row">
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                   <hr>
 
                   @if($buscar)
