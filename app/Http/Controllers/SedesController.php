@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SedesModel;
+use App\Models\Preregistro;
+use App\Models\DatosAlumno;
 
 class SedesController extends Controller
 {

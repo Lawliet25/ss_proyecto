@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DatosAlumno;
 use App\Models\Preregistro;
+use App\Models\SedesModel;
 
 class FichaController extends Controller
 {
@@ -17,8 +18,10 @@ class FichaController extends Controller
     {
       $preregistros=Preregistro::all();
       $alumnos=DatosAlumno::all();
+      $sedes=SedesModel::all();
       $buscar = $request->get('buscarpor');
       $tipo = $request->get('tipo');
+      $tipo2 = DatosAlumno::get('Sede');
       //$preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(5);
       //return view('Ficha.index',['alumnos'=>$alumnos]);
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
@@ -28,7 +31,7 @@ class FichaController extends Controller
               ->Buscarpor($tipo, $buscar)
               ->paginate(5);
 
-               return view('Ficha.index',['data'=>$data],['alumnos'=>$alumnos],['buscar'=>$buscar]);
+               return view('Ficha.index',['buscar'=>$buscar],['data'=>$data],['buscar'=>$buscar]);
 
     }
 

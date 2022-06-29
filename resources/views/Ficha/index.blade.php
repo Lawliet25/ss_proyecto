@@ -5,34 +5,41 @@
 @section('content')
 <div class="container">
 
-  <div class="row">
-      <div class="form-group col-md-3">
-        <form class="" action="" method="">
-        <label for="username">Filtros de búsqueda</label>
-        <select class="form-control" name="tipo">
-          <option></option>
-          <option>Nombres</option>
-          <option>Apellidos</option>
-          <option>NIE</option>
-        </select>
-      </div>
-      <div class="form-group col-md-3" style="margin-top:25px;">
-        <input type="text" name="buscarpor" placeholder="Búsqueda" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <button type="submit" class="btn btn-warning" value="Buscar" name="Filtrar" style="margin-top:25px;">
-        <span class="glyphicon glyphicon-search"></span>
-      </form>
-    </div>
-  </div>
-
             <div class="row">
+              <div class="form-group col-md-3">
+                  <form class="" action="" method="">
+                  <label for="username">Filtros de búsqueda</label>
+                  <select class="form-control" name="tipo">
+                    <option></option>
+                    <option>Nombres</option>
+                    <option>Apellidos</option>
+                    <option>NIE</option>
+                    <option value="GradoMatricular">Grado</option>
+                    <option>Sede</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3" style="margin-top:25px;">
+                  <input type="text" name="buscarpor" placeholder="Búsqueda" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                  <button type="submit" class="btn btn-warning" value="Buscar" name="Filtrar" style="margin-top:25px;">
+                  <span class="glyphicon glyphicon-search"></span>
+                </form>
+              </div>
+            </div><hr>
+
+            <div class="">
+              @if($buscar)
+              <a type="button" class="btn btn-danger" href="{{route('Ficha.index')}}">Ver todos los registros</a><br><br>
+              <div class="alert alert-info" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              Los resultados para tu búsqueda "{{$buscar}}" son:
+              </div>@endif
                 <h3>Lista de alumnos matriculados</h3>
             </div>
             <div class="row">
-                <div class="col-md-14">
+                <div class="col-md-12">
 
-                <br>
                 @if (session('status'))
                   <div class="alert alert-success">
                     {{session('status')}}
@@ -57,8 +64,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($alumnos as $alumno)
-                    @endforeach
+
                     @foreach($data as $dato)
 
                     <tr>
