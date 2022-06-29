@@ -5,15 +5,16 @@
 @section('content')
 
     <div class="row">
-    <div class="col-md-8 col-md-offset-1">
-
+    <div class="col-md-8 col-md-ofset-2">
+    
         <h3>Formulario de preregistro</h3>
       <form style="" action="{{route('pre.store')}}" method="POST">
         @csrf
         <div class="panel panel-info">
           <div class="panel-heading">Formulario de preregistro</div>
           <div class="panel-body" >
-
+           
+           <!---Primera fila"--->
         <div class="form-group" style="margin-bottom:95px;">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Nombres</label>
@@ -32,8 +33,8 @@
               <span class="error text-danger">{{$message}}</span>
             @enderror
           </div>
-
         </div>
+        <!---Segunda fila"--->
         <div class="form-row" style="margin-bottom:190px">
         <div class="form-group col-md-6">
           <label for="inputAddress">Grado al que se inscribe</label>
@@ -57,6 +58,7 @@
           @enderror
         </div>
         </div>
+        <!---Tercera fila"--->
         <div class="form-row" style="margin-bottom:285px">
           <div class="form-group col-md-6">
             <label for="inputCity">Fecha de recepción</label>
@@ -73,7 +75,7 @@
             @enderror
           </div>
           </div>
-
+           <!---Cuarta fila"--->
           <div class="form-row" style="margin-bottom:380px">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nombre de quién recibe</label>
@@ -96,6 +98,8 @@
               @enderror
             </div>
           </div>
+          
+          <!---Quinta fila"--->
             <div class="form-row" style="margin-bottom:100px">
             <div class="form-group col-md-6">
               <label for="inputPassword4">Observaciones</label>

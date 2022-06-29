@@ -149,7 +149,7 @@ class FichaController extends Controller
      */
     public function edit($id)
     {
-      //$preregistro = Preregistro::find($id);
+      //$preregistro = Preregistro::all();
       $alumno=DatosAlumno::find($id);
       return view('Ficha.edit', compact('alumno'));
     }
