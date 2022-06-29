@@ -22,7 +22,7 @@ class FichaController extends Controller
                ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
                 'datosalumnofr.PersonaRegistro')
-               ->paginate(2);
+               ->paginate(5);
 
                return view('Ficha.index',['data'=>$data],['alumnos'=>$alumnos]);
 
@@ -121,6 +121,10 @@ class FichaController extends Controller
         $alumno->Edad4=$request->Edad4;
         $alumno->Sexo4=$request->Sexo4;
         $alumno->PersonaRegistro=$request->PersonaRegistro;
+
+        //Sede
+        $alumno->CodigoSede=$request->CodigoSede;
+        $alumno->Sede=$request->Sede;
 
         //Foránea
         $alumno->id_preregistro=$request->id_preregistro;
@@ -235,6 +239,10 @@ class FichaController extends Controller
       $alumno->Edad4=$request->Edad4;
       $alumno->Sexo4=$request->Sexo4;
       $alumno->PersonaRegistro=$request->PersonaRegistro;
+
+      //Sede
+      $alumno->CodigoSede=$request->CodigoSede;
+      $alumno->Sede=$request->Sede;
 
       //Foránea
       $alumno->id_preregistro=$request->id_preregistro;
