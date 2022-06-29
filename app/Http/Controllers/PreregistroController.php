@@ -15,18 +15,20 @@ class PreregistroController extends Controller
      */
     public function index(Request $request)
     {
-
-      if ($request) {
+      /*if ($request) {
         $query = trim($request->get('search'));
         $preregistros = Preregistro::where('Nombres','LIKE','%'.$query.'%')
         ->orderBy('id', 'asc')
         ->paginate(5);
-        return view('pre.index',['preregistros'=>$preregistros], ['search'=>$query]);
+        return view('pre.index',['preregistros'=>$preregistros], ['search'=>$query]);*/
+        $buscar = $request->get('buscarpor');
+        $tipo = $request->get('tipo');
+        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(5);
+        return view('pre.index',['preregistros'=>$preregistros],['buscar'=>$buscar]);
       }
       //$preregistros=Preregistro::paginate(5);
       //$alumnos= DatosAlumno::all();
       //return view('pre.index',['preregistros'=>$preregistros]);
-    }
 
     /**
      * Show the form for creating a new resource.
