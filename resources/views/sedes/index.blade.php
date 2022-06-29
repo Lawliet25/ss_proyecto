@@ -4,11 +4,10 @@
 
 @section('content')
 <div class="container">
-            <div class="row">
-                <h3>Lista de sedes registradas</h3>
-            </div>
+
             <div class="row">
                 <div class="col-md-10">
+                    <h3>Lista de sedes registradas</h3>
                     <a type="button" class="btn btn-primary btn-md" href="{{route('sedes.create')}}">Nueva sede</a>
                 <br>
                 @if (session('status'))

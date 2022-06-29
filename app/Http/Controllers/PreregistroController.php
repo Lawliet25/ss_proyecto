@@ -13,11 +13,19 @@ class PreregistroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      $preregistros=Preregistro::paginate(5);
-      $alumnos= DatosAlumno::all();
-      return view('pre.index',['preregistros'=>$preregistros]);
+
+      if ($request) {
+        $query = trim($request->get('search'));
+        $preregistros = Preregistro::where('Nombres','LIKE','%'.$query.'%')
+        ->orderBy('id', 'asc')
+        ->paginate(5);
+        return view('pre.index',['preregistros'=>$preregistros], ['search'=>$query]);
+      }
+      //$preregistros=Preregistro::paginate(5);
+      //$alumnos= DatosAlumno::all();
+      //return view('pre.index',['preregistros'=>$preregistros]);
     }
 
     /**
