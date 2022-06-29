@@ -630,6 +630,7 @@
 
                      <div class="form-row">
                      <input type="submit" class="btn btn-primary" value="Matricular" name="Guardar">
+                     <a class="btn btn-danger" href="{{route('pre.index')}}">Cancelar</a>
                      </div>
                  </div>
              </div>

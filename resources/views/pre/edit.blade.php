@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-1">
       <h3>Editar información del alumno</h3>
         <h3>Formulario de preregistro</h3>
       <form style="" action="{{route('pre.update',$preregistro->id)}}" method="POST">
@@ -72,7 +72,7 @@
         <div class="form-group">
           <div class="form-group col-md-6">
           <br>
-          <input type="submit" class="btn btn-primary" value="Siguiente" name="Guardar">
+          <input type="submit" class="btn btn-primary" value="Actualizar" name="Guardar">
           <a class="btn btn-danger" href="{{route('pre.index')}}">Cancelar</a>
           </div>
         </div>

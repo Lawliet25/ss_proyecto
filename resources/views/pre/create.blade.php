@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="row">
-    <div class="col-md-8 col-md-ofset-2">
+    <div class="col-md-8 col-md-offset-1">
 
         <h3>Formulario de preregistro</h3>
       <form style="" action="{{route('pre.store')}}" method="POST">

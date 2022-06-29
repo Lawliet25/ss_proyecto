@@ -624,6 +624,7 @@
 
                      <div class="form-row">
                      <input type="submit" class="btn btn-primary" value="Actualizar datos" name="Guardar">
+                     <a class="btn btn-danger" href="{{route('Ficha.index')}}">Cancelar</a>
                      </div>
                  </div>
              </div>
