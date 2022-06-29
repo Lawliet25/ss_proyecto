@@ -9,7 +9,7 @@
 
       <form style="" action="{{route('Ficha.update',$alumno->id)}}" method="POST">
         @csrf
-         
+
               <div class="panel panel-info">
                   <div class="panel-heading text-center"><strong>Editando Registro de ficha</strong></div>
                   <div class="panel-body">
@@ -19,9 +19,49 @@
                      <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br>
                    </div>
                     <hr>
-                      <!---SECCION DE DATOS PERSONALES---> 
-                      <h3><strong>1.DATOS PERSONALES</strong></h3>
-                    
+                    <!---SECCION DE SEDE--->
+                    <?php
+                    $usuario = 'root';
+                    $password = '';
+                    $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
+                    ?>
+                    <h3><strong>1.DATOS DE SEDE</strong></h3>
+                    <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputAddress">Código de sede:</label>
+                      <select id="Sede" name="CodigoSede" class="form-control">
+                        <option>{{$alumno->CodigoSede}}</option>
+                        <?php
+                         $query = $db->prepare("SELECT * FROM sedes");
+                         $query->execute();
+                         $data = $query->fetchAll();
+
+                         foreach ($data as $valores):
+                         echo '<option value="'.$valores["CodigoSede"].'">'.$valores["CodigoSede"].'</option>';
+                         endforeach;
+                         ?>
+                     </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="inputAddress">Nombre de sede:</label>
+                      <select id="Sede" name="Sede" class="form-control">
+                        <option>{{$alumno->Sede}}</option>
+                        <?php
+                         $query = $db->prepare("SELECT * FROM sedes");
+                         $query->execute();
+                         $data = $query->fetchAll();
+
+                         foreach ($data as $valores):
+                         echo '<option value="'.$valores["Sede"].'">'.$valores["Sede"].'</option>';
+                         endforeach;
+                         ?>
+                     </select>
+                    </div>
+                    </div>
+                      <!---SECCION DE DATOS PERSONALES--->
+                      <h3><strong>2.DATOS PERSONALES</strong></h3>
+
                      <!---Primera fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-6">
@@ -45,7 +85,7 @@
                              </select>
                          </div>
                      </div>
-                     
+
                     <!---Segunda fila"--->
                      <div class="form-row" >
                          <div class="form-group col-md-12">
@@ -53,7 +93,7 @@
                          <input type="text" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{$alumno->FechaNacimiento}}">
                          </div>
                      </div>
-                     
+
                      <!---Tercera fila"--->
                      <div class="form-row">
                           <div class="form-group col-md-6">
@@ -94,7 +134,7 @@
                            <input type="text" value="{{$alumno->DistanciaSede}}" class="form-control" name="DistanciaSede" placeholder="Distancia a sede">
                           </div>
                      </div>
-                     
+
                       <!---Quinta fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-6">
@@ -111,7 +151,7 @@
                              <input value="{{$alumno->Ocupacion}}" type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación">
                          </div>
                       </div>
-                    
+
                     <!---Sexta fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-6">
@@ -128,7 +168,7 @@
                              <input value="{{$alumno->TipoDiscapacidad}}" type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad">
                          </div>
                       </div>
-                      
+
                       <!---Séptima fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-6">
@@ -147,7 +187,7 @@
                          </div>
                       </div>
 
-                      
+
                       <!---Octava fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-12">
@@ -164,7 +204,7 @@
 
                      <!--- Novena fila"--->
                       <div class="form-row">
-                      
+
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Medicamentos prescrito de carácter permanente:</label>
                              <textarea style="display: block;
@@ -176,10 +216,10 @@
                               placeholder="Escriba aquí" rows="3" name="Medicamentos">{{$alumno->Medicamentos}}</textarea>
                          </div>
                      </div>
-                      
+
 
                        <!---SECCION DE DATOS FAMILIARES--->
-                      <h4><strong>Datos familiares o responsable</strong></h4>
+                      <h3><strong>3.DATOS FAMILIARES O RESPONSABLE</strong></h3>
                       <!---Primera fila"--->
                      <div class="form-row">
                           <div class="form-group col-md-6">
@@ -199,7 +239,7 @@
                              <label for="inputEmail4">Lugar de trabajo:</label>
                              <input value="{{$alumno->LugarTrabajoEncargado}}" type="text" class="form-control" id="LugarTrabajoEncargado" name="LugarTrabajoEncargado" placeholder="Lugar de trabajo">
                          </div>
-                         
+
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Parentesco:</label>
                              <select class="form-control" name="ParentescoEncargado">
@@ -240,18 +280,18 @@
                              <input value="{{$alumno->DireccionEncargado}}" type="text" class="form-control" name="DireccionEncargado" id="nombres" placeholder="Dirección">
                          </div>
                      </div>
-                     
+
 
                       <!---SECCION DE LOS DATOS DE RESIDENCIA--->
-                      <h3><strong>2.DATOS DE RESIDENCIA</strong></h3>
-                      
+                      <h3><strong>4.DATOS DE RESIDENCIA</strong></h3>
+
                       <!---Primera fila"--->
                       <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Dirección:</label>
                              <input value="{{$alumno->Direccion}}" type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
                           </div>
-                       
+
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Zona de residencia:</label>
                                <select class="form-control" name="Zona">
@@ -320,7 +360,7 @@
                      <hr>
 
                      <!---SECCION DE LOS DATOS SOBRE SITUACION FAMILIAR--->
-                     <h3><strong>3.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
+                     <h3><strong>5.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
 
                      <!---Primera fila"--->
                      <div class="form-row">
@@ -342,7 +382,7 @@
                              <input value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique">
                          </div>
                      </div>
-                     
+
 
                      <!---Segunda fila"--->
                      <div class="form-row">
@@ -371,8 +411,8 @@
                              <label for="inputEmail4">N° de miembros de la familia:</label>
                              <input value="{{$alumno->NumFamiliares}}" type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
                          </div>
-                         
-                         
+
+
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Cantidad de hijos:</label>
                              <select class="form-control" name="CantidadHijos">
@@ -431,10 +471,10 @@
                             </select>
                          </div>
                       </div>
-                      
+
 
                       <!---SECCION DE ESTUDIOS REALIZADOS--->
-                     <h3><strong>4.ESTUDIOS REALIZADOS</strong></h3>
+                     <h3><strong>6.ESTUDIOS REALIZADOS</strong></h3>
 
                      <!---Primera fila--->
                      <div class="form-row">
@@ -474,10 +514,10 @@
                              <input value="{{$alumno->CentroEducativo}}" type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo">
                          </div>
                       </div>
-                     
+
 
                        <!---SECCION DE DATOS MATRICULA--->
-                     <h3><strong>5.DATOS DE MATRICULA</strong></h3>
+                     <h3><strong>7.DATOS DE MATRICULA</strong></h3>
 
                      <!---Primera fila--->
                     <div class="form-row">
@@ -519,7 +559,7 @@
                                  <option>Modalidad flexible integrada</option>
                              </select>
                          </div>
-                         
+
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Tipo de ingreso:</label>
                              <select class="form-control" name="TipoIngreso">
@@ -531,11 +571,11 @@
                              </select>
                          </div>
                       </div>
-                      
+
 
                       <!---Tercera fila GRADO A MATRICULAR--->
                       <h4><strong>Grado a matricular</strong></h4>
-                      
+
                      <div class="form-row">
                         <div class="form-group col-md-6">
                          <label for="">Grados disponibles:</label>
@@ -548,7 +588,7 @@
                                  <option>2do Año</option>
                              </select>
                              </div>
-                             
+
                              <div class="form-group col-md-6">
                              <label for="inputEmail4">Sección:</label>
                              <select class="form-control" name="Seccion">
@@ -559,21 +599,21 @@
                               </select>
                          </div>
                       </div>
-                      
-                      
+
+
                       <!---Cuarta fila--->
                       <div class="form-row">
                           <div class="form-group col-md-6">
                           <label for="inputEmail4">Fecha de registro de ficha:</label>
                           <input value="{{$alumno->FechaFR}}" type="text" class="form-control" id="FechaFR" name="FechaFR">
                           </div>
-                          
+
                           <div class="form-group col-md-6">
                               <label for="inputEmail4">Persona que recibió la ficha:</label>
                               <input value="{{$alumno->PersonaRegistro}}" type="text" class="form-control" name="PersonaRegistro" placeholder="">
                           </div>
                       </div>
-                      
+
                       <!---Quinta fila--->
                       <h4><strong>Datos adicionales:</strong></h4>
                       <div class="row">
@@ -581,16 +621,17 @@
                              <textarea name="DatosAdicionales" class="form-control"rows="3" cols="80">{{$alumno->DatosAdicionales}}</textarea>
                          </div>
                      </div>
-                     
+
                      <div class="form-row">
                      <input type="submit" class="btn btn-primary" value="Actualizar datos" name="Guardar">
+                     <a class="btn btn-danger" href="{{route('Ficha.index')}}">Cancelar</a>
                      </div>
                  </div>
              </div>
          </div>
      </form>
 
-                            
+
 
 
 @endsection

@@ -5,15 +5,15 @@
 @section('content')
 
     <div class="row">
-    <div class="col-md-8 col-md-ofset-2">
-    
+    <div class="col-md-8 col-md-offset-1">
+
         <h3>Formulario de preregistro</h3>
       <form style="" action="{{route('pre.store')}}" method="POST">
         @csrf
         <div class="panel panel-info">
           <div class="panel-heading">Formulario de preregistro</div>
           <div class="panel-body" >
-           
+
            <!---Primera fila"--->
         <div class="form-group" style="margin-bottom:95px;">
           <div class="form-group col-md-6">
@@ -89,8 +89,8 @@
               <label for="inputZip">Estado del estudiante</label>
               <select id="Estado" name="Estado" class="form-control">
                 <option>{{old('Estado')}}</option>
-                <option>Activo</option>
-                <option>Inactivo</option>
+                <option>Aprobado</option>
+                <option>Reprobado</option>
 
               </select>
               @error ('Estado')
@@ -98,7 +98,7 @@
               @enderror
             </div>
           </div>
-          
+
           <!---Quinta fila"--->
             <div class="form-row" style="margin-bottom:100px">
             <div class="form-group col-md-6">
@@ -108,7 +108,7 @@
 
           <div class="form-group col-md-6">
           <br>
-          <input type="submit" class="btn btn-primary" value="Siguiente" name="Guardar">
+          <input type="submit" class="btn btn-primary" value="Guardar" name="Guardar">
           <a class="btn btn-danger" href="{{route('pre.index')}}">Cancelar</a>
           </div>
         </div>

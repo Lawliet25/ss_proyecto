@@ -1,14 +1,13 @@
 @extends('layout.template')
 
-@section('title','Formulario de preregistro')
+@section('title','Formulario de documentos')
 
 @section('content')
 <div class="container">
-            <div class="row">
-                <h3>Agregar documentos a alumno</h3>
-            </div>
+          
             <div class="row">
                 <div class="col-md-10">
+                  <h3>Agregar documentos a alumno</h3>
                     <a type="button" class="btn btn-danger btn-md" href="{{route('pre.index')}}">Regresar</a>
                 <br>
                 @if (session('status'))

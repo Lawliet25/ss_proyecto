@@ -10,7 +10,7 @@
 
       <form style="" action="{{route('Ficha.store')}}" method="POST">
         @csrf
-          
+
               <div class="panel panel-info">
                   <div class="panel-heading text-center"><strong>Registro de ficha</strong></div>
                   <div class="panel-body">
@@ -24,9 +24,50 @@
                     <input style="margin-left:100px;" readonly type="text" name="" value="{{$preregistro->NIE}}" class="form-control">
                   </div>
                     <hr>
+                      <!---SECCION DE SEDE--->
+                      <?php
+                      $usuario = 'root';
+                      $password = '';
+                      $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
+                      ?>
+                      <h3><strong>1.DATOS DE SEDE</strong></h3>
+                      <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputAddress">Código de sede:</label>
+                        <select id="Sede" name="CodigoSede" class="form-control">
+                          <option>Seleccionar</option>
+                          <?php
+                           $query = $db->prepare("SELECT * FROM sedes");
+                           $query->execute();
+                           $data = $query->fetchAll();
+
+                           foreach ($data as $valores):
+                           echo '<option value="'.$valores["CodigoSede"].'">'.$valores["CodigoSede"].'</option>';
+                           endforeach;
+                           ?>
+                       </select>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="inputAddress">Nombre de sede:</label>
+                        <select id="Sede" name="Sede" class="form-control">
+                          <option>Seleccionar</option>
+                          <?php
+                           $query = $db->prepare("SELECT * FROM sedes");
+                           $query->execute();
+                           $data = $query->fetchAll();
+
+                           foreach ($data as $valores):
+                           echo '<option value="'.$valores["Sede"].'">'.$valores["Sede"].'</option>';
+                           endforeach;
+                           ?>
+                       </select>
+                      </div>
+                      </div>
+
                       <!---SECCION DE DATOS PERSONALES--->
-                      <h3><strong>1.DATOS PERSONALES</strong></h3>
-                    
+                      <h3><strong>2.DATOS PERSONALES</strong></h3>
+
 
                      <!---Primera fila"--->
                      <div class="form-row">
@@ -179,7 +220,7 @@
                       <hr>
 
                        <!---SECCION  DE DATOS FAMILIARES--->
-                      <h4><strong>Datos familiares o responsable</strong></h4>
+                      <h3><strong>3.DATOS FAMILIARES O RESPONSABLE</strong></h3>
                       <!---Primera fila"--->
                      <div class="form-row">
                           <div class="form-group col-md-6">
@@ -240,10 +281,10 @@
                              <input type="text" class="form-control" name="DireccionEncargado" id="nombres" placeholder="Dirección">
                          </div>
                      </div>
-                    
+
 
                       <!---SECCION  DE LOS DATOS DE RESIDENCIA--->
-                      <h3><strong>2.DATOS DE RESIDENCIA</strong></h3>
+                      <h3><strong>4.DATOS DE RESIDENCIA</strong></h3>
                       <!---Primera fila"--->
                       <div class="form-row">
                       <div class="form-group col-md-6">
@@ -320,7 +361,7 @@
                      <hr>
 
                      <!---SECCION  DE LOS DATOS SOBRE SITUACION FAMILIAR--->
-                     <h3><strong>3.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
+                     <h3><strong>5.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
 
                      <!---Primera fila"--->
                      <div class="form-row">
@@ -432,7 +473,7 @@
                       <hr>
 
                       <!---SECCION  DE ESTUDIOS REALIZADOS--->
-                     <h3><strong>4.ESTUDIOS REALIZADOS</strong></h3>
+                     <h3><strong>6.ESTUDIOS REALIZADOS</strong></h3>
 
                      <!---Primera fila--->
                      <div class="form-ow">
@@ -472,10 +513,10 @@
                              <input type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo">
                          </div>
                       </div>
-                      
+
 
                        <!---SECCION  DE DATOS MATRICULA--->
-                     <h3><strong>5.DATOS DE MATRICULA</strong></h3>
+                     <h3><strong>7.DATOS DE MATRICULA</strong></h3>
 
                      <!---Primera fila--->
                      <div class="form-row">
@@ -533,7 +574,7 @@
 
                       <!---Tercera fila GRADO A MATRICULAR--->
                       <h4><strong>Grado a matricular</strong></h4>
-                      
+
                       <div class="form-row" >
                           <div class="form-group col-md-6">
                              <label for="">Grados disponibles:</label>
@@ -575,7 +616,7 @@
                       <h4><strong>Datos adicionales:</strong></h4>
                       <div class="row">
                          <div class="form-group col-md-12">
-                             <textarea name="DatosAdicionales" 
+                             <textarea name="DatosAdicionales"
                              style="display: block;
                               width: 100%;
                               resize: none;
@@ -589,13 +630,13 @@
 
                      <div class="form-row">
                      <input type="submit" class="btn btn-primary" value="Matricular" name="Guardar">
+                     <a class="btn btn-danger" href="{{route('pre.index')}}">Cancelar</a>
                      </div>
                  </div>
              </div>
          </div>
-         
+
      </form>
-   
+
 
 @endsection
-

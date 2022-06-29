@@ -1,14 +1,41 @@
 @extends('layout.template')
 
-@section('title','Formulario de preregistro')
+@section('title','Preregistro')
 
 @section('content')
 <div class="container">
+
+
+      <div class="row">
+        <div class="col-md-3">
+          <form class="" action="" method="">
+            <label for="username">Filtros de búsqueda</label>
+            <br>
+            <select class="form-control" name="tipo">
+              <option></option>
+              <option>Nombres</option>
+              <option>NIE</option>
+            </select>
+            <br>
+            <input type="text" name="buscarpor" placeholder="Búsqueda" class="form-control">
+            <input type="submit" class="btn btn-info" value="Buscar" name="Filtrar" style="margin-top:10px;">
+          </form>
+        </div>
+
+      </div>
             <div class="row">
-                <h3>Lista de alumnos preregistrados</h3>
-            </div>
-            <div class="row">
+
                 <div class="col-md-10">
+                  <hr>
+
+                  @if($buscar)
+                  <a type="button" class="btn btn-danger" href="{{route('pre.index')}}">Ver todos los registros</a><br><br>
+                  <div class="alert alert-info" role="alert">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                  Los resultados para tu búsqueda "{{$buscar}}" son:
+                  </div>@endif
+
+                  <h3>Lista de alumnos preregistrados</h3>
                     <a type="button" class="btn btn-primary btn-md" href="{{route('pre.create')}}">Nuevo preregistro</a>
                 <br>
                 @if (session('status'))

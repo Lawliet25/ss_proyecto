@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreregistroController;
 use App\Http\Controllers\FichaController;
+use App\Http\Controllers\SedesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +37,12 @@ Route::controller(FichaController::class)->group(function(){
     Route::get('/Ficha/edit/{id}','edit')->name('Ficha.edit');
   Route::post('/Ficha/{id}','update')->name('Ficha.update');
   Route::get('/Ficha/{id}','destroy')->name('Ficha.destroy');
+});
+Route::controller(SedesController::class)->group(function(){
+  Route::get('/sedes/create','create')->name('sedes.create');
+  Route::get('/sedes/index','index')->name('sedes.index');
+  Route::post('/sedes','store')->name('sedes.store');
+    Route::get('/sedes/edit/{id}','edit')->name('sedes.edit');
+  Route::post('/sedes/{id}','update')->name('sedes.update');
+  Route::get('/sedes/{id}','destroy')->name('sedes.destroy');
 });
