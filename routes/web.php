@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PreregistroController;
 use App\Http\Controllers\FichaController;
 use App\Http\Controllers\SedesController;
+use App\Http\Controllers\ReportesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,4 +46,8 @@ Route::controller(SedesController::class)->group(function(){
     Route::get('/sedes/edit/{id}','edit')->name('sedes.edit');
   Route::post('/sedes/{id}','update')->name('sedes.update');
   Route::get('/sedes/{id}','destroy')->name('sedes.destroy');
+});
+Route::controller(ReportesController::class)->group(function(){
+  Route::get('/reportes/index','index')->name('reportes.index');
+  Route::get('/reportes/pdf','pdf')->name('reportes.pdf');
 });

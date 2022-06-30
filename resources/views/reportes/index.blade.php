@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title','Alumnos matriculados')
+@section('title','Reporte de alumnos')
 
 @section('content')
 <div class="container">
@@ -8,13 +8,10 @@
             <div class="row">
               <div class="form-group col-md-3">
                   <form class="" action="" method="">
-                  <label for="username">Filtros de búsqueda</label>
+                  <label for="username">Tipo de reporte</label>
                   <select class="form-control" name="tipo">
                     <option></option>
-                    <option>Nombres</option>
-                    <option>Apellidos</option>
-                    <option>NIE</option>
-                    <option>Sede</option>
+                    <option value="GradoMatricular">Grado</option>
                   </select>
                 </div>
                 <div class="form-group col-md-3" style="margin-top:25px;">
@@ -29,12 +26,11 @@
 
             <div class="">
               @if($buscar)
-              <a type="button" class="btn btn-danger" href="{{route('Ficha.index')}}">Ver todos los registros</a><br><br>
-              <div class="alert alert-info" role="alert">
+              <div class="alert alert-warning" role="alert">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-              Los resultados para tu búsqueda "{{$buscar}}" son:
-              </div>@endif
-                <h3>Lista de alumnos matriculados</h3>
+              El reporte incluirá la siguiente información basado en el filtro solicitado: "{{$buscar}}":
+              </div>
+                <h3>Lista de alumnos</h3>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -51,14 +47,14 @@
                         <tr>
                             <th>ID</th>
                             <th>NIE</th>
+                            <th>DUI</th>
                             <th>Nombre completo</th>
+                            <th>Sexo</th>
+                            <th>Email</th>
+                            <th>Grado</th>
                             <th>Sección</th>
                             <th>Turno</th>
-                            <th>Modalidad</th>
                             <th>Sede</th>
-                            <th>Persona que registró la ficha</th>
-                            <th>Fecha de registro</th>
-                            <th>Operaciones</th>
 
                         </tr>
                     </thead>
@@ -69,26 +65,23 @@
                     <tr>
                     <td>{{$dato->id}}</td>
                     <td>{{$dato->NIE}}</td>
+                    <td>{{$dato->DUI}}</td>
                     <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
+                    <td>{{$dato->Sexo}}</td>
+                    <td>{{$dato->Email}}</td>
+                    <td>{{$dato->GradoMatricular}}</td>
                     <td>{{$dato->Seccion}}</td>
                     <td>{{$dato->Turno}}</td>
-                    <td>{{$dato->Modalidad}}</td>
                     <td>{{$dato->Sede}}</td>
-                    <td>{{$dato->PersonaRegistro}}</td>
-                    <td>{{$dato->FechaFR}}</td>
-
-                    <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('Ficha.edit', $dato->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('Ficha.destroy', $dato->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
-
-                    </td>
-
                     </tr>
 
                     @endforeach
                     </tbody>
                 </table>
+                <a href="{{route('reportes.pdf')}}" class="btn btn-primary">Generar PDF</a>
                 {{$data->links('pagination::bootstrap-4')}}
                 </div>
             </div>
+            @endif
         </div>
 @endsection

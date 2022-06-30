@@ -54,7 +54,10 @@
                 <a href="{{route('sedes.index')}}">Sedes</a>
 
               </li>
+              <li class="dropdown">
+                <a href="{{route('reportes.index')}}">Reportes</a>
 
+              </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
