@@ -29,22 +29,16 @@
             <td><img src="{{asset('reporte.jpg')}}" width="150px"alt=""></td>
           </tr>
           <tr>
-              <th style="text-align:center"><a href="{{route('reportes.pdf7')}}" class="btn btn-primary">Generar PDF</a></th>
-              <th style="text-align:center"><a href="{{route('reportes.pdf8')}}" class="btn btn-primary">Generar PDF</a></th>
-              <th style="text-align:center"><a href="{{route('reportes.pdf9')}}" class="btn btn-primary">Generar PDF</a></th>
-              <th style="text-align:center"><a href="{{route('reportes.pdf1')}}" class="btn btn-primary">Generar PDF</a></th>
-              <th style="text-align:center"><a href="{{route('reportes.pdf2')}}" class="btn btn-primary">Generar PDF</a></th>
+              <th style="text-align:center"><a href="{{route('reportes.pdf7')}}" target="_blank" class="btn btn-primary">Generar PDF</a></th>
+              <th style="text-align:center"><a href="{{route('reportes.pdf8')}}" target="_blank" class="btn btn-primary">Generar PDF</a></th>
+              <th style="text-align:center"><a href="{{route('reportes.pdf9')}}" target="_blank" class="btn btn-primary">Generar PDF</a></th>
+              <th style="text-align:center"><a href="{{route('reportes.pdf1')}}" target="_blank" class="btn btn-primary">Generar PDF</a></th>
+              <th style="text-align:center"><a href="{{route('reportes.pdf2')}}" target="_blank" class="btn btn-primary">Generar PDF</a></th>
 
           </tr>
 
       </thead>
 
-
-
-
-
-
-                {{$data->links('pagination::bootstrap-4')}}
                 </div>
             </div>
 
