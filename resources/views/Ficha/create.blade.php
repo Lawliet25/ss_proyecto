@@ -580,11 +580,11 @@
                              <label for="">Grados disponibles:</label>
                               <select class="form-control" name="GradoMatricular">
                                  <option></option>
-                                 <option>7° Grado</option>
-                                 <option>8° Grado</option>
-                                 <option>9° Grado</option>
-                                 <option>1er. Año</option>
-                                 <option>2do Año</option>
+                                 <option>7° grado</option>
+                                 <option>8° grado</option>
+                                 <option>9° grado</option>
+                                 <option>1er año</option>
+                                 <option>2do año</option>
                              </select>
                          </div>
 
