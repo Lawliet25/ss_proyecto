@@ -17,15 +17,15 @@
                 @endif
 
                 <br>
-                <table class="table table-striped table-bordered table-hover" id="tabla">
-                    <thead>
+                <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
+                    <thead >
                         <tr>
-                            <th>ID</th>
-                            <th>Código de sede</th>
-                            <th>Nombre de sede</th>
-                            <th>Departamento</th>
-                            <th>Municipio</th>
-                            <th>Operaciones</th>
+                            <th style="text-align:center">ID</th>
+                            <th style="text-align:center">Código de sede</th>
+                            <th style="text-align:center">Nombre de sede</th>
+                            <th style="text-align:center">Departamento</th>
+                            <th style="text-align:center">Municipio</th>
+                            <th style="text-align:center">Operaciones</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -27,7 +27,14 @@
         <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputAddress">Grado al que se inscribe</label>
-          <input value="{{$preregistro->Grado}}" type="text" class="form-control" id="Grado" name="Grado" placeholder="Digite el grado al que se inscribe">
+          <select id="Grado" name="Grado" class="form-control" value="{{$preregistro->Grado}}">
+            <option>{{$preregistro->Grado}}</option>
+            <option>7° grado</option>
+            <option>8° grado</option>
+            <option>9° grado</option>
+            <option>1er año</option>
+            <option>2do año</option>
+          </select>
         </div>
         <div class="form-group col-md-6">
           <label for="inputAddress2">NIE</label>

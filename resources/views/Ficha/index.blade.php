@@ -15,6 +15,7 @@
                     <option>Apellidos</option>
                     <option>NIE</option>
                     <option>Sede</option>
+                    <option>Grado</option>
                   </select>
                 </div>
                 <div class="form-group col-md-3" style="margin-top:25px;">
@@ -36,8 +37,8 @@
               </div>@endif
                 <h3>Lista de alumnos matriculados</h3>
             </div>
-            <div class="row">
-                <div class="col-md-12">
+            <div class="">
+                <div class="col-md-13">
 
                 @if (session('status'))
                   <div class="alert alert-success">
@@ -46,19 +47,20 @@
                 @endif
 
                 <br>
-                <table class="table table-striped table-bordered table-hover" id="tabla">
+                <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>NIE</th>
-                            <th>Nombre completo</th>
-                            <th>Sección</th>
-                            <th>Turno</th>
-                            <th>Modalidad</th>
-                            <th>Sede</th>
-                            <th>Persona que registró la ficha</th>
-                            <th>Fecha de registro</th>
-                            <th>Operaciones</th>
+                            <th style="text-align:center">ID</th>
+                            <th style="text-align:center">NIE</th>
+                            <th style="text-align:center">Nombre completo</th>
+                            <th style="text-align:center">Grado</th>
+                            <th style="text-align:center">Sección</th>
+                            <th style="text-align:center">Turno</th>
+                            <th style="text-align:center">Modalidad</th>
+                            <th style="text-align:center">Sede</th>
+                            <th style="text-align:center">Persona que registró</th>
+                            <th style="text-align:center">Fecha de matrícula</th>
+                            <th style="text-align:center">Operaciones</th>
 
                         </tr>
                     </thead>
@@ -70,6 +72,7 @@
                     <td>{{$dato->id}}</td>
                     <td>{{$dato->NIE}}</td>
                     <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
+                    <td>{{$dato->GradoMatricular}}</td>
                     <td>{{$dato->Seccion}}</td>
                     <td>{{$dato->Turno}}</td>
                     <td>{{$dato->Modalidad}}</td>

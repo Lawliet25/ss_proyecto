@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DatosAlumno;
 use App\Models\Preregistro;
 use App\Models\SedesModel;
-
+use PDF;
 class ReportesController extends Controller
 {
     /**
@@ -27,18 +27,68 @@ class ReportesController extends Controller
 
                return view('reportes.index',['buscar'=>$buscar],['data'=>$data]);
     }
-    public function pdf(Request $request)
+    public function pdf7()
     {
-      $buscar = $request->get('buscarpor');
-      $tipo = $request->get('tipo');
+
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-
+              ->where('GradoMatricular', 'LIKE', '7° grado')
               ->paginate(5);
+              $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
+              return $pdf->stream();
 
-               return view('reportes.pdf',['data'=>$data],['buscar'=>$buscar]);
+    }
+    public function pdf8()
+    {
+
+      $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
+              ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
+                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
+                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
+              ->where('GradoMatricular', 'LIKE', '8° grado')
+              ->paginate(5);
+              $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
+              return $pdf->stream();
+
+    }
+    public function pdf9()
+    {
+
+      $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
+              ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
+                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
+                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
+              ->where('GradoMatricular', 'LIKE', '9° grado')
+              ->paginate(5);
+              $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
+              return $pdf->stream();
+
+    }
+    public function pdf1()
+    {
+
+      $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
+              ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
+                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
+                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
+              ->where('GradoMatricular', 'LIKE', '1er año')
+              ->paginate(5);
+              $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
+              return $pdf->stream();
+    }
+    public function pdf2()
+    {
+
+      $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
+              ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
+                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
+                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
+              ->where('GradoMatricular', 'LIKE', '2do año')
+              ->paginate(5);
+              $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
+              return $pdf->stream();
     }
 
     /**

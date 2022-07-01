@@ -48,16 +48,16 @@
                 @endif
 
                 <br>
-                <table class="table table-striped table-bordered table-hover" id="tabla">
+                <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>NIE</th>
-                            <th>Estado</th>
-                            <th>Operaciones</th>
-                            <th>Ficha de matrícula</th>
+                            <th style="text-align:center">ID</th>
+                            <th style="text-align:center">Nombres</th>
+                            <th style="text-align:center">Apellidos</th>
+                            <th style="text-align:center">NIE</th>
+                            <th style="text-align:center">Estado</th>
+                            <th style="text-align:center">Operaciones</th>
+                            <th style="text-align:center">Ficha de matrícula</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,8 +78,8 @@
                         <?php endif; ?>
 
                     </td>
-                    <th>
-                      <a class="btn btn-primary" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registro de ficha</a></th>
+                    <td>
+                      <a class="btn btn-primary" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registro de ficha</a>
                     </td>
                     </tr>
                   @endforeach

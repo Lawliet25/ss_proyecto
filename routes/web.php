@@ -49,5 +49,9 @@ Route::controller(SedesController::class)->group(function(){
 });
 Route::controller(ReportesController::class)->group(function(){
   Route::get('/reportes/index','index')->name('reportes.index');
-  Route::get('/reportes/pdf','pdf')->name('reportes.pdf');
+  Route::get('/reportes/pdf7','pdf7')->name('reportes.pdf7');
+  Route::get('/reportes/pdf8','pdf8')->name('reportes.pdf8');
+  Route::get('/reportes/pdf9','pdf9')->name('reportes.pdf9');
+  Route::get('/reportes/pdf1','pdf1')->name('reportes.pdf1');
+  Route::get('/reportes/pdf2','pdf2')->name('reportes.pdf2');
 });
