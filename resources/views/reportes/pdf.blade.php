@@ -32,7 +32,7 @@
     </style>
   </head>
   <body>
-      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Universidad_don_bosco.jpg/800px-Universidad_don_bosco.jpg" alt="">
+      <img class="logo" src="{{asset('udb.jpg')}}" alt="">
       <br>
 <h2>Reporte de Matriculados</h2>
     <br><br>
