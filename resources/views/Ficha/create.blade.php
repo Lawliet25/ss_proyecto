@@ -165,7 +165,7 @@
                      <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Trabaja:</label>
-                           <select class="form-control" name="Trabaja">
+                           <select class="form-control" name="Trabaja" id="selectTrabaja">
                             
                                <option>{{old('Trabaja')}}</option>
                                <option>Sí</option>
@@ -178,17 +178,32 @@
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Ocupación:</label>
-                             <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación" value="{{old('Ocupacion')}}">
+                             <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación" value="{{old('Ocupacion')}}" disabled>
                              @error ('Ocupacion')
                                 <span class="error text-danger">{{$message}}</span>
                              @enderror
                          </div>
+                         <script>
+                            let selectTrabaja;
+                            let inputocupacion;
+                            selectTrabaja=document.getElementById("selectTrabaja");
+                            inputocupacion=document.getElementById("Ocupacion");
+                            
+                            selectTrabaja.onclick=function(e){
+                            if(selectTrabaja.value=="Sí"){
+                                inputocupacion.disabled=false;
+                                }
+                            else{
+                            inputocupacion.disabled=true;
+                            }
+                            }
+                        </script>
                       </div>
                      <!---Sexta fila"--->
                      <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Tiene discapacidad:</label>
-                           <select class="form-control" name="Discapacidad">
+                           <select class="form-control" name="Discapacidad" id="selectDisca">
                             
                                <option>{{old('Discapacidad')}}</option>
                                <option>Sí</option>
@@ -201,17 +216,29 @@
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Tipo de discapacidad:</label>
-                             <input type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad" value="{{old('TipoDiscapacidad')}}">
-                             @error ('TipoDiscapacidad')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
+                             <input type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad" value="{{old('TipoDiscapacidad')}}" disabled>
                          </div>
+                         <script>
+                            let selectDisca;
+                            let inputdisca;
+                            selectDisca=document.getElementById("selectDisca");
+                            inputdisca=document.getElementById("TipoDiscapacidad");
+                            
+                            selectDisca.onclick=function(e){
+                            if(selectDisca.value=="Sí"){
+                                inputdisca.disabled=false;
+                                }
+                            else{
+                            inputdisca.disabled=true;
+                            }
+                            }
+                        </script>
                       </div>
                       <!---Séptima fila"--->
                      <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Retornado:</label>
-                           <select class="form-control" name="Retornado">
+                           <select class="form-control" name="Retornado" id="selectRetor">
                             
                                <option>{{old('Retornado')}}</option>
                                <option>Sí</option>
@@ -224,8 +251,24 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">País:</label>
-                             <input type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" value="{{old('PaisRetornado')}}">
+                             <input type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" value="{{old('PaisRetornado')}}" disabled>
                          </div>
+                         
+                         <script>
+                            let selectRetor;
+                            let inputretor;
+                            selectRetor=document.getElementById("selectRetor");
+                            inputretor=document.getElementById("PaisRetornado");
+                            
+                            selectRetor.onclick=function(e){
+                            if(selectRetor.value=="Sí"){
+                                inputretor.disabled=false;
+                                }
+                            else{
+                            inputretor.disabled=true;
+                            }
+                            }
+                        </script>
                       </div>
 
                       <!---Octava fila"--->
@@ -238,7 +281,7 @@
                               padding: 20px;
                               border: 1.5px solid #b2b2b2;
                               border-radius: 5px;"
-                              placeholder="Escriba aquí" name="Enfermedades" rows="3" value="{{old('Enfermedades')}}"></textarea>
+                              placeholder="Escriba aquí" name="Enfermedades" rows="3">{{old('Enfermedades')}}</textarea>
                               @error ('Enfermedades')
                                 <span class="error text-danger">{{$message}}</span>
                              @enderror
@@ -256,7 +299,7 @@
                               color: #202020;
                               border: 1.5px solid #b2b2b2;
                               border-radius: 5px;"
-                              placeholder="Escriba aquí" rows="3" name="Medicamentos" value="{{old('Medicamentos')}}"></textarea>
+                              placeholder="Escriba aquí" rows="3" name="Medicamentos">{{old('Medicamentos')}}</textarea>
                               @error ('Medicamentos')
                                 <span class="error text-danger">{{$message}}</span>
                              @enderror
@@ -452,15 +495,30 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique" value="{{old('EspecifiqueConv')}}">
+                             <input type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique" value="{{old('EspecifiqueConv')}}" disabled>
                          </div>
+                         <script>
+                            let otros;
+                            let input;
+                            otros=document.getElementById("ConvivenciaFamiliar");
+                            input=document.getElementById("EspecifiqueConv");
+                            
+                            otros.onclick=function(e){
+                            if(otros.value=="Otros"){
+                                input.disabled=false;
+                                }
+                            else{
+                            input.disabled=true;
+                            }
+                            }
+                        </script>
                      </div>
 
                      <!---Segunda fila"--->
                      <div class="form-row" style="margin-bottom:285px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">De quién depende económicamente:</label>
-                             <select class="form-control" name="DependenciaEconomica">
+                             <select class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
                                 
                                  <option>{{old('DependenciaEconomica')}}</option>
                                  <option>Padre</option>
@@ -476,8 +534,24 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input type="text" class="form-control"  name="EspecifiqueEcon"placeholder="Especifique" value="{{old('EspecifiqueEcon')}}">
+                             <input type="text" class="form-control"  name="EspecifiqueEcon" id="EspecifiqueEcon" placeholder="Especifique" value="{{old('EspecifiqueEcon')}}" disabled>
                          </div>
+                         
+                         <script>
+                            let otrosE;
+                            let input2;
+                            otrosE=document.getElementById("DependenciaEconomica");
+                            input2=document.getElementById("EspecifiqueEcon");
+                            
+                            otrosE.onclick=function(e){
+                            if(otrosE.value=="Otros"){
+                                input2.disabled=false;
+                                }
+                            else{
+                            input2.disabled=true;
+                            }
+                            }
+                        </script>
                      </div>
 
                      <!---Tercera fila"--->
@@ -492,8 +566,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Cantidad de hijos:</label>
-                             <select class="form-control" name="CantidadHijos">
-                                
+                             <select class="form-control" name="CantidadHijos" id="selectHijos">
                                  <option>{{old('CantidadHijos')}}</option>
                                  <option>0</option>
                                  <option>1</option>
@@ -510,7 +583,8 @@
 
                       <!---Cuarta fila CAMPOS HIJOS--->
                      <div class="form-row" style="margin-bottom:190px;">
-                         <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                         <div class="form-group col-md-6" id="Hijo1">
                              <label for="inputEmail4">Hijo 1</label>
                              <input type="text" class="form-control" name="Edad1" placeholder="Edad" value="{{old('Edad1')}}">
                              <label for="inputEmail4">Sexo</label>
@@ -522,7 +596,7 @@
                             </select>
                          </div>
 
-                         <div class="form-group col-md-6">
+                         <div class="form-group col-md-6" id="Hijo2">
                              <label for="inputEmail4">Hijo 2</label>
                              <input type="text" class="form-control" name="Edad2" placeholder="Edad" value="{{old('Edad2')}}">
                              <label for="inputEmail4">Sexo</label>
@@ -533,11 +607,13 @@
                                  <option>Masculino</option>
                             </select>
                          </div>
+                        </div>
                       </div>
 
                       <!---Quinta fila CAMPOS HIJOS--->
                      <div class="form-row" style="margin-bottom:190px;">
-                         <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                         <div class="form-group col-md-6" id="Hijo3">
                              <label for="inputEmail4">Hijo 3</label>
                              <input type="text" class="form-control" name="Edad3" placeholder="Edad" value="{{old('Edad3')}}">
                              <label for="inputEmail4">Sexo</label>
@@ -549,7 +625,7 @@
                              </select>
                          </div>
 
-                         <div class="form-group col-md-6">
+                         <div class="form-group col-md-6" id="Hijo4">
                              <label for="inputEmail4">Hijo 4</label>
                              <input type="text" class="form-control" name="Edad4"  placeholder="Edad" value="{{old('Edad4')}}">
                              <label for="inputEmail4">Sexo</label>
@@ -560,7 +636,70 @@
                                  <option>Masculino</option>
                             </select>
                          </div>
+                        </div>
                       </div>
+                      <script>
+                        let Hijo1;
+                        let Hijo2;
+                        let Hijo3;
+                        let Hijo4;
+                        let select;
+                        Hijo1 = document.getElementById("Hijo1");
+                        Hijo2 = document.getElementById("Hijo2");
+                        Hijo3 = document.getElementById("Hijo3");
+                        Hijo4 = document.getElementById("Hijo4");
+                        select = document.getElementById("selectHijos");
+                        
+                        Hijo1.style.display="none";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                        window.onload=function(){
+                            datos();
+                        }
+                        select.onclick=function(e){
+                            datos();
+                            
+                        }
+                    function datos(){
+                        if(select.value==""){
+                                Hijo1.style.display="none";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="0"){
+                                Hijo1.style.display="none";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="1"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="2"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="block";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="3"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="block";
+                                Hijo3.style.display="block";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="4"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="block";
+                                Hijo3.style.display="block";
+                                Hijo4.style.display="block";
+                            }
+                    }
+                      </script>
                       <hr>
 
                       <!---SECCION  DE ESTUDIOS REALIZADOS--->
@@ -758,7 +897,7 @@
                               color: #202020;
                               border: 1.5px solid #b2b2b2;
                               border-radius: 5px;"
-                              placeholder="Escriba aquí" rows="3" value="{{old('DatosAdicionales')}}"></textarea>
+                              placeholder="Escriba aquí" rows="3">{{old('DatosAdicionales')}}</textarea>
                               @error ('DatosAdicionales')
                                 <span class="error text-danger">{{$message}}</span>
                              @enderror
