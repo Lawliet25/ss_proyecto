@@ -60,26 +60,26 @@ class FichaController extends Controller
 
           //Alumnosfr  
           'Sexo'=>'required',
-          'IdentidadGenero'=>'string',
+          //'IdentidadGenero'=>'string',
           'FechaNacimiento'=>'required',
           'Nacionalidad'=>'required',
           'EstadoFamiliar'=>'required',
           'MedioTransporte'=>'required',
           'DistanciaSede'=>['required','string'],
           'Trabaja'=>'required',
-          'Ocupacion'=>['required','string'],
+          //'Ocupacion'=>'string',
           'Discapacidad'=>'required',
-          'TipoDiscapacidad'=>['required','string'],
+          //'TipoDiscapacidad'=>'string',
           'Retornado'=>'required',
-          'Pais'=>'string',
+          //'Pais'=>'string',
           'ConvivenciaFamiliar'=>'required',
           'DependenciaEconomica'=>'required',
-          'NumFamiliares'=>['required','numeric'],
+          'NumFamiliares'=>'required',
           'Enfermedades'=>['required','string'],
-          'Medicamentos'=>['required','string'],
+          //'Medicamentos'=>'string',
           'FechaFR'=>'required',
-          'EspecifiqueConv'=>'string',
-          'EspecifiqueEcon'=>'string',
+          //'EspecifiqueConv'=>'string',
+          //'EspecifiqueEcon'=>'string',
 
           //Historial
           'InstitucionAcademica'=>'required',
@@ -90,11 +90,11 @@ class FichaController extends Controller
           //Encargado
           'NombresEncargado'=>['required','string'],
           'ApellidosEncargado'=>['required','string'],
-          'DUIEncargado'=>'string',
-          'LugarTrabajoEncargado'=>'string',
-          'TelefonoEncargado'=>'string',
-          'ProfesionEncargado'=>'string',
-          'DireccionEncargado'=>'string',
+          //'DUIEncargado'=>'string',
+          //'LugarTrabajoEncargado'=>'string',
+          //'TelefonoEncargado'=>'string',
+          //'ProfesionEncargado'=>'string',
+          //'DireccionEncargado'=>'string',
           'ParentescoEncargado'=>'required',
           
           //Matricula
@@ -104,7 +104,7 @@ class FichaController extends Controller
           'TipoIngreso'=>'required',
           'GradoMatricular'=>'required',
           'Seccion'=>'required',
-          'DatosAdicionales'=>['required','string'],
+          //'DatosAdicionales'=>'string',
 
           //Residencia
           'Direccion'=>['required','string'],
@@ -116,18 +116,18 @@ class FichaController extends Controller
           //Hijos
           'CantidadHijos'=>'required',
           'PersonaRegistro'=>['required','string'],
-          'Edad1'=>'string',
-          'Sexo1'=>'string',
-          'Edad2'=>'string',
-          'Sexo2'=>'string',
-          'Edad3'=>'string',
-          'Sexo3'=>'string',
-          'Edad4'=>'string',
-          'Sexo4'=>'string',
+          //'Edad1'=>'string',
+          //'Sexo1'=>'string',
+          //'Edad2'=>'string',
+          //'Sexo2'=>'string',
+          //'Edad3'=>'string',
+          //'Sexo3'=>'string',
+          //'Edad4'=>'string',
+          //'Sexo4'=>'string',
 
           //Sede
-          'CodigoSede'=>'string',
-          'Sede'=>'string'
+          //'CodigoSede'=>'string',
+          //'Sede'=>'string'
         ]);
         
         $alumno= new DatosAlumno();

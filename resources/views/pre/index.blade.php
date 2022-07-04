@@ -31,7 +31,7 @@
                 <div class="col-md-11">
                   <hr>
 
-                  @if($buscar && $buscarpor)
+                  @if($buscar)
                   <a type="button" class="btn btn-danger" href="{{route('pre.index')}}">Ver todos los registros</a><br><br>
                   <div class="alert alert-info" role="alert">
                   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>

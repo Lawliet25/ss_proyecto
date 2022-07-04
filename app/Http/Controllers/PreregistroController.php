@@ -54,7 +54,7 @@ class PreregistroController extends Controller
         'Nombres'=>['required','string'],
         'Apellidos'=>['required','string'],
         'NIE'=>['unique:preregistro', 'required'],
-        'DUI'=>['required', 'regex: /^[0][0-9]{7}-[0-9]{1}/','unique:preregistro'],
+        'DUI'=>['required', 'regex: /^[0-9]{8}-[0-9]{1}/','unique:preregistro'],
         'FechaRecepcion'=>'required',
         'Estado'=>'required',
         'PersonaRecibido'=>'required',

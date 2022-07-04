@@ -69,7 +69,7 @@
           </div>
           <div class="form-group col-md-6">
             <label for="">DUI</label>
-            <input type="text" class="form-control" id="DUI" name="DUI" placeholder="Digite el DUI" value="{{old('DUI')}}">
+            <input type="text" class="form-control" id="DUI" name="DUI" placeholder="xxxxxxxx-x" value="{{old('DUI')}}">
             @error ('DUI')
               <span class="error text-danger">{{$message}}</span>
             @enderror

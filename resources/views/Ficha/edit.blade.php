@@ -139,7 +139,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Trabaja:</label>
-                           <select class="form-control" name="Trabaja">
+                           <select class="form-control" name="Trabaja" id="selectTrabaja">
                                <option>{{$alumno->Trabaja}}</option>
                                <option>Sí</option>
                                <option>No</option>
@@ -150,13 +150,28 @@
                             <label for="inputEmail4">Ocupación:</label>
                              <input value="{{$alumno->Ocupacion}}" type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación">
                          </div>
+                         <script>
+                            let selectTrabaja;
+                            let inputocupacion;
+                            selectTrabaja=document.getElementById("selectTrabaja");
+                            inputocupacion=document.getElementById("Ocupacion");
+                            
+                            selectTrabaja.onclick=function(e){
+                            if(selectTrabaja.value=="Sí"){
+                                inputocupacion.disabled=false;
+                                }
+                            else{
+                            inputocupacion.disabled=true;
+                            }
+                            }
+                        </script>
                       </div>
 
                     <!---Sexta fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Tiene discapacidad:</label>
-                           <select class="form-control" name="Discapacidad">
+                           <select class="form-control" name="Discapacidad" id="selectDisca">
                                <option>{{$alumno->Discapacidad}}</option>
                                <option>Sí</option>
                                <option>No</option>
@@ -165,26 +180,55 @@
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Tipo de discapacidad:</label>
-                             <input value="{{$alumno->TipoDiscapacidad}}" type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad">
+                             <input value="{{$alumno->TipoDiscapacidad}}" type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad" disabled>
                          </div>
+                         <script>
+                            let selectDisca;
+                            let inputdisca;
+                            selectDisca=document.getElementById("selectDisca");
+                            inputdisca=document.getElementById("TipoDiscapacidad");
+                            
+                            selectDisca.onclick=function(e){
+                            if(selectDisca.value=="Sí"){
+                                inputdisca.disabled=false;
+                                }
+                            else{
+                            inputdisca.disabled=true;
+                            }
+                            }
+                        </script>
                       </div>
 
                       <!---Séptima fila"--->
                      <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Retornado:</label>
-                           <select class="form-control" name="Retornado">
+                           <select class="form-control" name="Retornado" id="selectRetor">
                                <option>{{$alumno->Retornado}}</option>
                                <option>Sí</option>
                                <option>No</option>
-
                            </select>
                          </div>
-
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">País:</label>
-                             <input value="{{$alumno->PaisRetornado}}" type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais">
+                             <input value="{{$alumno->PaisRetornado}}" type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" disabled>
                          </div>
+                         
+                         <script>
+                            let selectRetor;
+                            let inputretor;
+                            selectRetor=document.getElementById("selectRetor");
+                            inputretor=document.getElementById("PaisRetornado");
+                            
+                            selectRetor.onclick=function(e){
+                            if(selectRetor.value=="Sí"){
+                                inputretor.disabled=false;
+                                }
+                            else{
+                            inputretor.disabled=true;
+                            }
+                            }
+                        </script>
                       </div>
 
 
@@ -379,8 +423,23 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique">
+                             <input value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique" disabled>
                          </div>
+                         <script>
+                            let otros;
+                            let input;
+                            otros=document.getElementById("ConvivenciaFamiliar");
+                            input=document.getElementById("EspecifiqueConv");
+                            
+                            otros.onclick=function(e){
+                            if(otros.value=="Otros"){
+                                input.disabled=false;
+                                }
+                            else{
+                            input.disabled=true;
+                            }
+                            }
+                        </script>
                      </div>
 
 
@@ -388,7 +447,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">De quién depende económicamente:</label>
-                             <select class="form-control" name="DependenciaEconomica">
+                             <select class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
                                  <option>{{$alumno->DependenciaEconomica}}</option>
                                  <option>Padre</option>
                                  <option>Madre</option>
@@ -401,8 +460,23 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input value="{{$alumno->EspecifiqueEcon}}" type="text" class="form-control"  name="EspecifiqueEcon"placeholder="Especifique">
+                             <input value="{{$alumno->EspecifiqueEcon}}" type="text" class="form-control" id="EspecifiqueEcon" name="EspecifiqueEcon"placeholder="Especifique" disabled>
                          </div>
+                         <script>
+                            let otrosE;
+                            let input2;
+                            otrosE=document.getElementById("DependenciaEconomica");
+                            input2=document.getElementById("EspecifiqueEcon");
+                            
+                            otrosE.onclick=function(e){
+                            if(otrosE.value=="Otros"){
+                                input2.disabled=false;
+                                }
+                            else{
+                            input2.disabled=true;
+                            }
+                            }
+                        </script>
                      </div>
 
                      <!---Tercera fila"--->
@@ -415,7 +489,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Cantidad de hijos:</label>
-                             <select class="form-control" name="CantidadHijos">
+                             <select class="form-control" name="CantidadHijos" id="selectHijos">
                                  <option>{{$alumno->CantidadHijos}}</option>
                                  <option>0</option>
                                  <option>1</option>
@@ -428,7 +502,8 @@
 
                       <!---Cuarta fila CAMPOS HIJOS--->
                     <div class="form-row">
-                         <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                         <div class="form-group col-md-6" id="Hijo1">
                              <label for="inputEmail4">Hijo 1</label>
                              <input value="{{$alumno->Edad1}}" type="text" class="form-control" name="Edad1" placeholder="Edad">
                              <select class="form-control" name="Sexo1">
@@ -438,7 +513,7 @@
                             </select>
                          </div>
 
-                         <div class="form-group col-md-6">
+                         <div class="form-group col-md-6" id="Hijo2">
                              <label for="inputEmail4">Hijo 2</label>
                              <input value="{{$alumno->Edad2}}" type="text" class="form-control" name="Edad2" placeholder="Edad">
                              <select class="form-control" name="Sexo2">
@@ -447,11 +522,13 @@
                                  <option>Masculino</option>
                             </select>
                          </div>
+                        </div>
                       </div>
 
                       <!---Quinta fila CAMPOS HIJOS--->
                     <div class="form-row">
-                         <div class="form-group col-md-6">
+                        <div class="col-md-12">
+                         <div class="form-group col-md-6" id="Hijo3">
                              <label for="inputEmail4">Hijo 3</label>
                              <input value="{{$alumno->Edad3}}" type="text" class="form-control" name="Edad3" placeholder="Edad">
                              <select class="form-control" name="Sexo3">
@@ -461,7 +538,7 @@
                              </select>
                          </div>
 
-                         <div class="form-group col-md-6">
+                         <div class="form-group col-md-6" id="Hijo4">
                              <label for="inputEmail4">Hijo 4</label>
                              <input value="{{$alumno->Edad4}}" type="text" class="form-control" name="Edad4"  placeholder="Edad4">
                              <select class="form-control" name="Sexo4">
@@ -470,9 +547,71 @@
                                  <option>Masculino</option>
                             </select>
                          </div>
+                        </div>
                       </div>
-
-
+                      <script>
+                        let Hijo1;
+                        let Hijo2;
+                        let Hijo3;
+                        let Hijo4;
+                        let select;
+                        Hijo1 = document.getElementById("Hijo1");
+                        Hijo2 = document.getElementById("Hijo2");
+                        Hijo3 = document.getElementById("Hijo3");
+                        Hijo4 = document.getElementById("Hijo4");
+                        select = document.getElementById("selectHijos");
+                        
+                        Hijo1.style.display="none";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                        window.onload=function(){
+                            datos();
+                        }
+                        select.onclick=function(e){
+                            datos();
+                            
+                        }
+                    function datos(){
+                        if(select.value==""){
+                                Hijo1.style.display="none";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="0"){
+                                Hijo1.style.display="none";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="1"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="none";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="2"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="block";
+                                Hijo3.style.display="none";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="3"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="block";
+                                Hijo3.style.display="block";
+                                Hijo4.style.display="none";
+                            }
+                            if(select.value=="4"){
+                                Hijo1.style.display="block";
+                                Hijo2.style.display="block";
+                                Hijo3.style.display="block";
+                                Hijo4.style.display="block";
+                            }
+                    }
+                      </script>
+                      <hr>
                       <!---SECCION DE ESTUDIOS REALIZADOS--->
                      <h3><strong>6.ESTUDIOS REALIZADOS</strong></h3>
 
