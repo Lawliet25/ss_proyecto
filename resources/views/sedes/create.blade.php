@@ -18,12 +18,18 @@
           <div class="form-group col-md-6">
             <label for="inputEmail4">Código de sede</label>
             <input type="text" class="form-control" id="CodigoSede" name="CodigoSede" placeholder="Digite el codigo de la sede">
+            @error ('CodigoSede')
+            <span class="error text-danger">{{$message}}</span>
+            @enderror
 
           </div>
 
           <div class="form-group col-md-6">
             <label for="inputPassword4">Nombre de sede</label>
             <input type="text" class="form-control" id="Sede" name="Sede" placeholder="Nombre de sede">
+            @error ('Sede')
+            <span class="error text-danger">{{$message}}</span>
+            @enderror
 
           </div>
 
@@ -48,11 +54,17 @@
              endforeach;
              ?>
           </select>
+          @error ('Departamento')
+            <span class="error text-danger">{{$message}}</span>
+            @enderror
 
         </div>
         <div class="form-group col-md-6">
           <label for="inputAddress2">Municipio</label>
           <input type="text" class="form-control" id="Municipio" name="Municipio" placeholder="Digite el municipio">
+          @error ('Municipio')
+            <span class="error text-danger">{{$message}}</span>
+            @enderror
 
         </div>
         </div>

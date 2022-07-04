@@ -56,7 +56,80 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
 
+          //Alumnosfr  
+          'Sexo'=>'required',
+          'IdentidadGenero'=>'string',
+          'FechaNacimiento'=>'required',
+          'Nacionalidad'=>'required',
+          'EstadoFamiliar'=>'required',
+          'MedioTransporte'=>'required',
+          'DistanciaSede'=>['required','string'],
+          'Trabaja'=>'required',
+          'Ocupacion'=>['required','string'],
+          'Discapacidad'=>'required',
+          'TipoDiscapacidad'=>['required','string'],
+          'Retornado'=>'required',
+          'Pais'=>'string',
+          'ConvivenciaFamiliar'=>'required',
+          'DependenciaEconomica'=>'required',
+          'NumFamiliares'=>['required','numeric'],
+          'Enfermedades'=>['required','string'],
+          'Medicamentos'=>['required','string'],
+          'FechaFR'=>'required',
+          'EspecifiqueConv'=>'string',
+          'EspecifiqueEcon'=>'string',
+
+          //Historial
+          'InstitucionAcademica'=>'required',
+          'AñoCursado'=>['required','numeric'],
+          'GradoCursado'=>'required',
+          'CentroEducativo'=>['required','string'],
+
+          //Encargado
+          'NombresEncargado'=>['required','string'],
+          'ApellidosEncargado'=>['required','string'],
+          'DUIEncargado'=>'string',
+          'LugarTrabajoEncargado'=>'string',
+          'TelefonoEncargado'=>'string',
+          'ProfesionEncargado'=>'string',
+          'DireccionEncargado'=>'string',
+          'ParentescoEncargado'=>'required',
+          
+          //Matricula
+          'Turno'=>'required',
+          'Modalidad'=>'required',
+          'Jornada'=>'required',
+          'TipoIngreso'=>'required',
+          'GradoMatricular'=>'required',
+          'Seccion'=>'required',
+          'DatosAdicionales'=>['required','string'],
+
+          //Residencia
+          'Direccion'=>['required','string'],
+          'Zona'=>'required',
+          'Celular'=>['required','string'],
+          'Departamento'=>'required',
+          'Municipio'=>['required','string'],
+
+          //Hijos
+          'CantidadHijos'=>'required',
+          'PersonaRegistro'=>['required','string'],
+          'Edad1'=>'string',
+          'Sexo1'=>'string',
+          'Edad2'=>'string',
+          'Sexo2'=>'string',
+          'Edad3'=>'string',
+          'Sexo3'=>'string',
+          'Edad4'=>'string',
+          'Sexo4'=>'string',
+
+          //Sede
+          'CodigoSede'=>'string',
+          'Sede'=>'string'
+        ]);
+        
         $alumno= new DatosAlumno();
 
         //Alumnosfr
@@ -174,6 +247,7 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
+      
       //$preregistro= Preregistro::find($id);
       $alumno=  DatosAlumno::find($id);
 
