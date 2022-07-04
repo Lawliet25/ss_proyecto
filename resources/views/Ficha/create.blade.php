@@ -31,11 +31,11 @@
                       $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
                       ?>
                       <h3><strong>1.DATOS DE SEDE</strong></h3>
-                      <div class="form-row">
+                      <div class="form-row" style="margin-bottom:100px;">
                       <div class="form-group col-md-6">
                         <label for="inputAddress">Código de sede:</label>
                         <select id="Sede" name="CodigoSede" class="form-control">
-                          <option>Seleccionar</option>
+                          <option>{{old('CodigoSede')}}</option>
                           <?php
                            $query = $db->prepare("SELECT * FROM sedes");
                            $query->execute();
@@ -51,7 +51,7 @@
                       <div class="form-group col-md-6">
                         <label for="inputAddress">Nombre de sede:</label>
                         <select id="Sede" name="Sede" class="form-control">
-                          <option>Seleccionar</option>
+                          <option>{{old('Sede')}}</option>
                           <?php
                            $query = $db->prepare("SELECT * FROM sedes");
                            $query->execute();
@@ -70,127 +70,166 @@
 
 
                      <!---Primera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:100px;">
                      <div class="form-group col-md-6">
                        <label for="inputAddress">Sexo:</label>
                        <select id="Grado" name="Sexo" class="form-control">
-                         <option></option>
+                         <option>{{old('Sexo')}}</option>
                          <option>Masculino</option>
                          <option>Femenino</option>
                        </select>
+                       @error ('Sexo')
+                            <span class="error text-danger">{{$message}}</span>
+                       @enderror
                      </div>
 
                      <div class="form-group col-md-6">
                        <label for="inputAddress">Identidad de género:</label>
                        <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
-                         <option></option>
+                         <option>{{old('IdentidadGenero')}}</option>
                          <option>Lesbianas</option>
                          <option>Gays</option>
                          <option>Bisexuales</option>
                          <option>Transexuales</option>
                          <option>Intersexuales</option>
+                         <option>No Aplica</option>
                       </select>
                      </div>
                      </div>
 
                      <!---Segunda fila"--->
-                     <div class="form-row" >
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-12">
                             <label for="inputCity">Fecha de nacimiento</label>
-                            <input type="datetime-local" class="form-control" id="FechaNacimiento" name="FechaNacimiento">
+                            <input type="datetime-local" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{old('FechaNacimiento')}}">
+                            @error ('FechaNacimiento')
+                                <span class="error text-danger">{{$message}}</span>
+                            @enderror
                          </div>
                      </div>
                      <!---Tercera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Nacionalidad</label>
                              <select class="form-control" name="Nacionalidad">
-                                 <option></option>
+                                
+                                 <option>{{old('Nacionalidad')}}</option>
                                  <option>Salvadoreña</option>
                                  <option>Extranjera</option>
                              </select>
+                             @error ('Nacionalidad')
+                            <span class="error text-danger">{{$message}}</span>
+                            @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Estado familiar:</label>
                            <select id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
-                             <option></option>
+                            
+                             <option>{{old('EstadoFamiliar')}}</option>
                              <option>Soltero(a)</option>
                              <option>Casado(a)</option>
                              <option>Acompañado(a)</option>
                            </select>
+                           @error ('EstadoFamiliar')
+                            <span class="error text-danger">{{$message}}</span>
+                           @enderror
                           </div>
                      </div>
                       <!---Cuarta fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Medio de transporte:</label>
                              <select class="form-control" name="MedioTransporte">
-                                 <option></option>
+                                
+                                 <option>{{old('MedioTransporte')}}</option>
                                  <option>Propio</option>
                                  <option>Público</option>
                                  <option>Familiar</option>
                                  <option>Peatonal</option>
                              </select>
+                             @error ('MedioTransporte')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Distancia entre la sede y la residencia:</label>
-                           <input type="text" class="form-control" name="DistanciaSede" placeholder="Distancia a sede">
+                           <input type="text" class="form-control" name="DistanciaSede" placeholder="Distancia a sede" value="{{old('DistanciaSede')}}">
+                           @error ('DistanciaSede')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                           </div>
                      </div>
                       <!---Quinta fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Trabaja:</label>
                            <select class="form-control" name="Trabaja">
-                               <option></option>
+                            
+                               <option>{{old('Trabaja')}}</option>
                                <option>Sí</option>
                                <option>No</option>
                            </select>
+                           @error ('Trabaja')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Ocupación:</label>
-                             <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación">
+                             <input type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación" value="{{old('Ocupacion')}}">
+                             @error ('Ocupacion')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
                      <!---Sexta fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Tiene discapacidad:</label>
                            <select class="form-control" name="Discapacidad">
-                               <option></option>
+                            
+                               <option>{{old('Discapacidad')}}</option>
                                <option>Sí</option>
                                <option>No</option>
                            </select>
+                           @error ('Discapacidad')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Tipo de discapacidad:</label>
-                             <input type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad">
+                             <input type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad" value="{{old('TipoDiscapacidad')}}">
+                             @error ('TipoDiscapacidad')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
                       <!---Séptima fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Retornado:</label>
                            <select class="form-control" name="Retornado">
-                               <option></option>
+                            
+                               <option>{{old('Retornado')}}</option>
                                <option>Sí</option>
                                <option>No</option>
-
                            </select>
+                           @error ('Retornado')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">País:</label>
-                             <input type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais">
+                             <input type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" value="{{old('PaisRetornado')}}">
                          </div>
                       </div>
 
                       <!---Octava fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Enfermedades o alergias que padece:</label>
                              <textarea  style="display: block;
@@ -199,12 +238,15 @@
                               padding: 20px;
                               border: 1.5px solid #b2b2b2;
                               border-radius: 5px;"
-                              placeholder="Escriba aquí" name="Enfermedades" rows="3"></textarea>
+                              placeholder="Escriba aquí" name="Enfermedades" rows="3" value="{{old('Enfermedades')}}"></textarea>
+                              @error ('Enfermedades')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
 
                       <!--- Novena fila"--->
-                      <div class="form-row">
+                      <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Medicamentos prescrito de carácter permanente:</label>
                              <textarea style="display: block;
@@ -214,7 +256,10 @@
                               color: #202020;
                               border: 1.5px solid #b2b2b2;
                               border-radius: 5px;"
-                              placeholder="Escriba aquí" rows="3" name="Medicamentos"></textarea>
+                              placeholder="Escriba aquí" rows="3" name="Medicamentos" value="{{old('Medicamentos')}}"></textarea>
+                              @error ('Medicamentos')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                      </div>
                       <hr>
@@ -222,20 +267,26 @@
                        <!---SECCION  DE DATOS FAMILIARES--->
                       <h3><strong>3.DATOS FAMILIARES O RESPONSABLE</strong></h3>
                       <!---Primera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:100px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Nombres: </label>
-                             <input type="text" class="form-control" id="NombresEncargado" name="NombresEncargado" placeholder="Nombres">
+                             <input type="text" class="form-control" id="NombresEncargado" name="NombresEncargado" placeholder="Nombres" value="{{old('NombresEncargado')}}">
+                             @error ('NombresEncargado')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Apellidos:</label>
-                             <input type="text" class="form-control" id="ApellidosEncargado" name="ApellidosEncargado" placeholder="Apellidos">
+                             <input type="text" class="form-control" id="ApellidosEncargado" name="ApellidosEncargado" placeholder="Apellidos" value="{{old('ApellidosEncargado')}}">
+                             @error ('ApellidosEncargado')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                           </div>
                      </div>
 
                      <!---Segunda fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Lugar de trabajo:</label>
                              <input type="text" class="form-control" id="LugarTrabajoEncargado" name="LugarTrabajoEncargado" placeholder="Lugar de trabajo">
@@ -244,7 +295,8 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Parentesco:</label>
                              <select class="form-control" name="ParentescoEncargado">
-                                 <option></option>
+                                
+                                 <option>{{old('ParentescoEncargado')}}</option>
                                  <option>Madre</option>
                                  <option>Padre</option>
                                  <option>Hermano/a</option>
@@ -253,32 +305,35 @@
                                  <option>Pareja</option>
                                  <option>Conocido</option>
                              </select>
+                             @error ('ParentescoEncargado')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                           </div>
                      </div>
 
                      <!---Tercera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Número de DUI:</label>
-                             <input type="text" class="form-control" id="DUIEncargado" name="DUIEncargado" placeholder="DUI">
+                             <input type="text" class="form-control" id="DUIEncargado" name="DUIEncargado" placeholder="DUI" value="{{old('DUIEncargado')}}">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Teléfono:</label>
-                             <input type="text" class="form-control" id="TelefonoEncargado" name="TelefonoEncargado" placeholder="Teléfono">
+                             <input type="text" class="form-control" id="TelefonoEncargado" name="TelefonoEncargado" placeholder="Teléfono" value="{{old('TelefonoEncargado')}}">
                          </div>
                      </div>
 
                      <!---Cuarta fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Profesión u oficio:</label>
-                             <input type="text" class="form-control" id="ProfesionEncargado" name="ProfesionEncargado" placeholder="Profesión u oficio">
+                             <input type="text" class="form-control" id="ProfesionEncargado" name="ProfesionEncargado" placeholder="Profesión u oficio" value="{{old('ProfesionEncargado')}}">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Dirección:</label>
-                             <input type="text" class="form-control" name="DireccionEncargado" id="nombres" placeholder="Dirección">
+                             <input type="text" class="form-control" name="DireccionEncargado" id="nombres" placeholder="Dirección" value="{{old('DireccionEncargado')}}">
                          </div>
                      </div>
 
@@ -286,20 +341,26 @@
                       <!---SECCION  DE LOS DATOS DE RESIDENCIA--->
                       <h3><strong>4.DATOS DE RESIDENCIA</strong></h3>
                       <!---Primera fila"--->
-                      <div class="form-row">
+                      <div class="form-row" style="margin-bottom:100px;">
                       <div class="form-group col-md-6">
                          <label for="inputEmail4">Dirección:</label>
-                           <input type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
+                           <input type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion" value="{{old('Direccion')}}">
+                           @error ('Direccion')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                       </div>
 
                       <div class="form-group col-md-6">
                          <label for="inputEmail4">Zona de residencia:</label>
                          <select class="form-control" name="Zona">
-                             <option></option>
+                            
+                             <option>{{old('Zona')}}</option>
                              <option>Rural</option>
                              <option>Urbana</option>
-
                          </select>
+                         @error ('Zona')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                      </div>
                      </div>
 
@@ -309,11 +370,12 @@
                      $password = '';
                      $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
                      ?>
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Departamento</label>
                              <select class="form-control" name="Departamento">
-                               <option></option>
+                                
+                               <option>{{old('Departamento')}}</option>
                                <?php
                                 $query = $db->prepare("SELECT * FROM departamento");
                                 $query->execute();
@@ -324,38 +386,44 @@
                                 endforeach;
                                 ?>
                              </select>
+                             @error ('Departamento')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
 
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Municipio</label>
-                             <input type="text" class="form-control" name="Municipio" id="nombres" placeholder="Municipio">
+                             <input type="text" class="form-control" name="Municipio" id="nombres" placeholder="Municipio" value="{{old('Municipio')}}">
+                             @error ('Municipio')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                      </div>
 
                      <!---Tercera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Residencia:</label>
-                             <input type="text" class="form-control" name="TelefonoResidencia" id="TelefonoResidencia" placeholder="Telefono de residencia">
+                             <input type="text" class="form-control" name="TelefonoResidencia" id="TelefonoResidencia" placeholder="Telefono de residencia" value="{{old('TelefonoResidencia')}}">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Celular:</label>
-                             <input type="text" class="form-control" id="Celular" name="Celular" placeholder="Telefono celular">
+                             <input type="text" class="form-control" id="Celular" name="Celular" placeholder="Telefono celular" value="{{old('Celular')}}">
                           </div>
                      </div>
 
                      <!---Cuarta fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Trabajo:</label>
-                             <input type="text" class="form-control" id="TelefonoTrabajo" name="TelefonoTrabajo" placeholder="Telefono trabajo">
+                             <input type="text" class="form-control" id="TelefonoTrabajo" name="TelefonoTrabajo" placeholder="Telefono trabajo" value="{{old('TelefonoTrabajo')}}">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Correo electrónico:</label>
-                             <input type="text" class="form-control" id="Email" name="Email" placeholder="Correo electrónico">
+                             <input type="text" class="form-control" id="Email" name="Email" placeholder="Correo electrónico" value="{{old('Email')}}">
                           </div>
                      </div>
                      <hr>
@@ -364,11 +432,12 @@
                      <h3><strong>5.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
 
                      <!---Primera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Convivencia:</label>
                              <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
-                             <option></option>
+                                
+                             <option>{{old('ConvivenciaFamiliar')}}</option>
                              <option>Con madre</option>
                              <option>Con padre</option>
                              <option>Padre y madre</option>
@@ -376,62 +445,78 @@
                              <option>No vive con familiares</option>
                              <option>Otros</option>
                             </select>
+                            @error ('ConvivenciaFamiliar')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique">
+                             <input type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique" value="{{old('EspecifiqueConv')}}">
                          </div>
                      </div>
 
                      <!---Segunda fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:285px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">De quién depende económicamente:</label>
                              <select class="form-control" name="DependenciaEconomica">
-                                 <option></option>
+                                
+                                 <option>{{old('DependenciaEconomica')}}</option>
                                  <option>Padre</option>
                                  <option>Madre</option>
                                  <option>Padre y madre</option>
                                  <option>Hermanos</option>
                                  <option>Otros</option>
-
                              </select>
+                             @error ('DependenciaEconomica')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input type="text" class="form-control"  name="EspecifiqueEcon"placeholder="Especifique">
+                             <input type="text" class="form-control"  name="EspecifiqueEcon"placeholder="Especifique" value="{{old('EspecifiqueEcon')}}">
                          </div>
                      </div>
 
                      <!---Tercera fila"--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:285px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">N° de miembros de la familia:</label>
-                             <input type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
+                             <input type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros" value="{{old('NumFamiliares')}}">
+                             @error ('NumFamiliares')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Cantidad de hijos:</label>
                              <select class="form-control" name="CantidadHijos">
+                                
+                                 <option>{{old('CantidadHijos')}}</option>
                                  <option>0</option>
                                  <option>1</option>
                                  <option>2</option>
                                  <option>3</option>
                                  <option>4</option>
                              </select>
+                             @error ('CantidadHijos')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                      </div>
 
 
                       <!---Cuarta fila CAMPOS HIJOS--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Hijo 1</label>
-                             <input type="text" class="form-control" name="Edad1" placeholder="Edad">
+                             <input type="text" class="form-control" name="Edad1" placeholder="Edad" value="{{old('Edad1')}}">
+                             <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo1">
-                                 <option></option>
+                                
+                                 <option>{{old('Sexo1')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
@@ -439,9 +524,11 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Hijo 2</label>
-                             <input type="text" class="form-control" name="Edad2" placeholder="Edad">
+                             <input type="text" class="form-control" name="Edad2" placeholder="Edad" value="{{old('Edad2')}}">
+                             <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo2">
-                                 <option></option>
+                                
+                                 <option>{{old('Sexo2')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
@@ -449,12 +536,14 @@
                       </div>
 
                       <!---Quinta fila CAMPOS HIJOS--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:190px;">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Hijo 3</label>
-                             <input type="text" class="form-control" name="Edad3" placeholder="Edad">
+                             <input type="text" class="form-control" name="Edad3" placeholder="Edad" value="{{old('Edad3')}}">
+                             <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo3">
-                                 <option></option>
+                                
+                                 <option>{{old('Sexo3')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                              </select>
@@ -462,9 +551,11 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Hijo 4</label>
-                             <input type="text" class="form-control" name="Edad4"  placeholder="Edad">
+                             <input type="text" class="form-control" name="Edad4"  placeholder="Edad" value="{{old('Edad4')}}">
+                             <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo4">
-                                 <option></option>
+                                
+                                 <option>{{old('Sexo4')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
                             </select>
@@ -476,41 +567,54 @@
                      <h3><strong>6.ESTUDIOS REALIZADOS</strong></h3>
 
                      <!---Primera fila--->
-                     <div class="form-ow">
+                     <div class="form-row" style="margin-bottom:100px">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Último grado cursado:</label>
                              <select id="Grado" name="GradoCursado" class="form-control">
-                               <option></option>
+                                
+                               <option>{{old('GradoCursado')}}</option>
                                <option>6° grado</option>
                                <option>7° grado</option>
                                <option>8° grado</option>
                                <option>9° grado</option>
                                <option>1er año</option>
                              </select>
+                             @error ('GradoCursado')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Año en que lo cursó:</label>
-                             <input type="text" class="form-control" name="AñoCursado"  placeholder="Año en que lo cursó">
+                             <input type="text" class="form-control" name="AñoCursado"  placeholder="Año en que lo cursó" value="{{old('AñoCursado')}}">
+                             @error ('AñoCursado')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
 
                       <!---Segunda fila--->
-                      <div class="form-row">
+                      <div class="form-row" style="margin-bottom:190px">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Institución en que lo cursó:</label>
                              <select class="form-control" name="InstitucionAcademica">
-                                 <option></option>
+                                
+                                 <option>{{old('InstitucionAcademica')}}</option>
                                  <option>Modalidad flexible</option>
                                  <option>Regular</option>
                                  <option>Extranjero</option>
                             </select>
-
+                            @error ('InstitucionAcademica')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Nombre del Centro Educativo:</label>
-                             <input type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo">
+                             <input type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo" value="{{old('CentroEducativo')}}">
+                             @error ('CentroEducativo')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
 
@@ -519,35 +623,44 @@
                      <h3><strong>7.DATOS DE MATRICULA</strong></h3>
 
                      <!---Primera fila--->
-                     <div class="form-row">
+                     <div class="form-row" style="margin-bottom:100px">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Turno:</label>
                              <select class="form-control" name="Turno">
-                                 <option></option>
+                                
+                                 <option>{{old('Turno')}}</option>
                                  <option>Mañana</option>
                                  <option>Tarde</option>
                                  <option>Mañana y tarde</option>
                                  <option>Nocturno</option>
                             </select>
+                            @error ('Turno')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Jornada:</label>
                              <select class="form-control" name="Jornada">
-                                 <option></option>
+                                <option disabled selected hidden>Seleccionar</option>
+                                 <option>{{old('Jornada')}}</option>
                                  <option>Lunes a viernes</option>
                                  <option>Sábado</option>
                                  <option>Domingo</option>
                              </select>
+                             @error ('Jornada')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
 
                       <!---Segunda fila--->
-                      <div class="form-row">
+                      <div class="form-row" style="margin-bottom:190px">
                       <div class="form-group col-md-6">
                              <label for="inputEmail4">Modalidad de atención:</label>
                              <select class="form-control" name="Modalidad">
-                                 <option></option>
+                                
+                                 <option>{{old('Modalidad')}}</option>
                                  <option>Nocturno</option>
                                  <option>Distancia</option>
                                  <option>Acelerada</option>
@@ -557,17 +670,24 @@
                                  <option>Nivelación académica</option>
                                  <option>Modalidad flexible integrada</option>
                              </select>
+                             @error ('Modalidad')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Tipo de ingreso:</label>
                              <select class="form-control" name="TipoIngreso">
-                                 <option></option>
+                                
+                                 <option>{{old('TipoIngreso')}}</option>
                                  <option>Certificado Escolar</option>
                                  <option>Certificación de Notas</option>
                                  <option>Prueba de suficiencia</option>
                                  <option>Resolución por Equivalencia</option>
                              </select>
+                             @error ('TipoIngreso')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
                       <hr>
@@ -575,40 +695,54 @@
                       <!---Tercera fila GRADO A MATRICULAR--->
                       <h4><strong>Grado a matricular</strong></h4>
 
-                      <div class="form-row" >
+                      <div class="form-row" style="margin-bottom:100px">
                           <div class="form-group col-md-6">
                              <label for="">Grados disponibles:</label>
                               <select class="form-control" name="GradoMatricular">
-                                 <option></option>
+                                
+                                 <option>{{old('GradoMatricular')}}</option>
                                  <option>7° grado</option>
                                  <option>8° grado</option>
                                  <option>9° grado</option>
                                  <option>1er año</option>
                                  <option>2do año</option>
                              </select>
+                             @error ('GradoMatricular')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Sección:</label>
                              <select class="form-control" name="Seccion">
-                                 <option></option>
+                                
+                                 <option>{{old('Seccion')}}</option>
                                  <option>A</option>
                                  <option>B</option>
                                  <option>C</option>
                               </select>
+                              @error ('Seccion')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                       </div>
 
                      <!---Cuarta fila--->
-                      <div class="form-row">
+                      <div class="form-row" style="margin-bottom:190px">
                           <div class="form-group col-md-6">
                           <label for="inputEmail4">Fecha de registro de ficha:</label>
-                          <input type="datetime-local" class="form-control" id="FechaFR" name="FechaFR">
+                          <input type="datetime-local" class="form-control" id="FechaFR" name="FechaFR" value="{{old('FechaFR')}}">
+                          @error ('FechaFR')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                           </div>
 
                           <div class="form-group col-md-6">
                               <label for="inputEmail4">Persona que recibió la ficha:</label>
-                              <input type="text" class="form-control" id="PersonaRegistro" name="PersonaRegistro" placeholder="">
+                              <input type="text" class="form-control" id="PersonaRegistro" name="PersonaRegistro" placeholder="" value="{{old('PersonaRegistro')}}">
+                              @error ('PersonaRegistro')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                           </div>
                       </div>
 
@@ -624,7 +758,10 @@
                               color: #202020;
                               border: 1.5px solid #b2b2b2;
                               border-radius: 5px;"
-                              placeholder="Escriba aquí" rows="3" ></textarea>
+                              placeholder="Escriba aquí" rows="3" value="{{old('DatosAdicionales')}}"></textarea>
+                              @error ('DatosAdicionales')
+                                <span class="error text-danger">{{$message}}</span>
+                             @enderror
                          </div>
                      </div>
 

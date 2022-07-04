@@ -95,6 +95,7 @@ class PreregistroController extends Controller
      */
     public function edit($id)
     {
+      
       $preregistro=Preregistro::find($id);
       return view('pre.edit', compact('preregistro'));
     }
@@ -108,6 +109,7 @@ class PreregistroController extends Controller
      */
     public function update(Request $request, $id)
     {
+            
       $preregistro= Preregistro::find($id);
 
       $preregistro->Nombres=$request->Nombres;

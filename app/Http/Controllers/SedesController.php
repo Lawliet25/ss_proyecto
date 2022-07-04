@@ -39,6 +39,13 @@ class SedesController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        'CodigoSede'=>['required','numeric'],
+        'Sede'=>['required','string'],
+        'Departamento'=>'required',
+        'Municipio'=>['required','string']
+      ]);
+
       $sede= new SedesModel();
 
       $sede->CodigoSede=$request->CodigoSede;
