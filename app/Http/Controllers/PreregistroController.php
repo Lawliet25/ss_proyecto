@@ -73,7 +73,7 @@ class PreregistroController extends Controller
       $preregistro->Grado=$request->Grado;
       $preregistro->Observacion=$request->Observacion;
       $preregistro->save();
-      return redirect()->route('pre.index');
+      return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');
     }
 
     /**
@@ -95,7 +95,7 @@ class PreregistroController extends Controller
      */
     public function edit($id)
     {
-      
+
       $preregistro=Preregistro::find($id);
       return view('pre.edit', compact('preregistro'));
     }
@@ -109,7 +109,7 @@ class PreregistroController extends Controller
      */
     public function update(Request $request, $id)
     {
-            
+
       $preregistro= Preregistro::find($id);
 
       $preregistro->Nombres=$request->Nombres;
@@ -143,8 +143,7 @@ class PreregistroController extends Controller
       }
 
       $preregistro->save();
-      return redirect()->route('pre.index');
-      return redirect()->route('editoriales.index')->with('status', alertify.success('Success notification message.'));
+      return redirect()->route('pre.index')->with('status', 'Preregistro modificado correctamente.');
 
     }
 

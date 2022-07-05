@@ -40,7 +40,6 @@ class SedesController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'CodigoSede'=>['required','numeric'],
         'Sede'=>['required','string'],
         'Departamento'=>'required',
         'Municipio'=>['required','string']
@@ -53,7 +52,7 @@ class SedesController extends Controller
       $sede->Departamento=$request->Departamento;
       $sede->Municipio=$request->Municipio;
       $sede->save();
-      return redirect()->route('sedes.index');
+      return redirect()->route('sedes.index')->with('status', 'Sede registrada correctamente.');
     }
 
     /**
@@ -95,7 +94,7 @@ class SedesController extends Controller
       $sede->Departamento=$request->Departamento;
       $sede->Municipio=$request->Municipio;
       $sede->save();
-      return redirect()->route('sedes.index');
+      return redirect()->route('sedes.index')->with('status', 'Sede modificada correctamente.');
     }
 
     /**
@@ -107,6 +106,6 @@ class SedesController extends Controller
     public function destroy($id)
     {
       $sede=SedesModel::destroy($id);
-      return redirect()->route('sedes.index');
+      return redirect()->route('sedes.index')->with('status', 'Sede eliminada correctamente.');
     }
 }

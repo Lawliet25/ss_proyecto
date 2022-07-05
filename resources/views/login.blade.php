@@ -3,16 +3,24 @@
 @section('title','Formulario de preregistro')
 
 @section('content')
-
+@if (session('status'))
+  <div style="width:390px; margin-left:31%; margin-top:40px;" class="alert alert-danger">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    {{session('status')}}
+  </div>
+@endif
         <div class="form-body">
+
             <img src="{{asset('iniciar-sesion.png')}}" alt="">
             <form class="login-form" method="post" action="">
               @csrf
                 <input type="text" name="email" placeholder="Nombre de usuario o email">
                 <input type="password" name="password" placeholder="Contraseña">
                 <button>Iniciar Sesión</button>
+
             </form>
         </div>
+
         <style media="screen">
         *{
             padding: 0;
@@ -30,7 +38,8 @@
             border-top-left-radius: 50px;
             border-bottom-right-radius: 50px;
             border: solid 1px #A2D2FF ;
-            margin: 10px;
+            margin-top: 5%;
+            margin-left: 30%;
         }
 
         .form-body img

@@ -58,7 +58,7 @@ class FichaController extends Controller
     {
         $request->validate([
 
-          //Alumnosfr  
+          //Alumnosfr
           'Sexo'=>'required',
           //'IdentidadGenero'=>'string',
           'FechaNacimiento'=>'required',
@@ -96,7 +96,7 @@ class FichaController extends Controller
           //'ProfesionEncargado'=>'string',
           //'DireccionEncargado'=>'string',
           'ParentescoEncargado'=>'required',
-          
+
           //Matricula
           'Turno'=>'required',
           'Modalidad'=>'required',
@@ -129,7 +129,7 @@ class FichaController extends Controller
           //'CodigoSede'=>'string',
           //'Sede'=>'string'
         ]);
-        
+
         $alumno= new DatosAlumno();
 
         //Alumnosfr
@@ -211,7 +211,7 @@ class FichaController extends Controller
 
 
         $alumno->save();
-        return redirect()->route('Ficha.index');
+        return redirect()->route('Ficha.index')->with('status', 'Ficha registrada correctamente.');
     }
 
     /**
@@ -247,7 +247,7 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
-      
+
       //$preregistro= Preregistro::find($id);
       $alumno=  DatosAlumno::find($id);
 
@@ -330,7 +330,7 @@ class FichaController extends Controller
 
 
       $alumno->save();
-      return redirect()->route('Ficha.index');
+      return redirect()->route('Ficha.index')->with('status', 'Ficha modificada correctamente.');
     }
 
     /**
@@ -342,6 +342,6 @@ class FichaController extends Controller
     public function destroy($id)
     {
       $alumno=DatosAlumno::destroy($id);
-      return redirect()->route('Ficha.index');
+      return redirect()->route('Ficha.index')->with('status', 'Ficha eliminada correctamente.');
     }
 }

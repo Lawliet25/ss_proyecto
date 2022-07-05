@@ -40,9 +40,10 @@
 
                   <h3>Lista de alumnos preregistrados</h3>
                     <a type="button" class="btn btn-primary btn-md" href="{{route('pre.create')}}">Nuevo preregistro</a>
-                <br>
+                <br><br>
                 @if (session('status'))
                   <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
                     {{session('status')}}
                   </div>
                 @endif
@@ -74,7 +75,7 @@
                         <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('pre.destroy', $preregistro->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
                         <a title="Añadir documentos" class="btn btn-success btn-circle" href="{{route('pre.documentos', $preregistro->id)}}"><span class="	glyphicon glyphicon-file"></span></a>
                         <?php if (($preregistro->DocumentoPdf)!=null): ?>
-                        <a title="Ver documento" class="btn btn-warning btn-circle" href="../../storage/app/public/archivos/{{$preregistro->DocumentoPdf}}"><span class="	glyphicon glyphicon-eye-open"></span></a>
+                        <a title="Ver documento" class="btn btn-warning btn-circle" target="_blank" href="../../storage/app/public/archivos/{{$preregistro->DocumentoPdf}}"><span class="	glyphicon glyphicon-eye-open"></span></a>
                         <?php endif; ?>
 
                     </td>

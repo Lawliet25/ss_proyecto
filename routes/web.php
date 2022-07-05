@@ -71,7 +71,7 @@ Route::post('login',function(){
       return redirect('pre/index');
     }
     else {
-        return redirect('login');
+        return redirect('login')->with('status', 'Verifique sus credenciales.');
     }
 
 });
