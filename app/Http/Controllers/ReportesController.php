@@ -16,6 +16,8 @@ class ReportesController extends Controller
      */
     public function index(Request $request)
     {
+      /* Se crea vista index con los componentes de filtro 
+      y en la data se hace una consulta join para mostrar los datos en una tabla */
       $buscar = $request->get('buscarpor');
       $tipo = $request->get('tipo');
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
@@ -27,6 +29,7 @@ class ReportesController extends Controller
 
                return view('reportes.index',['buscar'=>$buscar],['data'=>$data]);
     }
+    /* Generando pdf de septimo grado */
     public function pdf7()
     {
 
@@ -40,6 +43,7 @@ class ReportesController extends Controller
               return $pdf->stream();
 
     }
+    /* Generando pdf de octavo grado */
     public function pdf8()
     {
 
@@ -53,6 +57,7 @@ class ReportesController extends Controller
               return $pdf->stream();
 
     }
+    /* Generando pdf de noveno grado */
     public function pdf9()
     {
 
@@ -66,6 +71,7 @@ class ReportesController extends Controller
               return $pdf->stream();
 
     }
+    /* Generando pdf de primer año */
     public function pdf1()
     {
 
@@ -78,6 +84,7 @@ class ReportesController extends Controller
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
     }
+    /* Generando pdf de segundo año */
     public function pdf2()
     {
 

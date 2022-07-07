@@ -16,23 +16,21 @@ class FichaController extends Controller
      */
     public function index(Request $request)
     {
+      /*En esta función se muestran los resultados de la consulta 
+      a la base de datos*/
       $preregistros=Preregistro::all();
       $alumnos=DatosAlumno::all();
       $sedes=SedesModel::all();
       $buscar = $request->get('buscarpor');
       $tipo = $request->get('tipo');
       $tipo2 = DatosAlumno::get('Sede');
-      //$preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(5);
-      //return view('Ficha.index',['alumnos'=>$alumnos]);
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
                 'datosalumnofr.PersonaRegistro','datosalumnofr.Sede','datosalumnofr.GradoMatricular')
               ->Buscarpor($tipo, $buscar)
               ->paginate(10);
-
                return view('Ficha.index',['buscar'=>$buscar],['data'=>$data],['buscar'=>$buscar]);
-
     }
 
     /**
@@ -42,10 +40,10 @@ class FichaController extends Controller
      */
     public function create($id)
     {
-        //$preregistro=Preregistro::find($id);
-        //$preregistros=Preregistro::pluck('id');
+        /*Redireccion a la vista Create de Ficha Grande 
+        */
         $preregistro=Preregistro::find($id);
-        return view('Ficha.create', compact('preregistro'));
+        return view('Ficha.create', compact('preregistro'));//El atributo compact es para guardar id de preregistro y concatenar con el matriculado.
     }
 
     /**
@@ -56,30 +54,25 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
+        /* Validaciones de los campos requeridos 
+        para el llenado de ficha grande  */
         $request->validate([
 
           //Alumnosfr
           'Sexo'=>'required',
-          //'IdentidadGenero'=>'string',
           'FechaNacimiento'=>'required',
           'Nacionalidad'=>'required',
           'EstadoFamiliar'=>'required',
           'MedioTransporte'=>'required',
           'DistanciaSede'=>['required','string'],
           'Trabaja'=>'required',
-          //'Ocupacion'=>'string',
           'Discapacidad'=>'required',
-          //'TipoDiscapacidad'=>'string',
           'Retornado'=>'required',
-          //'Pais'=>'string',
           'ConvivenciaFamiliar'=>'required',
           'DependenciaEconomica'=>'required',
           'NumFamiliares'=>'required',
           'Enfermedades'=>['required','string'],
-          //'Medicamentos'=>'string',
           'FechaFR'=>'required',
-          //'EspecifiqueConv'=>'string',
-          //'EspecifiqueEcon'=>'string',
 
           //Historial
           'InstitucionAcademica'=>'required',
@@ -90,11 +83,6 @@ class FichaController extends Controller
           //Encargado
           'NombresEncargado'=>['required','string'],
           'ApellidosEncargado'=>['required','string'],
-          //'DUIEncargado'=>'string',
-          //'LugarTrabajoEncargado'=>'string',
-          //'TelefonoEncargado'=>'string',
-          //'ProfesionEncargado'=>'string',
-          //'DireccionEncargado'=>'string',
           'ParentescoEncargado'=>'required',
 
           //Matricula
@@ -104,7 +92,6 @@ class FichaController extends Controller
           'TipoIngreso'=>'required',
           'GradoMatricular'=>'required',
           'Seccion'=>'required',
-          //'DatosAdicionales'=>'string',
 
           //Residencia
           'Direccion'=>['required','string'],
@@ -116,20 +103,10 @@ class FichaController extends Controller
           //Hijos
           'CantidadHijos'=>'required',
           'PersonaRegistro'=>['required','string'],
-          //'Edad1'=>'string',
-          //'Sexo1'=>'string',
-          //'Edad2'=>'string',
-          //'Sexo2'=>'string',
-          //'Edad3'=>'string',
-          //'Sexo3'=>'string',
-          //'Edad4'=>'string',
-          //'Sexo4'=>'string',
-
-          //Sede
-          //'CodigoSede'=>'string',
-          //'Sede'=>'string'
         ]);
 
+        /* Creando el objeto alumno con campos de la base de datos
+        y haciendo el insert */
         $alumno= new DatosAlumno();
 
         //Alumnosfr
@@ -211,7 +188,7 @@ class FichaController extends Controller
 
 
         $alumno->save();
-        return redirect()->route('Ficha.index')->with('status', 'Ficha registrada correctamente.');
+        return redirect()->route('Ficha.index')->with('status', 'Ficha registrada correctamente.');//Redireccion a vista index de alumnos matriculados junto con alerta
     }
 
     /**
@@ -233,7 +210,7 @@ class FichaController extends Controller
      */
     public function edit($id)
     {
-      //$preregistro = Preregistro::all();
+      /* Se redirige a vista edit de ficha grande */
       $alumno=DatosAlumno::find($id);
       return view('Ficha.edit', compact('alumno'));
     }
@@ -247,8 +224,10 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-      //$preregistro= Preregistro::find($id);
+      
+        /* Buscando el objeto alumno ya existente con campos de la base de datos
+        y haciendo el update*/
+      
       $alumno=  DatosAlumno::find($id);
 
       //Alumnosfr
@@ -330,7 +309,7 @@ class FichaController extends Controller
 
 
       $alumno->save();
-      return redirect()->route('Ficha.index')->with('status', 'Ficha modificada correctamente.');
+      return redirect()->route('Ficha.index')->with('status', 'Ficha modificada correctamente.');//Redireccion a vista index de alumnos matriculados junto con alerta
     }
 
     /**
@@ -342,6 +321,6 @@ class FichaController extends Controller
     public function destroy($id)
     {
       $alumno=DatosAlumno::destroy($id);
-      return redirect()->route('Ficha.index')->with('status', 'Ficha eliminada correctamente.');
+      return redirect()->route('Ficha.index')->with('status', 'Ficha eliminada correctamente.');//Redireccion a vista index de alumnos matriculados junto con alerta
     }
 }

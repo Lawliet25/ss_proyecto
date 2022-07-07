@@ -16,9 +16,6 @@ class LoginController extends Controller
         return view('Login.index');
     }
 
-    public function login(Request $request){
-        return
-    }
 
     /**
      * Show the form for creating a new resource.
