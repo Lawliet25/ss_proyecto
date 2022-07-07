@@ -17,7 +17,7 @@
                   </div>
                 @endif
 
-                <br>
+
                 <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
                     <thead >
                         <tr>

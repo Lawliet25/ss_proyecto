@@ -29,7 +29,7 @@ class FichaController extends Controller
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
                 'datosalumnofr.PersonaRegistro','datosalumnofr.Sede','datosalumnofr.GradoMatricular')
               ->Buscarpor($tipo, $buscar)
-              ->paginate(5);
+              ->paginate(10);
 
                return view('Ficha.index',['buscar'=>$buscar],['data'=>$data],['buscar'=>$buscar]);
 

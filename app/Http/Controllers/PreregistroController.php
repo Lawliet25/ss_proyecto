@@ -23,7 +23,7 @@ class PreregistroController extends Controller
         return view('pre.index',['preregistros'=>$preregistros], ['search'=>$query]);*/
         $buscar = $request->get('buscarpor');
         $tipo = $request->get('tipo');
-        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(5);
+        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(10);
         return view('pre.index',['preregistros'=>$preregistros],['buscar'=>$buscar]);
       }
       //$preregistros=Preregistro::paginate(5);

@@ -155,7 +155,7 @@
                             let inputocupacion;
                             selectTrabaja=document.getElementById("selectTrabaja");
                             inputocupacion=document.getElementById("Ocupacion");
-                            
+
                             selectTrabaja.onclick=function(e){
                             if(selectTrabaja.value=="Sí"){
                                 inputocupacion.disabled=false;
@@ -187,7 +187,7 @@
                             let inputdisca;
                             selectDisca=document.getElementById("selectDisca");
                             inputdisca=document.getElementById("TipoDiscapacidad");
-                            
+
                             selectDisca.onclick=function(e){
                             if(selectDisca.value=="Sí"){
                                 inputdisca.disabled=false;
@@ -213,13 +213,13 @@
                              <label for="inputEmail4">País:</label>
                              <input value="{{$alumno->PaisRetornado}}" type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" disabled>
                          </div>
-                         
+
                          <script>
                             let selectRetor;
                             let inputretor;
                             selectRetor=document.getElementById("selectRetor");
                             inputretor=document.getElementById("PaisRetornado");
-                            
+
                             selectRetor.onclick=function(e){
                             if(selectRetor.value=="Sí"){
                                 inputretor.disabled=false;
@@ -430,7 +430,7 @@
                             let input;
                             otros=document.getElementById("ConvivenciaFamiliar");
                             input=document.getElementById("EspecifiqueConv");
-                            
+
                             otros.onclick=function(e){
                             if(otros.value=="Otros"){
                                 input.disabled=false;
@@ -467,7 +467,7 @@
                             let input2;
                             otrosE=document.getElementById("DependenciaEconomica");
                             input2=document.getElementById("EspecifiqueEcon");
-                            
+
                             otrosE.onclick=function(e){
                             if(otrosE.value=="Otros"){
                                 input2.disabled=false;
@@ -560,7 +560,7 @@
                         Hijo3 = document.getElementById("Hijo3");
                         Hijo4 = document.getElementById("Hijo4");
                         select = document.getElementById("selectHijos");
-                        
+
                         Hijo1.style.display="none";
                                 Hijo2.style.display="none";
                                 Hijo3.style.display="none";
@@ -570,7 +570,7 @@
                         }
                         select.onclick=function(e){
                             datos();
-                            
+
                         }
                     function datos(){
                         if(select.value==""){
@@ -723,8 +723,8 @@
                                  <option>7° grado</option>
                                  <option>8° grado</option>
                                  <option>9° grado</option>
-                                 <option>1er año</option>
-                                 <option>2do año</option>
+                                 <option>Primer año</option>
+                                 <option>Segundo año</option>
                              </select>
                              </div>
 

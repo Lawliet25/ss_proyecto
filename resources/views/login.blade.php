@@ -3,12 +3,7 @@
 @section('title','Formulario de preregistro')
 
 @section('content')
-@if (session('status'))
-  <div style="width:390px; margin-left:31%; margin-top:40px;" class="alert alert-danger">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    {{session('status')}}
-  </div>
-@endif
+
         <div class="form-body">
 
             <img src="{{asset('iniciar-sesion.png')}}" alt="">
@@ -19,6 +14,12 @@
                 <button>Iniciar Sesión</button>
 
             </form>
+            @if (session('status'))
+              <div style="width:78%; display: block; margin: auto;" class="alert alert-danger">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                {{session('status')}}
+              </div>
+            @endif
         </div>
 
         <style media="screen">
@@ -33,6 +34,7 @@
 
             background-color:#003566;
             width: 400px;
+            height: 450px;
             min-width: 300px;
             border-radius: 10px;
             border-top-left-radius: 50px;
@@ -72,7 +74,7 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: transparent;
             border-top-left-radius: 10px;
-            font-size: 1rem;
+            font-size: 12px;
             outline: none;
         }
 
@@ -82,7 +84,7 @@
         }
 
         ::placeholder{
-            font-size: 1rem;
+            font-size: 12px;
             color: #fff;
         }
 
@@ -98,7 +100,7 @@
             display: block;
             margin: auto;
             margin-top: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 18px;
             height: 40px;
             width: 78%;
             background: transparent;

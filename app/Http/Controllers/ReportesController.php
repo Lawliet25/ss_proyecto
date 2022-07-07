@@ -23,7 +23,7 @@ class ReportesController extends Controller
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
               ->Buscarpor($tipo, $buscar)
-              ->paginate(5);
+              ->paginate(500);
 
                return view('reportes.index',['buscar'=>$buscar],['data'=>$data]);
     }
@@ -35,7 +35,7 @@ class ReportesController extends Controller
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
               ->where('GradoMatricular', 'LIKE', '7° grado')
-              ->paginate(5);
+              ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
 
@@ -48,7 +48,7 @@ class ReportesController extends Controller
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
               ->where('GradoMatricular', 'LIKE', '8° grado')
-              ->paginate(5);
+              ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
 
@@ -61,7 +61,7 @@ class ReportesController extends Controller
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
               ->where('GradoMatricular', 'LIKE', '9° grado')
-              ->paginate(5);
+              ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
 
@@ -73,8 +73,8 @@ class ReportesController extends Controller
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '1er año')
-              ->paginate(5);
+              ->where('GradoMatricular', 'LIKE', '1er año')->orWhere('GradoMatricular','LIKE','PRIMER AÑO')
+              ->paginate(1000);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
     }
@@ -85,8 +85,8 @@ class ReportesController extends Controller
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
                 'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '2do año')
-              ->paginate(5);
+              ->where('GradoMatricular', 'LIKE', '2do año')->orWhere('GradoMatricular','LIKE','SEGUNDO AÑO')
+              ->paginate(1000);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
     }

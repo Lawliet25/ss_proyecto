@@ -112,7 +112,7 @@
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Nacionalidad</label>
                              <select class="form-control" name="Nacionalidad">
-                                
+
                                  <option>{{old('Nacionalidad')}}</option>
                                  <option>Salvadoreña</option>
                                  <option>Extranjera</option>
@@ -125,7 +125,7 @@
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Estado familiar:</label>
                            <select id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
-                            
+
                              <option>{{old('EstadoFamiliar')}}</option>
                              <option>Soltero(a)</option>
                              <option>Casado(a)</option>
@@ -141,7 +141,7 @@
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Medio de transporte:</label>
                              <select class="form-control" name="MedioTransporte">
-                                
+
                                  <option>{{old('MedioTransporte')}}</option>
                                  <option>Propio</option>
                                  <option>Público</option>
@@ -166,7 +166,7 @@
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Trabaja:</label>
                            <select class="form-control" name="Trabaja" id="selectTrabaja">
-                            
+
                                <option>{{old('Trabaja')}}</option>
                                <option>Sí</option>
                                <option>No</option>
@@ -188,7 +188,7 @@
                             let inputocupacion;
                             selectTrabaja=document.getElementById("selectTrabaja");
                             inputocupacion=document.getElementById("Ocupacion");
-                            
+
                             selectTrabaja.onclick=function(e){
                             if(selectTrabaja.value=="Sí"){
                                 inputocupacion.disabled=false;
@@ -204,7 +204,7 @@
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Tiene discapacidad:</label>
                            <select class="form-control" name="Discapacidad" id="selectDisca">
-                            
+
                                <option>{{old('Discapacidad')}}</option>
                                <option>Sí</option>
                                <option>No</option>
@@ -223,7 +223,7 @@
                             let inputdisca;
                             selectDisca=document.getElementById("selectDisca");
                             inputdisca=document.getElementById("TipoDiscapacidad");
-                            
+
                             selectDisca.onclick=function(e){
                             if(selectDisca.value=="Sí"){
                                 inputdisca.disabled=false;
@@ -239,7 +239,7 @@
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Retornado:</label>
                            <select class="form-control" name="Retornado" id="selectRetor">
-                            
+
                                <option>{{old('Retornado')}}</option>
                                <option>Sí</option>
                                <option>No</option>
@@ -253,13 +253,13 @@
                              <label for="inputEmail4">País:</label>
                              <input type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" value="{{old('PaisRetornado')}}" disabled>
                          </div>
-                         
+
                          <script>
                             let selectRetor;
                             let inputretor;
                             selectRetor=document.getElementById("selectRetor");
                             inputretor=document.getElementById("PaisRetornado");
-                            
+
                             selectRetor.onclick=function(e){
                             if(selectRetor.value=="Sí"){
                                 inputretor.disabled=false;
@@ -338,7 +338,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Parentesco:</label>
                              <select class="form-control" name="ParentescoEncargado">
-                                
+
                                  <option>{{old('ParentescoEncargado')}}</option>
                                  <option>Madre</option>
                                  <option>Padre</option>
@@ -396,7 +396,7 @@
                       <div class="form-group col-md-6">
                          <label for="inputEmail4">Zona de residencia:</label>
                          <select class="form-control" name="Zona">
-                            
+
                              <option>{{old('Zona')}}</option>
                              <option>Rural</option>
                              <option>Urbana</option>
@@ -417,7 +417,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Departamento</label>
                              <select class="form-control" name="Departamento">
-                                
+
                                <option>{{old('Departamento')}}</option>
                                <?php
                                 $query = $db->prepare("SELECT * FROM departamento");
@@ -479,7 +479,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Convivencia:</label>
                              <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
-                                
+
                              <option>{{old('ConvivenciaFamiliar')}}</option>
                              <option>Con madre</option>
                              <option>Con padre</option>
@@ -502,7 +502,7 @@
                             let input;
                             otros=document.getElementById("ConvivenciaFamiliar");
                             input=document.getElementById("EspecifiqueConv");
-                            
+
                             otros.onclick=function(e){
                             if(otros.value=="Otros"){
                                 input.disabled=false;
@@ -519,7 +519,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">De quién depende económicamente:</label>
                              <select class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
-                                
+
                                  <option>{{old('DependenciaEconomica')}}</option>
                                  <option>Padre</option>
                                  <option>Madre</option>
@@ -536,13 +536,13 @@
                              <label for="inputEmail4">Especifique:</label>
                              <input type="text" class="form-control"  name="EspecifiqueEcon" id="EspecifiqueEcon" placeholder="Especifique" value="{{old('EspecifiqueEcon')}}" disabled>
                          </div>
-                         
+
                          <script>
                             let otrosE;
                             let input2;
                             otrosE=document.getElementById("DependenciaEconomica");
                             input2=document.getElementById("EspecifiqueEcon");
-                            
+
                             otrosE.onclick=function(e){
                             if(otrosE.value=="Otros"){
                                 input2.disabled=false;
@@ -589,7 +589,7 @@
                              <input type="text" class="form-control" name="Edad1" placeholder="Edad" value="{{old('Edad1')}}">
                              <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo1">
-                                
+
                                  <option>{{old('Sexo1')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
@@ -601,7 +601,7 @@
                              <input type="text" class="form-control" name="Edad2" placeholder="Edad" value="{{old('Edad2')}}">
                              <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo2">
-                                
+
                                  <option>{{old('Sexo2')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
@@ -618,7 +618,7 @@
                              <input type="text" class="form-control" name="Edad3" placeholder="Edad" value="{{old('Edad3')}}">
                              <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo3">
-                                
+
                                  <option>{{old('Sexo3')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
@@ -630,7 +630,7 @@
                              <input type="text" class="form-control" name="Edad4"  placeholder="Edad" value="{{old('Edad4')}}">
                              <label for="inputEmail4">Sexo</label>
                              <select class="form-control" name="Sexo4">
-                                
+
                                  <option>{{old('Sexo4')}}</option>
                                  <option>Femenino</option>
                                  <option>Masculino</option>
@@ -649,7 +649,7 @@
                         Hijo3 = document.getElementById("Hijo3");
                         Hijo4 = document.getElementById("Hijo4");
                         select = document.getElementById("selectHijos");
-                        
+
                         Hijo1.style.display="none";
                                 Hijo2.style.display="none";
                                 Hijo3.style.display="none";
@@ -659,7 +659,7 @@
                         }
                         select.onclick=function(e){
                             datos();
-                            
+
                         }
                     function datos(){
                         if(select.value==""){
@@ -710,7 +710,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Último grado cursado:</label>
                              <select id="Grado" name="GradoCursado" class="form-control">
-                                
+
                                <option>{{old('GradoCursado')}}</option>
                                <option>6° grado</option>
                                <option>7° grado</option>
@@ -737,7 +737,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Institución en que lo cursó:</label>
                              <select class="form-control" name="InstitucionAcademica">
-                                
+
                                  <option>{{old('InstitucionAcademica')}}</option>
                                  <option>Modalidad flexible</option>
                                  <option>Regular</option>
@@ -766,7 +766,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Turno:</label>
                              <select class="form-control" name="Turno">
-                                
+
                                  <option>{{old('Turno')}}</option>
                                  <option>Mañana</option>
                                  <option>Tarde</option>
@@ -798,7 +798,7 @@
                       <div class="form-group col-md-6">
                              <label for="inputEmail4">Modalidad de atención:</label>
                              <select class="form-control" name="Modalidad">
-                                
+
                                  <option>{{old('Modalidad')}}</option>
                                  <option>Nocturno</option>
                                  <option>Distancia</option>
@@ -817,7 +817,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Tipo de ingreso:</label>
                              <select class="form-control" name="TipoIngreso">
-                                
+
                                  <option>{{old('TipoIngreso')}}</option>
                                  <option>Certificado Escolar</option>
                                  <option>Certificación de Notas</option>
@@ -838,13 +838,13 @@
                           <div class="form-group col-md-6">
                              <label for="">Grados disponibles:</label>
                               <select class="form-control" name="GradoMatricular">
-                                
+
                                  <option>{{old('GradoMatricular')}}</option>
                                  <option>7° grado</option>
                                  <option>8° grado</option>
                                  <option>9° grado</option>
-                                 <option>1er año</option>
-                                 <option>2do año</option>
+                                 <option>Primer año</option>
+                                 <option>Segundo año</option>
                              </select>
                              @error ('GradoMatricular')
                                 <span class="error text-danger">{{$message}}</span>
@@ -854,7 +854,7 @@
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Sección:</label>
                              <select class="form-control" name="Seccion">
-                                
+
                                  <option>{{old('Seccion')}}</option>
                                  <option>A</option>
                                  <option>B</option>
