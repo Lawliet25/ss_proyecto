@@ -14,7 +14,8 @@
           <div class="panel-heading">Formulario de preregistro</div>
           <div class="panel-body">
 
-        <div class="form-row">
+            <!---Primera fila"--->
+        <div class="form-group">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Nombres</label>
             <input value="{{$preregistro->Nombres}}" type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Digite los nombres">
@@ -24,6 +25,8 @@
             <input value="{{$preregistro->Apellidos}}" type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Digite los apellidos">
           </div>
         </div>
+
+        <!---Segunda fila"--->
         <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputAddress">Grado al que se inscribe</label>

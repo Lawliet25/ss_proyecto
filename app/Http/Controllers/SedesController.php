@@ -16,6 +16,7 @@ class SedesController extends Controller
      */
     public function index()
     {
+      /* Creando vista index de todas las sedes existentes */
           $sedes=SedesModel::paginate(10);
           return view('sedes.index',['sedes'=>$sedes]);
     }
@@ -27,6 +28,7 @@ class SedesController extends Controller
      */
     public function create()
     {
+      /* Creando vista create de sedes */
       $sede=SedesModel::all();
       return view('sedes.create');
     }
@@ -39,6 +41,13 @@ class SedesController extends Controller
      */
     public function store(Request $request)
     {
+      /* Validando campos de sedes para su insercion en base de datos */
+      $request->validate([
+        'Sede'=>['required','string'],
+        'Departamento'=>'required',
+        'Municipio'=>['required','string']
+      ]);
+
       $sede= new SedesModel();
 
       $sede->CodigoSede=$request->CodigoSede;
@@ -46,7 +55,7 @@ class SedesController extends Controller
       $sede->Departamento=$request->Departamento;
       $sede->Municipio=$request->Municipio;
       $sede->save();
-      return redirect()->route('sedes.index');
+      return redirect()->route('sedes.index')->with('status', 'Sede registrada correctamente.');//Redireccion a vista index sedes junto con alerta
     }
 
     /**
@@ -88,7 +97,7 @@ class SedesController extends Controller
       $sede->Departamento=$request->Departamento;
       $sede->Municipio=$request->Municipio;
       $sede->save();
-      return redirect()->route('sedes.index');
+      return redirect()->route('sedes.index')->with('status', 'Sede modificada correctamente.');
     }
 
     /**
@@ -100,6 +109,6 @@ class SedesController extends Controller
     public function destroy($id)
     {
       $sede=SedesModel::destroy($id);
-      return redirect()->route('sedes.index');
+      return redirect()->route('sedes.index')->with('status', 'Sede eliminada correctamente.');
     }
 }

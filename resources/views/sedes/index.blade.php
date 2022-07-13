@@ -9,14 +9,15 @@
                 <div class="col-md-10">
                     <h3>Lista de sedes registradas</h3>
                     <a type="button" class="btn btn-primary btn-md" href="{{route('sedes.create')}}">Nueva sede</a>
-                <br>
+                <br><br>
                 @if (session('status'))
                   <div class="alert alert-success">
+                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     {{session('status')}}
                   </div>
                 @endif
 
-                <br>
+
                 <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
                     <thead >
                         <tr>

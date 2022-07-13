@@ -41,8 +41,6 @@
             <tr>
                 <th>NIE</th>
                 <th>Nombre completo</th>
-                <th>Sexo</th>
-                <th>Email</th>
                 <th>Grado</th>
                 <th>Sección</th>
                 <th>Turno</th>
@@ -57,8 +55,6 @@
         <tr>
         <td>{{$dato->NIE}}</td>
         <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
-        <td>{{$dato->Sexo}}</td>
-        <td>{{$dato->Email}}</td>
         <td>{{$dato->GradoMatricular}}</td>
         <td>{{$dato->Seccion}}</td>
         <td>{{$dato->Turno}}</td>

@@ -15,20 +15,13 @@ class PreregistroController extends Controller
      */
     public function index(Request $request)
     {
-      /*if ($request) {
-        $query = trim($request->get('search'));
-        $preregistros = Preregistro::where('Nombres','LIKE','%'.$query.'%')
-        ->orderBy('id', 'asc')
-        ->paginate(5);
-        return view('pre.index',['preregistros'=>$preregistros], ['search'=>$query]);*/
+        /* Se muestran los datos existentes en base de datos 
+        de alumnos preregistrados */
         $buscar = $request->get('buscarpor');
         $tipo = $request->get('tipo');
-        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(5);
+        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(10);
         return view('pre.index',['preregistros'=>$preregistros],['buscar'=>$buscar]);
       }
-      //$preregistros=Preregistro::paginate(5);
-      //$alumnos= DatosAlumno::all();
-      //return view('pre.index',['preregistros'=>$preregistros]);
 
     /**
      * Show the form for creating a new resource.
@@ -37,6 +30,7 @@ class PreregistroController extends Controller
      */
     public function create()
     {
+        /* Se redirige a vista create de preregistro */
         $alumno=DatosAlumno::all();
         return view('pre.create');
 
@@ -50,17 +44,20 @@ class PreregistroController extends Controller
      */
     public function store(Request $request)
     {
+      /* Se validan los campos a insertar en base de datos */
       $request->validate([
         'Nombres'=>['required','string'],
         'Apellidos'=>['required','string'],
         'NIE'=>['unique:preregistro', 'required'],
-        'DUI'=>['required', 'regex: /^[0][0-9]{7}-[0-9]{1}/','unique:preregistro'],
+        'DUI'=>['required', 'regex: /^[0-9]{8}-[0-9]{1}/','unique:preregistro'],
         'FechaRecepcion'=>'required',
         'Estado'=>'required',
         'PersonaRecibido'=>'required',
         'Grado'=>'required'
       ]);
 
+      /* Se crea el objeto preregistro y se insertan 
+      los campos ya validados en base de datos */
       $preregistro= new Preregistro();
 
       $preregistro->Nombres=$request->Nombres;
@@ -73,7 +70,7 @@ class PreregistroController extends Controller
       $preregistro->Grado=$request->Grado;
       $preregistro->Observacion=$request->Observacion;
       $preregistro->save();
-      return redirect()->route('pre.index');
+      return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');//Redirecciona a vista index junto con alerta 
     }
 
     /**
@@ -95,6 +92,8 @@ class PreregistroController extends Controller
      */
     public function edit($id)
     {
+      /* Se redirige a vista edit y se concatena
+       el id del alumno que se va a modificar */
       $preregistro=Preregistro::find($id);
       return view('pre.edit', compact('preregistro'));
     }
@@ -108,6 +107,8 @@ class PreregistroController extends Controller
      */
     public function update(Request $request, $id)
     {
+      /* Se busca el objeto del preregistro 
+      mediante el id y se modifican los campos */
       $preregistro= Preregistro::find($id);
 
       $preregistro->Nombres=$request->Nombres;
@@ -134,6 +135,7 @@ class PreregistroController extends Controller
         'DocumentoPdf'=>['mimes:pdf']
       ]);
 
+      //Validando que el archivo ingresado sea con extension pdf 
       if($request->hasFile('DocumentoPdf')){
         $preregistro['DocumentoPdf'] = time() . '_' . $request->file('DocumentoPdf')->getClientOriginalName();
         $request->file('DocumentoPdf')
@@ -141,8 +143,7 @@ class PreregistroController extends Controller
       }
 
       $preregistro->save();
-      return redirect()->route('pre.index');
-      return redirect()->route('editoriales.index')->with('status', alertify.success('Success notification message.'));
+      return redirect()->route('pre.index')->with('status', 'Preregistro modificado correctamente.');//Redirecciona a vista index junto con alerta
 
     }
 
@@ -161,7 +162,7 @@ class PreregistroController extends Controller
     public function documentos($id)
     {
       $preregistro=Preregistro::find($id);
-      return view('pre.documentos', compact('preregistro'));
+      return view('pre.documentos', compact('preregistro'));//Redirecciona a vista index junto con id de preregistro
     }
 
 }

@@ -15,7 +15,7 @@
                     <option>Apellidos</option>
                     <option>NIE</option>
                     <option>Sede</option>
-                    <option>Grado</option>
+                    <option value="GradoMatricular">Grado</option>
                   </select>
                 </div>
                 <div class="form-group col-md-3" style="margin-top:25px;">
@@ -42,11 +42,12 @@
 
                 @if (session('status'))
                   <div class="alert alert-success">
+                  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
                     {{session('status')}}
                   </div>
                 @endif
 
-                <br>
+                
                 <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
                     <thead>
                         <tr>
