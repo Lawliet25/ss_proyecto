@@ -32,11 +32,11 @@
           <label for="inputAddress">Grado al que se inscribe</label>
           <select id="Grado" name="Grado" class="form-control" value="{{$preregistro->Grado}}">
             <option>{{$preregistro->Grado}}</option>
-            <option>7° grado</option>
-            <option>8° grado</option>
-            <option>9° grado</option>
-            <option>1er año</option>
-            <option>2do año</option>
+            <option>7° GRADO</option>
+            <option>8° GRADO</option>
+            <option>9° GRADO</option>
+            <option>1ER AÑO</option>
+            <option>2DO AÑO</option>
           </select>
         </div>
         <div class="form-group col-md-6">
@@ -64,8 +64,11 @@
               <label for="inputZip">Estado del estudiante</label>
               <select  id="Estado" name="Estado" class="form-control">
                 <option>{{$preregistro->Estado}}</option>
-                <option>Aprobado</option>
-                <option>Reprobado</option>
+                <option>ACTIVO</option>
+                <option>INACIVO</option>
+                <option>APROBADO</option>
+                <option>REPROBADO</option>
+                <option>DESERTOR</option>
 
               </select>
 

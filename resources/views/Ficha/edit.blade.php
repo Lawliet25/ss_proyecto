@@ -68,8 +68,8 @@
                              <label for="inputAddress">Sexo:</label>
                              <select id="Sexo" name="Sexo" class="form-control">
                                  <option>{{$alumno->Sexo}}</option>
-                                 <option>Masculino</option>
-                                 <option>Femenino</option>
+                                 <option>MASCULINO</option>
+                                 <option>FEMENINO</option>
                              </select>
                          </div>
 
@@ -77,11 +77,12 @@
                               <label for="inputAddress">Identidad de género:</label>
                               <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
                              <option>{{$alumno->IdentidadGenero}}</option>
-                             <option>Lesbianas</option>
-                              <option>Gays</option>
-                             <option>Bisexuales</option>
-                             <option>Transexuales</option>
-                              <option>Intersexuales</option>
+                             <option>LESBIANAS</option>
+                             <option>GAYS</option>
+                             <option>BISEXUALES</option>
+                             <option>TRANSEXUALES</option>
+                             <option>INTERSEXUALES</option>
+                             <option>NO APLICA</option>
                              </select>
                          </div>
                      </div>
@@ -100,8 +101,8 @@
                              <label for="inputEmail4">Nacionalidad</label>
                              <select class="form-control" name="Nacionalidad">
                                  <option>{{$alumno->Nacionalidad}}</option>
-                                 <option>Salvadoreña</option>
-                                 <option>Extranjera</option>
+                                 <option>SALVADOREÑA</option>
+                                 <option>EXTRANJERA</option>
                              </select>
                          </div>
 
@@ -109,9 +110,9 @@
                            <label for="inputAddress">Estado familiar:</label>
                            <select id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
                              <option>{{$alumno->EstadoFamiliar}}</option>
-                             <option>Soltero(a)</option>
-                             <option>Casado(a)</option>
-                             <option>Acompañado(a)</option>
+                             <option>SOLTERO(A)</option>
+                             <option>CASADO(A)</option>
+                             <option>ACOMPAÑADO(A)</option>
                            </select>
                           </div>
                      </div>
@@ -122,10 +123,10 @@
                              <label for="inputEmail4">Medio de transporte:</label>
                              <select class="form-control" name="MedioTransporte">
                                  <option>{{$alumno->MedioTransporte}}</option>
-                                 <option>Propio</option>
-                                 <option>Público</option>
-                                 <option>Familiar</option>
-                                 <option>Peatonal</option>
+                                 <option>PROPIO</option>
+                                 <option>PÚBLICO</option>
+                                 <option>FAMILIAR</option>
+                                 <option>PEATONAL</option>
                              </select>
                          </div>
 
@@ -141,8 +142,8 @@
                            <label for="inputEmail4">Trabaja:</label>
                            <select class="form-control" name="Trabaja" id="selectTrabaja">
                                <option>{{$alumno->Trabaja}}</option>
-                               <option>Sí</option>
-                               <option>No</option>
+                               <option>SÍ</option>
+                               <option>NO</option>
                            </select>
                          </div>
 
@@ -157,7 +158,7 @@
                             inputocupacion=document.getElementById("Ocupacion");
 
                             selectTrabaja.onclick=function(e){
-                            if(selectTrabaja.value=="Sí"){
+                            if(selectTrabaja.value=="SÍ"){
                                 inputocupacion.disabled=false;
                                 }
                             else{
@@ -173,8 +174,8 @@
                            <label for="inputEmail4">Tiene discapacidad:</label>
                            <select class="form-control" name="Discapacidad" id="selectDisca">
                                <option>{{$alumno->Discapacidad}}</option>
-                               <option>Sí</option>
-                               <option>No</option>
+                               <option>SÍ</option>
+                               <option>NO</option>
                            </select>
                          </div>
 
@@ -189,7 +190,7 @@
                             inputdisca=document.getElementById("TipoDiscapacidad");
 
                             selectDisca.onclick=function(e){
-                            if(selectDisca.value=="Sí"){
+                            if(selectDisca.value=="SÍ"){
                                 inputdisca.disabled=false;
                                 }
                             else{
@@ -205,8 +206,8 @@
                            <label for="inputEmail4">Retornado:</label>
                            <select class="form-control" name="Retornado" id="selectRetor">
                                <option>{{$alumno->Retornado}}</option>
-                               <option>Sí</option>
-                               <option>No</option>
+                               <option>SÍ</option>
+                               <option>NO</option>
                            </select>
                          </div>
                          <div class="form-group col-md-6">
@@ -221,7 +222,7 @@
                             inputretor=document.getElementById("PaisRetornado");
 
                             selectRetor.onclick=function(e){
-                            if(selectRetor.value=="Sí"){
+                            if(selectRetor.value=="SÍ"){
                                 inputretor.disabled=false;
                                 }
                             else{
@@ -288,13 +289,13 @@
                              <label for="inputEmail4">Parentesco:</label>
                              <select class="form-control" name="ParentescoEncargado">
                                  <option>{{$alumno->ParentescoEncargado}}</option>
-                                 <option>Madre</option>
-                                 <option>Padre</option>
-                                 <option>Hermano/a</option>
-                                 <option>Tía</option>
-                                 <option>Tío</option>
-                                 <option>Pareja</option>
-                                 <option>Conocido</option>
+                                 <option>MADRE</option>
+                                 <option>PADRE</option>
+                                 <option>HERMANO/A</option>
+                                 <option>TÍA</option>
+                                 <option>TÍO</option>
+                                 <option>PAREJA</option>
+                                 <option>CONOCIDO</option>
                              </select>
                           </div>
                      </div>
@@ -340,8 +341,8 @@
                              <label for="inputEmail4">Zona de residencia:</label>
                                <select class="form-control" name="Zona">
                                   <option>{{$alumno->Zona}}</option>
-                                  <option>Rural</option>
-                                  <option>Urbana</option>
+                                  <option>RURAL</option>
+                                  <option>URBANA</option>
                               </select>
                           </div>
                      </div>
@@ -412,12 +413,12 @@
                              <label for="inputEmail4">Convivencia:</label>
                              <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
                              <option>{{$alumno->ConvivenciaFamiliar}}</option>
-                             <option>Con madre</option>
-                             <option>Con padre</option>
-                             <option>Padre y madre</option>
-                             <option>Con familiar</option>
-                             <option>No vive con familiares</option>
-                             <option>Otros</option>
+                             <option>CON MADRE</option>
+                             <option>CON PADRE</option>
+                             <option>PADRE Y MADRE</option>
+                             <option>CON FAMILIAR</option>
+                             <option>NO VIVE CON FAMILIARES</option>
+                             <option>OTROS</option>
                             </select>
                          </div>
 
@@ -432,7 +433,7 @@
                             input=document.getElementById("EspecifiqueConv");
 
                             otros.onclick=function(e){
-                            if(otros.value=="Otros"){
+                            if(otros.value=="OTROS"){
                                 input.disabled=false;
                                 }
                             else{
@@ -449,11 +450,11 @@
                              <label for="inputEmail4">De quién depende económicamente:</label>
                              <select class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
                                  <option>{{$alumno->DependenciaEconomica}}</option>
-                                 <option>Padre</option>
-                                 <option>Madre</option>
-                                 <option>Padre y madre</option>
-                                 <option>Hermanos</option>
-                                 <option>Otros</option>
+                                 <option>PADRE</option>
+                                 <option>MADRE</option>
+                                 <option>PADRE Y MADRE</option>
+                                 <option>HERMANOS</option>
+                                 <option>OTROS</option>
 
                              </select>
                          </div>
@@ -469,7 +470,7 @@
                             input2=document.getElementById("EspecifiqueEcon");
 
                             otrosE.onclick=function(e){
-                            if(otrosE.value=="Otros"){
+                            if(otrosE.value=="OTROS"){
                                 input2.disabled=false;
                                 }
                             else{
@@ -508,8 +509,8 @@
                              <input value="{{$alumno->Edad1}}" type="text" class="form-control" name="Edad1" placeholder="Edad">
                              <select class="form-control" name="Sexo1">
                                  <option>{{$alumno->Sexo1}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                             </select>
                          </div>
 
@@ -518,8 +519,8 @@
                              <input value="{{$alumno->Edad2}}" type="text" class="form-control" name="Edad2" placeholder="Edad">
                              <select class="form-control" name="Sexo2">
                                  <option>{{$alumno->Sexo2}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                             </select>
                          </div>
                         </div>
@@ -533,8 +534,8 @@
                              <input value="{{$alumno->Edad3}}" type="text" class="form-control" name="Edad3" placeholder="Edad">
                              <select class="form-control" name="Sexo3">
                                  <option>{{$alumno->Sexo3}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                              </select>
                          </div>
 
@@ -543,8 +544,8 @@
                              <input value="{{$alumno->Edad4}}" type="text" class="form-control" name="Edad4"  placeholder="Edad4">
                              <select class="form-control" name="Sexo4">
                                  <option>{{$alumno->Sexo4}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                             </select>
                          </div>
                         </div>
@@ -621,11 +622,11 @@
                              <label for="inputEmail4">Último grado cursado:</label>
                              <select id="Grado" name="GradoCursado" class="form-control">
                                <option>{{$alumno->GradoCursado}}</option>
-                               <option>6° grado</option>
-                               <option>7° grado</option>
-                               <option>8° grado</option>
-                               <option>9° grado</option>
-                               <option>1er año</option>
+                               <option>6° GRADO</option>
+                               <option>7° GRADO</option>
+                               <option>8° GRADO</option>
+                               <option>9° GRADO</option>
+                               <option>PRIMER AÑO</option>
                              </select>
                          </div>
 
@@ -641,9 +642,9 @@
                              <label for="inputEmail4">Institución en que lo cursó:</label>
                              <select class="form-control" name="InstitucionAcademica">
                                  <option>{{$alumno->InstitucionAcademica}}</option>
-                                 <option>Modalidad flexible</option>
-                                 <option>Regular</option>
-                                 <option>Extranjero</option>
+                                 <option>MODALIDAD FLEXIBLE</option>
+                                 <option>REGULAR</option>
+                                 <option>EXTRANJERO</option>
                             </select>
 
                          </div>
@@ -664,10 +665,10 @@
                              <label for="inputEmail4">Turno:</label>
                              <select class="form-control" name="Turno">
                                  <option>{{$alumno->Turno}}</option>
-                                 <option>Mañana</option>
-                                 <option>Tarde</option>
-                                 <option>Mañana y tarde</option>
-                                 <option>Nocturno</option>
+                                 <option>MMAÑANA</option>
+                                 <option>TARDE</option>
+                                 <option>MAÑANA Y TARDE</option>
+                                 <option>NOCTURNO</option>
                             </select>
                          </div>
 
@@ -675,9 +676,9 @@
                              <label for="inputEmail4">Jornada:</label>
                              <select class="form-control" name="Jornada">
                                  <option>{{$alumno->Jornada}}</option>
-                                 <option>Lunes a viernes</option>
-                                 <option>Sábado</option>
-                                 <option>Domingo</option>
+                                 <option>LUNES A VIERNES</option>
+                                 <option>SÁBADO</option>
+                                 <option>DOMINGO</option>
                              </select>
                          </div>
                       </div>
@@ -688,14 +689,14 @@
                              <label for="inputEmail4">Modalidad de atención:</label>
                              <select class="form-control" name="Modalidad">
                                  <option>{{$alumno->Modalidad}}</option>
-                                 <option>Nocturno</option>
-                                 <option>Distancia</option>
-                                 <option>Acelerada</option>
-                                 <option>Semipresencial</option>
-                                 <option>Virtual</option>
-                                 <option>Prueba de suficiencia</option>
-                                 <option>Nivelación académica</option>
-                                 <option>Modalidad flexible integrada</option>
+                                 <option>NOCTURNO</option>
+                                 <option>DISTANCIA</option>
+                                 <option>ACELERADA</option>
+                                 <option>SEMIPRESENCIAL</option>
+                                 <option>VIRTUAL</option>
+                                 <option>PRUEBA DE SUFICIENCIA</option>
+                                 <option>NIVELACIÓN ACADÉMICA</option>
+                                 <option>MODALIDAD FLEXIBLE INTEGRADA</option>
                              </select>
                          </div>
 
@@ -703,10 +704,10 @@
                              <label for="inputEmail4">Tipo de ingreso:</label>
                              <select class="form-control" name="TipoIngreso">
                                  <option>{{$alumno->TipoIngreso}}</option>
-                                 <option>Certificado Escolar</option>
-                                 <option>Certificación de Notas</option>
-                                 <option>Prueba de suficiencia</option>
-                                 <option>Resolución por Equivalencia</option>
+                                 <option>CERTIFICADO ESCOLAR</option>
+                                 <option>CERTIFICACIÓN DE NOTAS</option>
+                                 <option>PRUEBA DE SUFUCIENCIAS</option>
+                                 <option>RESOLUCIÓN POR EQUIVALENCIA</option>
                              </select>
                          </div>
                       </div>
@@ -720,11 +721,11 @@
                          <label for="">Grados disponibles:</label>
                              <select class="form-control" name="GradoMatricular">
                                  <option>{{$alumno->GradoMatricular}}</option>
-                                 <option>7° grado</option>
-                                 <option>8° grado</option>
-                                 <option>9° grado</option>
-                                 <option>Primer año</option>
-                                 <option>Segundo año</option>
+                                 <option>7° GRADO</option>
+                                 <option>8° GRADO</option>
+                                 <option>9° GRADO</option>
+                                 <option>PRIMER AÑO</option>
+                                 <option>SEGUNDO AÑO</option>
                              </select>
                              </div>
 

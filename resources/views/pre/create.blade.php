@@ -40,11 +40,11 @@
           <label for="inputAddress">Grado al que se inscribe</label>
           <select id="Grado" name="Grado" class="form-control">
             <option>{{old('Grado')}}</option>
-            <option>7° grado</option>
-            <option>8° grado</option>
-            <option>9° grado</option>
-            <option>1er año</option>
-            <option>2do año</option>
+            <option>7° GRADO</option>
+            <option>8° GRADO</option>
+            <option>9° GRADO</option>
+            <option>PRIMER AÑO</option>
+            <option>SEGUNDO AÑO</option>
           </select>
           @error ('Grado')
             <span class="error text-danger">{{$message}}</span>
@@ -89,8 +89,11 @@
               <label for="inputZip">Estado del estudiante</label>
               <select id="Estado" name="Estado" class="form-control">
                 <option>{{old('Estado')}}</option>
-                <option>Aprobado</option>
-                <option>Reprobado</option>
+                <option>ACTIVO</option>
+                <option>INACIVO</option>
+                <option>APROBADO</option>
+                <option>REPROBADO</option>
+                <option>DESERTOR</option>
 
               </select>
               @error ('Estado')

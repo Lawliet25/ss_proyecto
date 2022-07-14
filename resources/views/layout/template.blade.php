@@ -24,8 +24,23 @@
 </head>
 <body>
     <style media="screen">
+    table{
+      text-transform: uppercase;
+    }
       a{
         color: #FFD60A;
+      }
+      input{
+        text-transform: uppercase;
+      }
+      .btn-primary{
+        text-transform: capitalize;
+      }
+      textarea{
+        text-transform: uppercase;
+      }
+      option{
+        text-transform: uppercase;
       }
     </style>
     <nav class="navbar navbar-light" style="background-color:#003566;">

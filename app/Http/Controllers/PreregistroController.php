@@ -15,7 +15,7 @@ class PreregistroController extends Controller
      */
     public function index(Request $request)
     {
-        /* Se muestran los datos existentes en base de datos 
+        /* Se muestran los datos existentes en base de datos
         de alumnos preregistrados */
         $buscar = $request->get('buscarpor');
         $tipo = $request->get('tipo');
@@ -48,15 +48,15 @@ class PreregistroController extends Controller
       $request->validate([
         'Nombres'=>['required','string'],
         'Apellidos'=>['required','string'],
-        'NIE'=>['unique:preregistro', 'required'],
-        'DUI'=>['required', 'regex: /^[0-9]{8}-[0-9]{1}/','unique:preregistro'],
+        //'NIE'=>['unique:preregistro', 'required'],
+        //'DUI'=>['required', 'regex: /^[0-9]{8}-[0-9]{1}/','unique:preregistro'],
         'FechaRecepcion'=>'required',
         'Estado'=>'required',
         'PersonaRecibido'=>'required',
         'Grado'=>'required'
       ]);
 
-      /* Se crea el objeto preregistro y se insertan 
+      /* Se crea el objeto preregistro y se insertan
       los campos ya validados en base de datos */
       $preregistro= new Preregistro();
 
@@ -70,7 +70,7 @@ class PreregistroController extends Controller
       $preregistro->Grado=$request->Grado;
       $preregistro->Observacion=$request->Observacion;
       $preregistro->save();
-      return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');//Redirecciona a vista index junto con alerta 
+      return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');//Redirecciona a vista index junto con alerta
     }
 
     /**
@@ -107,7 +107,7 @@ class PreregistroController extends Controller
      */
     public function update(Request $request, $id)
     {
-      /* Se busca el objeto del preregistro 
+      /* Se busca el objeto del preregistro
       mediante el id y se modifican los campos */
       $preregistro= Preregistro::find($id);
 
@@ -135,7 +135,7 @@ class PreregistroController extends Controller
         'DocumentoPdf'=>['mimes:pdf']
       ]);
 
-      //Validando que el archivo ingresado sea con extension pdf 
+      //Validando que el archivo ingresado sea con extension pdf
       if($request->hasFile('DocumentoPdf')){
         $preregistro['DocumentoPdf'] = time() . '_' . $request->file('DocumentoPdf')->getClientOriginalName();
         $request->file('DocumentoPdf')
