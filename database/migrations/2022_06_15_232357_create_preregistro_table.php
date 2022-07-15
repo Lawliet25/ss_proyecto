@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('Nombres',200);
             $table->string('Apellidos',200);
-            $table->string('NIE',20)->unique();
-            $table->string('DUI',10)->unique();
+            $table->string('NIE',20)->nullable();
+            $table->string('DUI',10)->nullable();
             $table->string('Estado',20);
             $table->string('Grado',20);
             $table->string('Observacion',20)->nullable();

@@ -12,6 +12,9 @@
     <!-- JavaScript -->
 
     <style media="screen">
+    table{
+      text-transform: uppercase;
+    }
       th{
         text-align: center;
         background-color: lightgray;

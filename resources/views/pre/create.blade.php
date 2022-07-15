@@ -37,16 +37,29 @@
         <!---Segunda fila"--->
         <div class="form-row" style="margin-bottom:190px">
         <div class="form-group col-md-6">
-          <label for="inputAddress">Grado al que se inscribe</label>
-          <select id="Grado" name="Grado" class="form-control">
+          <label for="inputAddress">Año de inscripción</label>
+          <select id="Año" name="Año" class="form-control">
             <option>{{old('Grado')}}</option>
-            <option>7° grado</option>
-            <option>8° grado</option>
-            <option>9° grado</option>
-            <option>1er año</option>
-            <option>2do año</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+            <option>2028</option>
+            <option>2029</option>
+            <option>2030</option>
+            <option>2031</option>
+            <option>2032</option>
+            <option>2033</option>
+            <option>2034</option>
+            <option>2035</option>
           </select>
-          @error ('Grado')
+          @error ('Año')
             <span class="error text-danger">{{$message}}</span>
           @enderror
         </div>
@@ -89,8 +102,11 @@
               <label for="inputZip">Estado del estudiante</label>
               <select id="Estado" name="Estado" class="form-control">
                 <option>{{old('Estado')}}</option>
-                <option>Aprobado</option>
-                <option>Reprobado</option>
+                <option>ACTIVO</option>
+                <option>INACIVO</option>
+                <option>APROBADO</option>
+                <option>REPROBADO</option>
+                <option>DESERTOR</option>
 
               </select>
               @error ('Estado')
@@ -98,6 +114,135 @@
               @enderror
             </div>
           </div>
+
+          <!---SECCION  DE DATOS MATRICULA--->
+        <h5><i><strong>DATOS DE MATRICULA</strong></i></h5>
+
+        <!---Primera fila--->
+        <div class="form-row" style="margin-bottom:100px">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Turno:</label>
+                <select class="form-control" name="Turno">
+
+                    <option>{{old('Turno')}}</option>
+                    <option>MAÑANA</option>
+                    <option>TARDE</option>
+                    <option>MAÑANA Y TARDE</option>
+                    <option>NOCTURNO</option>
+               </select>
+               @error ('Turno')
+                   <span class="error text-danger">{{$message}}</span>
+                @enderror
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Jornada:</label>
+                <select class="form-control" name="Jornada">
+                    <option>{{old('Jornada')}}</option>
+                    <option>LUNES A VIERNES</option>
+                    <option>SÁBADO</option>
+                    <option>DOMINGO</option>
+                </select>
+                @error ('Jornada')
+                   <span class="error text-danger">{{$message}}</span>
+                @enderror
+            </div>
+         </div>
+
+         <!---Segunda fila--->
+         <div class="form-row" style="margin-bottom:190px">
+         <div class="form-group col-md-6">
+                <label for="inputEmail4">Modalidad de atención:</label>
+                <select class="form-control" name="Modalidad">
+
+                    <option>{{old('Modalidad')}}</option>
+                    <option>NOCTURNO</option>
+                    <option>DISTANCIA</option>
+                    <option>ACELERADA</option>
+                    <option>SEMIPRESENCIAL</option>
+                    <option>VIRTUAL</option>
+                    <option>PRUEBA DE SUFICIENCIA</option>
+                    <option>NIVELACIÓN ACADÉMICA</option>
+                    <option>MODALIDAD FLEXIBLE INTEGRADA</option>
+                </select>
+                @error ('Modalidad')
+                   <span class="error text-danger">{{$message}}</span>
+                @enderror
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Tipo de ingreso:</label>
+                <select class="form-control" name="TipoIngreso">
+
+                    <option>{{old('TipoIngreso')}}</option>
+                    <option>CERTIFICADO ESCOLAR</option>
+                    <option>CERTIFICACIÓN DE NOTAS</option>
+                    <option>PRUEBA DE SUFUCIENCIAS</option>
+                    <option>RESOLUCIÓN POR EQUIVALENCIA</option>
+                </select>
+                @error ('TipoIngreso')
+                   <span class="error text-danger">{{$message}}</span>
+                @enderror
+            </div>
+         </div>
+         <hr>
+
+         <!---Tercera fila GRADO A MATRICULAR--->
+
+         <div class="form-row" style="margin-bottom:100px">
+             <div class="form-group col-md-6">
+                <label for="">Grados disponibles:</label>
+                 <select class="form-control" name="Grado">
+
+                    <option>{{old('Grado')}}</option>
+                    <option>7° GRADO</option>
+                    <option>8° GRADO</option>
+                    <option>9° GRADO</option>
+                    <option>PRIMER AÑO</option>
+                    <option>SEGUNDO AÑO</option>
+                </select>
+                @error ('Grado')
+                   <span class="error text-danger">{{$message}}</span>
+                @enderror
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Sección:</label>
+                <select class="form-control" name="Seccion">
+
+                    <option>{{old('Seccion')}}</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>G</option>
+                    <option>H</option>
+                    <option>I</option>
+                    <option>J</option>
+                    <option>K</option>
+                    <option>L</option>
+                    <option>M</option>
+                    <option>N</option>
+                    <option>O</option>
+                    <option>P</option>
+                    <option>Q</option>
+                    <option>R</option>
+                    <option>S</option>
+                    <option>T</option>
+                    <option>U</option>
+                    <option>V</option>
+                    <option>W</option>
+                    <option>X</option>
+                    <option>Y</option>
+                    <option>Z</option>
+                 </select>
+                 @error ('Seccion')
+                   <span class="error text-danger">{{$message}}</span>
+                @enderror
+            </div>
+         </div>
 
           <!---Quinta fila"--->
             <div class="form-row" style="margin-bottom:100px">

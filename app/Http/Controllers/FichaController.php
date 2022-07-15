@@ -16,7 +16,7 @@ class FichaController extends Controller
      */
     public function index(Request $request)
     {
-      /*En esta función se muestran los resultados de la consulta 
+      /*En esta función se muestran los resultados de la consulta
       a la base de datos*/
       $preregistros=Preregistro::all();
       $alumnos=DatosAlumno::all();
@@ -26,8 +26,9 @@ class FichaController extends Controller
       $tipo2 = DatosAlumno::get('Sede');
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','datosalumnofr.FechaFR', 'datosalumnofr.Turno',
-                'datosalumnofr.PersonaRegistro','datosalumnofr.Sede','datosalumnofr.GradoMatricular')
+                'preregistro.Seccion', 'preregistro.Modalidad','datosalumnofr.FechaFR', 'preregistro.Turno',
+                'datosalumnofr.PersonaRegistro','datosalumnofr.Sede','preregistro.Grado', 'datosalumnofr.FechaNacimiento',
+                'datosalumnofr.Celular','datosalumnofr.NombresEncargado','datosalumnofr.ApellidosEncargado')
               ->Buscarpor($tipo, $buscar)
               ->paginate(10);
                return view('Ficha.index',['buscar'=>$buscar],['data'=>$data],['buscar'=>$buscar]);
@@ -40,7 +41,7 @@ class FichaController extends Controller
      */
     public function create($id)
     {
-        /*Redireccion a la vista Create de Ficha Grande 
+        /*Redireccion a la vista Create de Ficha Grande
         */
         $preregistro=Preregistro::find($id);
         return view('Ficha.create', compact('preregistro'));//El atributo compact es para guardar id de preregistro y concatenar con el matriculado.
@@ -54,7 +55,7 @@ class FichaController extends Controller
      */
     public function store(Request $request)
     {
-        /* Validaciones de los campos requeridos 
+        /* Validaciones de los campos requeridos
         para el llenado de ficha grande  */
         $request->validate([
 
@@ -84,14 +85,6 @@ class FichaController extends Controller
           'NombresEncargado'=>['required','string'],
           'ApellidosEncargado'=>['required','string'],
           'ParentescoEncargado'=>'required',
-
-          //Matricula
-          'Turno'=>'required',
-          'Modalidad'=>'required',
-          'Jornada'=>'required',
-          'TipoIngreso'=>'required',
-          'GradoMatricular'=>'required',
-          'Seccion'=>'required',
 
           //Residencia
           'Direccion'=>['required','string'],
@@ -149,14 +142,7 @@ class FichaController extends Controller
         $alumno->DireccionEncargado=$request->DireccionEncargado;
 
         //Matrícula
-        $alumno->Turno=$request->Turno;
-        $alumno->Modalidad=$request->Modalidad;
-        $alumno->Jornada=$request->Jornada;
-        $alumno->TipoIngreso=$request->TipoIngreso;
-        $alumno->GradoMatricular=$request->GradoMatricular;
-        $alumno->Seccion=$request->Seccion;
         $alumno->DatosAdicionales=$request->DatosAdicionales;
-
         //Residencia
         $alumno->Direccion=$request->Direccion;
         $alumno->Zona=$request->Zona;
@@ -199,7 +185,8 @@ class FichaController extends Controller
      */
     public function show($id)
     {
-        //
+      $alumno=DatosAlumno::find($id);
+      return view('Ficha.verFR', compact('alumno'));
     }
 
     /**
@@ -224,10 +211,10 @@ class FichaController extends Controller
      */
     public function update(Request $request, $id)
     {
-      
+
         /* Buscando el objeto alumno ya existente con campos de la base de datos
         y haciendo el update*/
-      
+
       $alumno=  DatosAlumno::find($id);
 
       //Alumnosfr
@@ -270,12 +257,6 @@ class FichaController extends Controller
       $alumno->DireccionEncargado=$request->DireccionEncargado;
 
       //Matrícula
-      $alumno->Turno=$request->Turno;
-      $alumno->Modalidad=$request->Modalidad;
-      $alumno->Jornada=$request->Jornada;
-      $alumno->TipoIngreso=$request->TipoIngreso;
-      $alumno->GradoMatricular=$request->GradoMatricular;
-      $alumno->Seccion=$request->Seccion;
       $alumno->DatosAdicionales=$request->DatosAdicionales;
 
       //Residencia

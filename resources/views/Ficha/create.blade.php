@@ -75,8 +75,8 @@
                        <label for="inputAddress">Sexo:</label>
                        <select id="Grado" name="Sexo" class="form-control">
                          <option>{{old('Sexo')}}</option>
-                         <option>Masculino</option>
-                         <option>Femenino</option>
+                         <option>MASCULINO</option>
+                         <option>FEMENINO</option>
                        </select>
                        @error ('Sexo')
                             <span class="error text-danger">{{$message}}</span>
@@ -87,12 +87,12 @@
                        <label for="inputAddress">Identidad de género:</label>
                        <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
                          <option>{{old('IdentidadGenero')}}</option>
-                         <option>Lesbianas</option>
-                         <option>Gays</option>
-                         <option>Bisexuales</option>
-                         <option>Transexuales</option>
-                         <option>Intersexuales</option>
-                         <option>No Aplica</option>
+                         <option>LESBIANAS</option>
+                         <option>GAYS</option>
+                         <option>BISEXUALES</option>
+                         <option>TRANSEXUALES</option>
+                         <option>INTERSEXUALES</option>
+                         <option>NO APLICA</option>
                       </select>
                      </div>
                      </div>
@@ -114,8 +114,8 @@
                              <select class="form-control" name="Nacionalidad">
 
                                  <option>{{old('Nacionalidad')}}</option>
-                                 <option>Salvadoreña</option>
-                                 <option>Extranjera</option>
+                                 <option>SALVADOREÑA</option>
+                                 <option>EXTRANJERA</option>
                              </select>
                              @error ('Nacionalidad')
                             <span class="error text-danger">{{$message}}</span>
@@ -127,9 +127,9 @@
                            <select id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
 
                              <option>{{old('EstadoFamiliar')}}</option>
-                             <option>Soltero(a)</option>
-                             <option>Casado(a)</option>
-                             <option>Acompañado(a)</option>
+                             <option>SOLTERO(A)</option>
+                             <option>CASADO(A)</option>
+                             <option>ACOMPAÑADO(A)</option>
                            </select>
                            @error ('EstadoFamiliar')
                             <span class="error text-danger">{{$message}}</span>
@@ -143,10 +143,10 @@
                              <select class="form-control" name="MedioTransporte">
 
                                  <option>{{old('MedioTransporte')}}</option>
-                                 <option>Propio</option>
-                                 <option>Público</option>
-                                 <option>Familiar</option>
-                                 <option>Peatonal</option>
+                                 <option>PROPIO</option>
+                                 <option>PÚBLICO</option>
+                                 <option>FAMILIAR</option>
+                                 <option>PEATONAL</option>
                              </select>
                              @error ('MedioTransporte')
                                 <span class="error text-danger">{{$message}}</span>
@@ -168,8 +168,8 @@
                            <select class="form-control" name="Trabaja" id="selectTrabaja">
 
                                <option>{{old('Trabaja')}}</option>
-                               <option>Sí</option>
-                               <option>No</option>
+                               <option>SÍ</option>
+                               <option>NO</option>
                            </select>
                            @error ('Trabaja')
                                 <span class="error text-danger">{{$message}}</span>
@@ -190,7 +190,7 @@
                             inputocupacion=document.getElementById("Ocupacion");
 
                             selectTrabaja.onclick=function(e){
-                            if(selectTrabaja.value=="Sí"){
+                            if(selectTrabaja.value=="SÍ"){
                                 inputocupacion.disabled=false;
                                 }
                             else{
@@ -206,8 +206,8 @@
                            <select class="form-control" name="Discapacidad" id="selectDisca">
 
                                <option>{{old('Discapacidad')}}</option>
-                               <option>Sí</option>
-                               <option>No</option>
+                               <option>SÍ</option>
+                               <option>NO</option>
                            </select>
                            @error ('Discapacidad')
                                 <span class="error text-danger">{{$message}}</span>
@@ -225,7 +225,7 @@
                             inputdisca=document.getElementById("TipoDiscapacidad");
 
                             selectDisca.onclick=function(e){
-                            if(selectDisca.value=="Sí"){
+                            if(selectDisca.value=="SÍ"){
                                 inputdisca.disabled=false;
                                 }
                             else{
@@ -241,8 +241,8 @@
                            <select class="form-control" name="Retornado" id="selectRetor">
 
                                <option>{{old('Retornado')}}</option>
-                               <option>Sí</option>
-                               <option>No</option>
+                               <option>SÍ</option>
+                               <option>NO</option>
                            </select>
                            @error ('Retornado')
                                 <span class="error text-danger">{{$message}}</span>
@@ -261,7 +261,7 @@
                             inputretor=document.getElementById("PaisRetornado");
 
                             selectRetor.onclick=function(e){
-                            if(selectRetor.value=="Sí"){
+                            if(selectRetor.value=="SÍ"){
                                 inputretor.disabled=false;
                                 }
                             else{
@@ -340,13 +340,13 @@
                              <select class="form-control" name="ParentescoEncargado">
 
                                  <option>{{old('ParentescoEncargado')}}</option>
-                                 <option>Madre</option>
-                                 <option>Padre</option>
-                                 <option>Hermano/a</option>
-                                 <option>Tía</option>
-                                 <option>Tío</option>
-                                 <option>Pareja</option>
-                                 <option>Conocido</option>
+                                 <option>MADRE</option>
+                                 <option>PADRE</option>
+                                 <option>HERMANO/A</option>
+                                 <option>TÍA</option>
+                                 <option>TÍO</option>
+                                 <option>PAREJA</option>
+                                 <option>CONOCIDO</option>
                              </select>
                              @error ('ParentescoEncargado')
                                 <span class="error text-danger">{{$message}}</span>
@@ -398,8 +398,8 @@
                          <select class="form-control" name="Zona">
 
                              <option>{{old('Zona')}}</option>
-                             <option>Rural</option>
-                             <option>Urbana</option>
+                             <option>RURAL</option>
+                             <option>URBANA</option>
                          </select>
                          @error ('Zona')
                                 <span class="error text-danger">{{$message}}</span>
@@ -407,7 +407,7 @@
                      </div>
                      </div>
 
-                     <!---Segunda fila"--->
+                     <!---Segunda fila--->
                      <?php
                      $usuario = 'root';
                      $password = '';
@@ -481,12 +481,12 @@
                              <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
 
                              <option>{{old('ConvivenciaFamiliar')}}</option>
-                             <option>Con madre</option>
-                             <option>Con padre</option>
-                             <option>Padre y madre</option>
-                             <option>Con familiar</option>
-                             <option>No vive con familiares</option>
-                             <option>Otros</option>
+                             <option>CON MADRE</option>
+                             <option>CON PADRE</option>
+                             <option>PADRE Y MADRE</option>
+                             <option>CON FAMILIAR</option>
+                             <option>NO VIVE CON FAMILIARES</option>
+                             <option>OTROS</option>
                             </select>
                             @error ('ConvivenciaFamiliar')
                                 <span class="error text-danger">{{$message}}</span>
@@ -504,7 +504,7 @@
                             input=document.getElementById("EspecifiqueConv");
 
                             otros.onclick=function(e){
-                            if(otros.value=="Otros"){
+                            if(otros.value=="OTROS"){
                                 input.disabled=false;
                                 }
                             else{
@@ -521,11 +521,11 @@
                              <select class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
 
                                  <option>{{old('DependenciaEconomica')}}</option>
-                                 <option>Padre</option>
-                                 <option>Madre</option>
-                                 <option>Padre y madre</option>
-                                 <option>Hermanos</option>
-                                 <option>Otros</option>
+                                 <option>PADRE</option>
+                                 <option>MADRE</option>
+                                 <option>PADRE Y MADRE</option>
+                                 <option>HERMANOS</option>
+                                 <option>OTROS</option>
                              </select>
                              @error ('DependenciaEconomica')
                                 <span class="error text-danger">{{$message}}</span>
@@ -544,7 +544,7 @@
                             input2=document.getElementById("EspecifiqueEcon");
 
                             otrosE.onclick=function(e){
-                            if(otrosE.value=="Otros"){
+                            if(otrosE.value=="OTROS"){
                                 input2.disabled=false;
                                 }
                             else{
@@ -591,8 +591,8 @@
                              <select class="form-control" name="Sexo1">
 
                                  <option>{{old('Sexo1')}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                             </select>
                          </div>
 
@@ -603,8 +603,8 @@
                              <select class="form-control" name="Sexo2">
 
                                  <option>{{old('Sexo2')}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                             </select>
                          </div>
                         </div>
@@ -620,8 +620,8 @@
                              <select class="form-control" name="Sexo3">
 
                                  <option>{{old('Sexo3')}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                              </select>
                          </div>
 
@@ -632,8 +632,8 @@
                              <select class="form-control" name="Sexo4">
 
                                  <option>{{old('Sexo4')}}</option>
-                                 <option>Femenino</option>
-                                 <option>Masculino</option>
+                                 <option>FEMENINO</option>
+                                 <option>MASCULINO</option>
                             </select>
                          </div>
                         </div>
@@ -712,11 +712,11 @@
                              <select id="Grado" name="GradoCursado" class="form-control">
 
                                <option>{{old('GradoCursado')}}</option>
-                               <option>6° grado</option>
-                               <option>7° grado</option>
-                               <option>8° grado</option>
-                               <option>9° grado</option>
-                               <option>1er año</option>
+                               <option>6° GRADO</option>
+                               <option>7° GRADO</option>
+                               <option>8° GRADO</option>
+                               <option>9° GRADO</option>
+                               <option>PRIMER AÑO</option>
                              </select>
                              @error ('GradoCursado')
                                 <span class="error text-danger">{{$message}}</span>
@@ -739,9 +739,9 @@
                              <select class="form-control" name="InstitucionAcademica">
 
                                  <option>{{old('InstitucionAcademica')}}</option>
-                                 <option>Modalidad flexible</option>
-                                 <option>Regular</option>
-                                 <option>Extranjero</option>
+                                 <option>MODALIDAD FLEXIBLE</option>
+                                 <option>REGULAR</option>
+                                 <option>EXTRANJERO</option>
                             </select>
                             @error ('InstitucionAcademica')
                                 <span class="error text-danger">{{$message}}</span>
@@ -758,136 +758,7 @@
                       </div>
 
 
-                       <!---SECCION  DE DATOS MATRICULA--->
-                     <h3><strong>7.DATOS DE MATRICULA</strong></h3>
-
-                     <!---Primera fila--->
-                     <div class="form-row" style="margin-bottom:100px">
-                         <div class="form-group col-md-6">
-                             <label for="inputEmail4">Turno:</label>
-                             <select class="form-control" name="Turno">
-
-                                 <option>{{old('Turno')}}</option>
-                                 <option>Mañana</option>
-                                 <option>Tarde</option>
-                                 <option>Mañana y tarde</option>
-                                 <option>Nocturno</option>
-                            </select>
-                            @error ('Turno')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
-                         </div>
-
-                         <div class="form-group col-md-6">
-                             <label for="inputEmail4">Jornada:</label>
-                             <select class="form-control" name="Jornada">
-                                <option disabled selected hidden>Seleccionar</option>
-                                 <option>{{old('Jornada')}}</option>
-                                 <option>Lunes a viernes</option>
-                                 <option>Sábado</option>
-                                 <option>Domingo</option>
-                             </select>
-                             @error ('Jornada')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
-                         </div>
-                      </div>
-
-                      <!---Segunda fila--->
-                      <div class="form-row" style="margin-bottom:190px">
-                      <div class="form-group col-md-6">
-                             <label for="inputEmail4">Modalidad de atención:</label>
-                             <select class="form-control" name="Modalidad">
-
-                                 <option>{{old('Modalidad')}}</option>
-                                 <option>Nocturno</option>
-                                 <option>Distancia</option>
-                                 <option>Acelerada</option>
-                                 <option>Semipresencial</option>
-                                 <option>Virtual</option>
-                                 <option>Prueba de suficiencia</option>
-                                 <option>Nivelación académica</option>
-                                 <option>Modalidad flexible integrada</option>
-                             </select>
-                             @error ('Modalidad')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
-                         </div>
-
-                         <div class="form-group col-md-6">
-                             <label for="inputEmail4">Tipo de ingreso:</label>
-                             <select class="form-control" name="TipoIngreso">
-
-                                 <option>{{old('TipoIngreso')}}</option>
-                                 <option>Certificado Escolar</option>
-                                 <option>Certificación de Notas</option>
-                                 <option>Prueba de suficiencia</option>
-                                 <option>Resolución por Equivalencia</option>
-                             </select>
-                             @error ('TipoIngreso')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
-                         </div>
-                      </div>
-                      <hr>
-
-                      <!---Tercera fila GRADO A MATRICULAR--->
-                      <h4><strong>Grado a matricular</strong></h4>
-
-                      <div class="form-row" style="margin-bottom:100px">
-                          <div class="form-group col-md-6">
-                             <label for="">Grados disponibles:</label>
-                              <select class="form-control" name="GradoMatricular">
-
-                                 <option>{{old('GradoMatricular')}}</option>
-                                 <option>7° grado</option>
-                                 <option>8° grado</option>
-                                 <option>9° grado</option>
-                                 <option>Primer año</option>
-                                 <option>Segundo año</option>
-                             </select>
-                             @error ('GradoMatricular')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
-                         </div>
-
-                         <div class="form-group col-md-6">
-                             <label for="inputEmail4">Sección:</label>
-                             <select class="form-control" name="Seccion">
-
-                                 <option>{{old('Seccion')}}</option>
-                                 <option>A</option>
-                                 <option>B</option>
-                                 <option>C</option>
-                                 <option>D</option>
-                                 <option>E</option>
-                                 <option>F</option>
-                                 <option>G</option>
-                                 <option>H</option>
-                                 <option>I</option>
-                                 <option>J</option>
-                                 <option>K</option>
-                                 <option>L</option>
-                                 <option>M</option>
-                                 <option>N</option>
-                                 <option>O</option>
-                                 <option>P</option>
-                                 <option>Q</option>
-                                 <option>R</option>
-                                 <option>S</option>
-                                 <option>T</option>
-                                 <option>U</option>
-                                 <option>V</option>
-                                 <option>W</option>
-                                 <option>X</option>
-                                 <option>Y</option>
-                                 <option>Z</option>
-                              </select>
-                              @error ('Seccion')
-                                <span class="error text-danger">{{$message}}</span>
-                             @enderror
-                         </div>
-                      </div>
+                    <!---SECCION  DE DATOS MATRICULA--->
 
                      <!---Cuarta fila--->
                       <div class="form-row" style="margin-bottom:190px">
