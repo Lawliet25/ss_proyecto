@@ -54,12 +54,6 @@ return new class extends Migration
             $table->string('ProfesionEncargado')->nullable();
             $table->string('DireccionEncargado')->nullable();
             //Matricula
-            $table->string('Turno')->nullable();
-            $table->string('Modalidad')->nullable();
-            $table->string('Jornada')->nullable();
-            $table->string('TipoIngreso')->nullable();
-            $table->string('GradoMatricular')->nullable();
-            $table->string('Seccion')->nullable();
             $table->string('DatosAdicionales')->nullable();
             //Residencia
             $table->string('Direccion')->nullable();

@@ -47,17 +47,14 @@
                   </div>
                 @endif
 
-                
+
                 <table class="table table-striped table-bordered table-hover" id="tabla" style="text-align:center">
                     <thead>
                         <tr>
-                            <th style="text-align:center">ID</th>
-                            <th style="text-align:center">NIE</th>
                             <th style="text-align:center">Nombre completo</th>
-                            <th style="text-align:center">Grado</th>
-                            <th style="text-align:center">Sección</th>
-                            <th style="text-align:center">Turno</th>
-                            <th style="text-align:center">Modalidad</th>
+                            <th style="text-align:center">Fecha de nacimiento</th>
+                            <th style="text-align:center">Celular</th>
+                            <th style="text-align:center">Encargado</th>
                             <th style="text-align:center">Sede</th>
                             <th style="text-align:center">Persona que registró</th>
                             <th style="text-align:center">Fecha de matrícula</th>
@@ -70,20 +67,17 @@
                     @foreach($data as $dato)
 
                     <tr>
-                    <td>{{$dato->id}}</td>
-                    <td>{{$dato->NIE}}</td>
                     <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
-                    <td>{{$dato->GradoMatricular}}</td>
-                    <td>{{$dato->Seccion}}</td>
-                    <td>{{$dato->Turno}}</td>
-                    <td>{{$dato->Modalidad}}</td>
+                    <td>{{$dato->FechaNacimiento}}</td>
+                    <td>{{$dato->Celular}}</td>
+                    <td>{{$dato->NombresEncargado. ' '.$dato->ApellidosEncargado}}</td>
                     <td>{{$dato->Sede}}</td>
                     <td>{{$dato->PersonaRegistro}}</td>
                     <td>{{$dato->FechaFR}}</td>
 
                     <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('Ficha.edit', $dato->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('Ficha.destroy', $dato->id)}}"><span class="glyphicon glyphicon-trash"></span></a>
-
+                        <!--a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('Ficha.destroy', $dato->id)}}"><span class="glyphicon glyphicon-trash"></span></a-->
+                        <a title="Ver ficha" class="btn btn-warning btn-circle" href="{{route('Ficha.verFR', $dato->id)}}"><span class="glyphicon glyphicon-eye-open"></span>
                     </td>
 
                     </tr>

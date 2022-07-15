@@ -39,6 +39,7 @@ Route::controller(FichaController::class)->group(function(){
   Route::get('/Ficha/index','index')->name('Ficha.index')->middleware('auth');;
   Route::post('/Ficha','store')->name('Ficha.store')->middleware('auth');;
     Route::get('/Ficha/edit/{id}','edit')->name('Ficha.edit')->middleware('auth');;
+    Route::get('/Ficha/verFR/{id}','show')->name('Ficha.verFR')->middleware('auth');;
   Route::post('/Ficha/{id}','update')->name('Ficha.update')->middleware('auth');;
   Route::get('/Ficha/{id}','destroy')->name('Ficha.destroy')->middleware('auth');;
 });

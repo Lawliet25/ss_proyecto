@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title','Formulario de actualización de datos')
+@section('title','Vista de datos Ficha de Registro')
 
 @section('content')
 
@@ -11,7 +11,7 @@
         @csrf
 
               <div class="panel panel-info">
-                  <div class="panel-heading text-center"><strong>Editando Registro de ficha</strong></div>
+
                   <div class="panel-body">
 
                   <div  class="form-inline">
@@ -29,7 +29,7 @@
                     <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputAddress">Código de sede:</label>
-                      <select id="Sede" name="CodigoSede" class="form-control">
+                      <select id="Sede" disabled name="CodigoSede" class="form-control">
                         <option>{{$alumno->CodigoSede}}</option>
                         <?php
                          $query = $db->prepare("SELECT * FROM sedes");
@@ -45,7 +45,7 @@
 
                     <div class="form-group col-md-6">
                       <label for="inputAddress">Nombre de sede:</label>
-                      <select id="Sede" name="Sede" class="form-control">
+                      <select disabled id="Sede" name="Sede" class="form-control">
                         <option>{{$alumno->Sede}}</option>
                         <?php
                          $query = $db->prepare("SELECT * FROM sedes");
@@ -66,7 +66,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputAddress">Sexo:</label>
-                             <select id="Sexo" name="Sexo" class="form-control">
+                             <select disabled id="Sexo" name="Sexo" class="form-control">
                                  <option>{{$alumno->Sexo}}</option>
                                  <option>MASCULINO</option>
                                  <option>FEMENINO</option>
@@ -75,7 +75,7 @@
 
                          <div class="form-group col-md-6">
                               <label for="inputAddress">Identidad de género:</label>
-                              <select id="IdentidadGenero" name="IdentidadGenero" class="form-control">
+                              <select disabled id="IdentidadGenero" name="IdentidadGenero" class="form-control">
                              <option>{{$alumno->IdentidadGenero}}</option>
                              <option>LESBIANAS</option>
                              <option>GAYS</option>
@@ -91,7 +91,7 @@
                      <div class="form-row" >
                          <div class="form-group col-md-12">
                          <label for="inputCity">Fecha de nacimiento</label>
-                         <input type="text" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{$alumno->FechaNacimiento}}">
+                         <input readonly type="text" class="form-control" id="FechaNacimiento" name="FechaNacimiento" value="{{$alumno->FechaNacimiento}}">
                          </div>
                      </div>
 
@@ -99,7 +99,7 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Nacionalidad</label>
-                             <select class="form-control" name="Nacionalidad">
+                             <select disabled class="form-control" name="Nacionalidad">
                                  <option>{{$alumno->Nacionalidad}}</option>
                                  <option>SALVADOREÑA</option>
                                  <option>EXTRANJERA</option>
@@ -108,7 +108,7 @@
 
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Estado familiar:</label>
-                           <select id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
+                           <select disabled id="EstadoFamiliar" name="EstadoFamiliar" class="form-control">
                              <option>{{$alumno->EstadoFamiliar}}</option>
                              <option>SOLTERO(A)</option>
                              <option>CASADO(A)</option>
@@ -121,7 +121,7 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Medio de transporte:</label>
-                             <select class="form-control" name="MedioTransporte">
+                             <select disabled class="form-control" name="MedioTransporte">
                                  <option>{{$alumno->MedioTransporte}}</option>
                                  <option>PROPIO</option>
                                  <option>PÚBLICO</option>
@@ -132,7 +132,7 @@
 
                          <div class="form-group col-md-6">
                            <label for="inputAddress">Distancia entre la sede y la residencia:</label>
-                           <input type="text" value="{{$alumno->DistanciaSede}}" class="form-control" name="DistanciaSede" placeholder="Distancia a sede">
+                           <input readonly type="text" value="{{$alumno->DistanciaSede}}" class="form-control" name="DistanciaSede" placeholder="Distancia a sede">
                           </div>
                      </div>
 
@@ -140,7 +140,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Trabaja:</label>
-                           <select class="form-control" name="Trabaja" id="selectTrabaja">
+                           <select disabled class="form-control" name="Trabaja" id="selectTrabaja">
                                <option>{{$alumno->Trabaja}}</option>
                                <option>SÍ</option>
                                <option>NO</option>
@@ -149,7 +149,7 @@
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Ocupación:</label>
-                             <input value="{{$alumno->Ocupacion}}" type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación">
+                             <input readonly value="{{$alumno->Ocupacion}}" type="text" class="form-control" id="Ocupacion" name="Ocupacion" placeholder="Ocupación">
                          </div>
                          <script>
                             let selectTrabaja;
@@ -172,7 +172,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Tiene discapacidad:</label>
-                           <select class="form-control" name="Discapacidad" id="selectDisca">
+                           <select disabled class="form-control" name="Discapacidad" id="selectDisca">
                                <option>{{$alumno->Discapacidad}}</option>
                                <option>SÍ</option>
                                <option>NO</option>
@@ -181,7 +181,7 @@
 
                          <div class="form-group col-md-6">
                             <label for="inputEmail4">Tipo de discapacidad:</label>
-                             <input value="{{$alumno->TipoDiscapacidad}}" type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad" disabled>
+                             <input readonly value="{{$alumno->TipoDiscapacidad}}" type="text" class="form-control" id="TipoDiscapacidad" name="TipoDiscapacidad" placeholder="Tipo de discapacidad" disabled>
                          </div>
                          <script>
                             let selectDisca;
@@ -204,7 +204,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                            <label for="inputEmail4">Retornado:</label>
-                           <select class="form-control" name="Retornado" id="selectRetor">
+                           <select disabled class="form-control" name="Retornado" id="selectRetor">
                                <option>{{$alumno->Retornado}}</option>
                                <option>SÍ</option>
                                <option>NO</option>
@@ -212,7 +212,7 @@
                          </div>
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">País:</label>
-                             <input value="{{$alumno->PaisRetornado}}" type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" disabled>
+                             <input readonly value="{{$alumno->PaisRetornado}}" type="text" class="form-control" id="PaisRetornado" name="PaisRetornado" placeholder="Pais" disabled>
                          </div>
 
                          <script>
@@ -237,7 +237,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Enfermedades o alergias que padece:</label>
-                             <textarea style="display: block;
+                             <textarea readonly style="display: block;
                               width: 100%;
                               resize: none;
                               padding: 20px;
@@ -252,7 +252,7 @@
 
                          <div class="form-group col-md-12">
                              <label for="inputEmail4">Medicamentos prescrito de carácter permanente:</label>
-                             <textarea style="display: block;
+                             <textarea readonly style="display: block;
                               width: 100%;
                               resize: none;
                               padding: 20px;
@@ -269,12 +269,12 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Nombres: </label>
-                             <input value="{{$alumno->NombresEncargado}}" type="text" class="form-control" id="NombresEncargado" name="NombresEncargado" placeholder="Nombres">
+                             <input readonly value="{{$alumno->NombresEncargado}}" type="text" class="form-control" id="NombresEncargado" name="NombresEncargado" placeholder="Nombres">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Apellidos:</label>
-                             <input value="{{$alumno->ApellidosEncargado}}" type="text" class="form-control" id="ApellidosEncargado" name="ApellidosEncargado" placeholder="Apellidos">
+                             <input readonly value="{{$alumno->ApellidosEncargado}}" type="text" class="form-control" id="ApellidosEncargado" name="ApellidosEncargado" placeholder="Apellidos">
                           </div>
                      </div>
 
@@ -282,12 +282,12 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Lugar de trabajo:</label>
-                             <input value="{{$alumno->LugarTrabajoEncargado}}" type="text" class="form-control" id="LugarTrabajoEncargado" name="LugarTrabajoEncargado" placeholder="Lugar de trabajo">
+                             <input readonly value="{{$alumno->LugarTrabajoEncargado}}" type="text" class="form-control" id="LugarTrabajoEncargado" name="LugarTrabajoEncargado" placeholder="Lugar de trabajo">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Parentesco:</label>
-                             <select class="form-control" name="ParentescoEncargado">
+                             <select disabled class="form-control" name="ParentescoEncargado">
                                  <option>{{$alumno->ParentescoEncargado}}</option>
                                  <option>MADRE</option>
                                  <option>PADRE</option>
@@ -304,12 +304,12 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Número de DUI:</label>
-                             <input value="{{$alumno->DUIEncargado}}" type="text" class="form-control" id="DUIEncargado" name="DUIEncargado" placeholder="DUI">
+                             <input readonly value="{{$alumno->DUIEncargado}}" type="text" class="form-control" id="DUIEncargado" name="DUIEncargado" placeholder="DUI">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Teléfono:</label>
-                             <input value="{{$alumno->TelefonoEncargado}}" type="text" class="form-control" id="TelefonoEncargado" name="TelefonoEncargado" placeholder="Teléfono">
+                             <input readonly value="{{$alumno->TelefonoEncargado}}" type="text" class="form-control" id="TelefonoEncargado" name="TelefonoEncargado" placeholder="Teléfono">
                          </div>
                      </div>
 
@@ -317,12 +317,12 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Profesión u oficio:</label>
-                             <input value="{{$alumno->ProfesionEncargado}}" type="text" class="form-control" id="ProfesionEncargado" name="ProfesionEncargado" placeholder="Profesión u oficio">
+                             <input readonly value="{{$alumno->ProfesionEncargado}}" type="text" class="form-control" id="ProfesionEncargado" name="ProfesionEncargado" placeholder="Profesión u oficio">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Dirección:</label>
-                             <input value="{{$alumno->DireccionEncargado}}" type="text" class="form-control" name="DireccionEncargado" id="nombres" placeholder="Dirección">
+                             <input readonly value="{{$alumno->DireccionEncargado}}" type="text" class="form-control" name="DireccionEncargado" id="nombres" placeholder="Dirección">
                          </div>
                      </div>
 
@@ -334,12 +334,12 @@
                       <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Dirección:</label>
-                             <input value="{{$alumno->Direccion}}" type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
+                             <input readonly value="{{$alumno->Direccion}}" type="text" class="form-control" id="nombres" placeholder="Dirección" name="Direccion">
                           </div>
 
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Zona de residencia:</label>
-                               <select class="form-control" name="Zona">
+                               <select disabled class="form-control" name="Zona">
                                   <option>{{$alumno->Zona}}</option>
                                   <option>RURAL</option>
                                   <option>URBANA</option>
@@ -356,7 +356,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Departamento</label>
-                             <select class="form-control" name="Departamento">
+                             <select disabled class="form-control" name="Departamento">
                                <option>{{$alumno->Departamento}}</option>
                                <?php
                                 $query = $db->prepare("SELECT * FROM departamento");
@@ -373,7 +373,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Municipio</label>
-                             <input type="text" class="form-control" name="Municipio" id="nombres" placeholder="Municipio" value="{{$alumno->Municipio}}">
+                             <input readonly type="text" class="form-control" name="Municipio" id="nombres" placeholder="Municipio" value="{{$alumno->Municipio}}">
                          </div>
                      </div>
 
@@ -381,12 +381,12 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Residencia:</label>
-                             <input value="{{$alumno->TelefonoResidencia}}" type="text" class="form-control" name="TelefonoResidencia" id="TelefonoResidencia" placeholder="Telefono de residencia">
+                             <input readonly value="{{$alumno->TelefonoResidencia}}" type="text" class="form-control" name="TelefonoResidencia" id="TelefonoResidencia" placeholder="Telefono de residencia">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Celular:</label>
-                             <input value="{{$alumno->Celular}}" type="text" class="form-control" id="Celular" name="Celular" placeholder="Telefono celular">
+                             <input readonly value="{{$alumno->Celular}}" type="text" class="form-control" id="Celular" name="Celular" placeholder="Telefono celular">
                           </div>
                      </div>
 
@@ -394,12 +394,12 @@
                      <div class="form-row">
                           <div class="form-group col-md-6">
                              <label for="inputEmail4">Tel.Trabajo:</label>
-                             <input value="{{$alumno->TelefonoTrabajo}}" type="text" class="form-control" id="TelefonoTrabajo" name="TelefonoTrabajo" placeholder="Telefono trabajo">
+                             <input readonly value="{{$alumno->TelefonoTrabajo}}" type="text" class="form-control" id="TelefonoTrabajo" name="TelefonoTrabajo" placeholder="Telefono trabajo">
                          </div>
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Correo electrónico:</label>
-                             <input value="{{$alumno->Email}}" type="text" class="form-control" id="Email" name="Email" placeholder="Correo electrónico">
+                             <input readonly value="{{$alumno->Email}}" type="text" class="form-control" id="Email" name="Email" placeholder="Correo electrónico">
                           </div>
                      </div>
                      <hr>
@@ -411,7 +411,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Convivencia:</label>
-                             <select class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
+                             <select disabled class="form-control" name="ConvivenciaFamiliar" id="ConvivenciaFamiliar">
                              <option>{{$alumno->ConvivenciaFamiliar}}</option>
                              <option>CON MADRE</option>
                              <option>CON PADRE</option>
@@ -424,7 +424,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique" disabled>
+                             <input readonly value="{{$alumno->EspecifiqueConv}}" type="text" class="form-control" name="EspecifiqueConv" id="EspecifiqueConv" placeholder="Especifique" disabled>
                          </div>
                          <script>
                             let otros;
@@ -448,7 +448,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">De quién depende económicamente:</label>
-                             <select class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
+                             <select disabled class="form-control" name="DependenciaEconomica" id="DependenciaEconomica">
                                  <option>{{$alumno->DependenciaEconomica}}</option>
                                  <option>PADRE</option>
                                  <option>MADRE</option>
@@ -461,7 +461,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Especifique:</label>
-                             <input value="{{$alumno->EspecifiqueEcon}}" type="text" class="form-control" id="EspecifiqueEcon" name="EspecifiqueEcon"placeholder="Especifique" disabled>
+                             <input readonly value="{{$alumno->EspecifiqueEcon}}" type="text" class="form-control" id="EspecifiqueEcon" name="EspecifiqueEcon"placeholder="Especifique" disabled>
                          </div>
                          <script>
                             let otrosE;
@@ -484,13 +484,13 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">N° de miembros de la familia:</label>
-                             <input value="{{$alumno->NumFamiliares}}" type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
+                             <input readonly value="{{$alumno->NumFamiliares}}" type="number" class="form-control" name="NumFamiliares"  placeholder="Número de miembros">
                          </div>
 
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Cantidad de hijos:</label>
-                             <select class="form-control" name="CantidadHijos" id="selectHijos">
+                             <select disabled class="form-control" name="CantidadHijos" id="selectHijos">
                                  <option>{{$alumno->CantidadHijos}}</option>
                                  <option>0</option>
                                  <option>1</option>
@@ -507,7 +507,7 @@
                          <div class="form-group col-md-6" id="Hijo1">
                              <label for="inputEmail4">Hijo 1</label>
                              <input value="{{$alumno->Edad1}}" type="text" class="form-control" name="Edad1" placeholder="Edad">
-                             <select class="form-control" name="Sexo1">
+                             <select disabled class="form-control" name="Sexo1">
                                  <option>{{$alumno->Sexo1}}</option>
                                  <option>FEMENINO</option>
                                  <option>MASCULINO</option>
@@ -517,7 +517,7 @@
                          <div class="form-group col-md-6" id="Hijo2">
                              <label for="inputEmail4">Hijo 2</label>
                              <input value="{{$alumno->Edad2}}" type="text" class="form-control" name="Edad2" placeholder="Edad">
-                             <select class="form-control" name="Sexo2">
+                             <select disabled class="form-control" name="Sexo2">
                                  <option>{{$alumno->Sexo2}}</option>
                                  <option>FEMENINO</option>
                                  <option>MASCULINO</option>
@@ -532,7 +532,7 @@
                          <div class="form-group col-md-6" id="Hijo3">
                              <label for="inputEmail4">Hijo 3</label>
                              <input value="{{$alumno->Edad3}}" type="text" class="form-control" name="Edad3" placeholder="Edad">
-                             <select class="form-control" name="Sexo3">
+                             <select disabled class="form-control" name="Sexo3">
                                  <option>{{$alumno->Sexo3}}</option>
                                  <option>FEMENINO</option>
                                  <option>MASCULINO</option>
@@ -542,7 +542,7 @@
                          <div class="form-group col-md-6" id="Hijo4">
                              <label for="inputEmail4">Hijo 4</label>
                              <input value="{{$alumno->Edad4}}" type="text" class="form-control" name="Edad4"  placeholder="Edad4">
-                             <select class="form-control" name="Sexo4">
+                             <select disabled class="form-control" name="Sexo4">
                                  <option>{{$alumno->Sexo4}}</option>
                                  <option>FEMENINO</option>
                                  <option>MASCULINO</option>
@@ -620,7 +620,7 @@
                      <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Último grado cursado:</label>
-                             <select id="Grado" name="GradoCursado" class="form-control">
+                             <select disabled id="Grado" name="GradoCursado" class="form-control">
                                <option>{{$alumno->GradoCursado}}</option>
                                <option>6° GRADO</option>
                                <option>7° GRADO</option>
@@ -632,7 +632,7 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Año en que lo cursó:</label>
-                             <input value="{{$alumno->AñoCursado}}" type="text" class="form-control" name="AñoCursado"  placeholder="Año en que lo cursó">
+                             <input readonly value="{{$alumno->AñoCursado}}" type="text" class="form-control" name="AñoCursado"  placeholder="Año en que lo cursó">
                          </div>
                       </div>
 
@@ -640,7 +640,7 @@
                       <div class="form-row">
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Institución en que lo cursó:</label>
-                             <select class="form-control" name="InstitucionAcademica">
+                             <select disabled class="form-control" name="InstitucionAcademica">
                                  <option>{{$alumno->InstitucionAcademica}}</option>
                                  <option>MODALIDAD FLEXIBLE</option>
                                  <option>REGULAR</option>
@@ -651,14 +651,14 @@
 
                          <div class="form-group col-md-6">
                              <label for="inputEmail4">Nombre del Centro Educativo:</label>
-                             <input value="{{$alumno->CentroEducativo}}" type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo">
+                             <input readonly value="{{$alumno->CentroEducativo}}" type="text" class="form-control" name="CentroEducativo" placeholder="Centro educativo">
                          </div>
                       </div>
                       <!---Cuarta fila--->
                        <div class="form-row" style="margin-bottom:190px">
                            <div class="form-group col-md-6">
                            <label for="inputEmail4">Fecha de registro de ficha:</label>
-                           <input type="text" class="form-control" id="FechaFR" name="FechaFR" value="{{$alumno->FechaFR}}">
+                           <input readonly type="text" class="form-control" id="FechaFR" name="FechaFR" value="{{$alumno->FechaFR}}">
                            @error ('FechaFR')
                                  <span class="error text-danger">{{$message}}</span>
                               @enderror
@@ -666,7 +666,7 @@
 
                            <div class="form-group col-md-6">
                                <label for="inputEmail4">Persona que recibió la ficha:</label>
-                               <input type="text" class="form-control" id="PersonaRegistro" name="PersonaRegistro" placeholder="" value="{{$alumno->PersonaRegistro}}">
+                               <input readonly type="text" class="form-control" id="PersonaRegistro" name="PersonaRegistro" placeholder="" value="{{$alumno->PersonaRegistro}}">
                                @error ('PersonaRegistro')
                                  <span class="error text-danger">{{$message}}</span>
                               @enderror
@@ -676,13 +676,11 @@
                       <h4><strong>Datos adicionales:</strong></h4>
                       <div class="row">
                          <div class="form-group col-md-12">
-                             <textarea name="DatosAdicionales" class="form-control"rows="3" cols="80">{{$alumno->DatosAdicionales}}</textarea>
+                             <textarea readonly name="DatosAdicionales" class="form-control"rows="3" cols="80">{{$alumno->DatosAdicionales}}</textarea>
                          </div>
                      </div>
-
                      <div class="form-row">
-                     <input type="submit" class="btn btn-primary" value="Actualizar datos" name="Guardar">
-                     <a class="btn btn-danger" href="{{route('Ficha.index')}}">Cancelar</a>
+                     <a class="btn btn-danger" href="{{route('Ficha.index')}}">Regresar</a>
                      </div>
                  </div>
              </div>

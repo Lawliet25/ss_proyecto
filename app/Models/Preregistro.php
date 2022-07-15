@@ -9,7 +9,7 @@ class Preregistro extends Model
 {
     use HasFactory;
     protected $table='preregistro';
-    protected $fillable=['Nombres','Apellidos','NIE','DUI','FechaRecepcion', 'Estado', 'PersonaRecibido', 'Grado','Observacion','DocumentoPdf'];
+    protected $fillable=['Nombres','Apellidos','NIE','DUI','FechaRecepcion', 'Estado', 'PersonaRecibido', 'Grado','Observacion','DocumentoPdf','Turno','Jornada','Modalidad','Seccion','TipoIngreso','Año'];
 
     public function scopeBuscarpor($query, $tipo, $buscar) {
     	if ( ($tipo) && ($buscar) ) {

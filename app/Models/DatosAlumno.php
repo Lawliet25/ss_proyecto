@@ -15,8 +15,7 @@ class DatosAlumno extends Model
     'DependenciaEconomica','NumFamiliares','Enfermedades','Medicamentos','FechaFR','IdentidadGenero','EspecifiqueConv',
     'EspecifiqueEcon', 'NombresEncargado','ApellidosEncargado','ParentescoEncargado','LugarTrabajoEncargado','TelefonoEncargado',
     'DUIEncargado', 'ProfesionEncargado', 'DireccionEncargado', 'Cantidad','Edad1','Sexo1','Edad2','Sexo2', 'Edad3', 'Sexo3',
-    'Edad4','Sexo4', 'InstitucionAcademica','AñoCursado','GradoCursado','CentroEducativo', 'Turno','Modalidad','Jornada',
-    'TipoIngreso','GradoMatricular', 'Seccion', 'DatosAdicionales', 'Direccion','Zona','TelefonoResidencia',
+    'Edad4','Sexo4', 'InstitucionAcademica','AñoCursado','GradoCursado','CentroEducativo','DatosAdicionales', 'Direccion','Zona','TelefonoResidencia',
     'TelefonoTrabajo','Celular','Email', 'Departamento', 'Municipio', 'PersonaRegistro',
     'id_preregistro'];
 
@@ -25,5 +24,5 @@ class DatosAlumno extends Model
     		return $query->where($tipo,'like',"%$buscar%");
     	}
 }
-  
+
 }

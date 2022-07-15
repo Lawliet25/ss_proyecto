@@ -66,7 +66,7 @@
                 <a href="{{route('pre.index')}}">Alumnos PreRegistrados</a>
                 </li>
               <li class="dropdown">
-                <a href="{{route('Ficha.index')}}">Alumnos matriculados</a>
+                <a href="{{route('Ficha.index')}}">Información de alumnos</a>
 
               </li>
               <li class="dropdown">

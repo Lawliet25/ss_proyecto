@@ -53,7 +53,10 @@ class PreregistroController extends Controller
         'FechaRecepcion'=>'required',
         'Estado'=>'required',
         'PersonaRecibido'=>'required',
+        'Año'=>'required',
+        //Matricula
         'Grado'=>'required'
+
       ]);
 
       /* Se crea el objeto preregistro y se insertan
@@ -69,6 +72,15 @@ class PreregistroController extends Controller
       $preregistro->PersonaRecibido=$request->PersonaRecibido;
       $preregistro->Grado=$request->Grado;
       $preregistro->Observacion=$request->Observacion;
+      $preregistro->Año=$request->Año;
+
+      //matrícula
+      $preregistro->Turno=$request->Turno;
+      $preregistro->Modalidad=$request->Modalidad;
+      $preregistro->Jornada=$request->Jornada;
+      $preregistro->TipoIngreso=$request->TipoIngreso;
+      $preregistro->Seccion=$request->Seccion;
+
       $preregistro->save();
       return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');//Redirecciona a vista index junto con alerta
     }
@@ -130,6 +142,13 @@ class PreregistroController extends Controller
       $preregistro->CopiaDuiResponsable=$request->CopiaDuiResponsable;
       $preregistro->CertificadoOriginal=$request->CertificadoOriginal;
       $preregistro->CertificadoNotas=$request->CertificadoNotas;
+
+      //matrícula
+      $preregistro->Turno=$request->Turno;
+      $preregistro->Modalidad=$request->Modalidad;
+      $preregistro->Jornada=$request->Jornada;
+      $preregistro->TipoIngreso=$request->TipoIngreso;
+      $preregistro->Seccion=$request->Seccion;
 
       $request->validate([
         'DocumentoPdf'=>['mimes:pdf']

@@ -55,7 +55,9 @@
                             <th style="text-align:center">Nombres</th>
                             <th style="text-align:center">Apellidos</th>
                             <th style="text-align:center">NIE</th>
-                            <th style="text-align:center">Estado</th>
+                            <th style="text-align:center">Grado</th>
+                            <th style="text-align:center">Sede</th>
+                            <th style="text-align:center">Año de matrícula</th>
                             <th style="text-align:center">Operaciones</th>
                             <th style="text-align:center">Ficha de matrícula</th>
                         </tr>
@@ -69,7 +71,9 @@
                     <td>{{$preregistro->Nombres}}</td>
                     <td>{{$preregistro->Apellidos}}</td>
                     <td>{{$preregistro->NIE}}</td>
-                    <td>{{$preregistro->Estado}}</td>
+                    <td>{{$preregistro->Grado}}</td>
+                    <td>{{$preregistro->Sede}}</td>
+                    <td>{{$preregistro->Año}}</td>
                     <td><a title="Editar" class="btn btn-primary btn-circle" href="{{route('pre.edit', $preregistro->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
                         <!--a title="Eliminar" class="btn btn-danger btn-circle" href="{{route('pre.destroy', $preregistro->id)}}"><span class="glyphicon glyphicon-trash"></span></a-->
                         <a title="Añadir documentos" class="btn btn-success btn-circle" href="{{route('pre.documentos', $preregistro->id)}}"><span class="	glyphicon glyphicon-file"></span></a>
