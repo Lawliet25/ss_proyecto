@@ -58,7 +58,7 @@
         <tr>
         <td>{{$dato->NIE}}</td>
         <td>{{$dato->Nombres.' '.$dato->Apellidos}}</td>
-        <td>{{$dato->GradoMatricular}}</td>
+        <td>{{$dato->Grado}}</td>
         <td>{{$dato->Seccion}}</td>
         <td>{{$dato->Turno}}</td>
         <td>{{$dato->Sede}}</td>

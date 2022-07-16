@@ -15,6 +15,7 @@
               <option>Nombres</option>
               <option>Apellidos</option>
               <option>NIE</option>
+              <option>Sede</option>
               <option value="Año">Año de matrícula</option>
             </select>
           </div>
@@ -29,7 +30,7 @@
       </div>
             <div class="row">
 
-                <div class="col-md-11">
+                <div class="col-md-12">
                   <hr>
 
                   @if($buscar)

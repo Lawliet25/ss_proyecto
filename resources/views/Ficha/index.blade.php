@@ -15,6 +15,7 @@
                     <option>Apellidos</option>
                     <option value="NombresEncargado">Encargado</option>
                     <option value="PersonaRegistro">Persona que registró</option>
+                    <option value="FechaFR">Fecha de registro</option>
                   </select>
                 </div>
                 <div class="form-group col-md-3" style="margin-top:25px;">
@@ -37,7 +38,7 @@
                 <h3>Lista de alumnos matriculados</h3>
             </div>
             <div class="">
-                <div class="col-md-13">
+                <div class="col-md-12">
 
                 @if (session('status'))
                   <div class="alert alert-success">
