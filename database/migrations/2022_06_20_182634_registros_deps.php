@@ -17,59 +17,65 @@ return new class extends Migration
         Schema::table('departamento', function (Blueprint $table) {
             //
         });
+        DB::table("departamento")
+        ->insert(
+
+        [
+        "Departamento" => "AHUACHAPÁN"
+      ]);
 
         DB::table("departamento")
         ->insert(
 
         [
-        "Departamento" => "Cabañas"
+        "Departamento" => "CABAÑAS"
       ]);
         DB::table("departamento")->insert([
-      "Departamento" => "Chalatenango"
+      "Departamento" => "CHALATENANGO"
       ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "Cuscatlán"
+      "Departamento" => "CUSCATLÁN"
       ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "La Libertad"
+      "Departamento" => "LA LIBERTAD"
       ]);
       DB::table("departamento")  ->insert(
       [
-      "Departamento" => "La Paz"
+      "Departamento" => "LA PAZ"
     ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "La Unión"
+      "Departamento" => "LA UNIÓN"
     ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "Morazán"
+      "Departamento" => "MORAZÁN"
     ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "San Miguel"
+      "Departamento" => "SAN MIGUEL"
     ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "San Salvador"
+      "Departamento" => "SAN SALVADOR"
     ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "San Vicente"
+      "Departamento" => "SAN VICENTE"
     ]);
       DB::table("departamento")->insert(
       [
-      "Departamento" => "Santa Ana"
+      "Departamento" => "SANTA ANA"
     ]);
     DB::table("departamento")  ->insert(
       [
-      "Departamento" => "Sonsonate"
+      "Departamento" => "SONSONATE"
     ]);
     DB::table("departamento")  ->insert(
       [
-      "Departamento" => "Usulután"
+      "Departamento" => "USULUTÁN"
     ]);
 
     }
