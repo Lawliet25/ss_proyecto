@@ -165,10 +165,6 @@ class FichaController extends Controller
         $alumno->Sexo4=$request->Sexo4;
         $alumno->PersonaRegistro=$request->PersonaRegistro;
 
-        //Sede
-        $alumno->CodigoSede=$request->CodigoSede;
-        $alumno->Sede=$request->Sede;
-
         //Foránea
         $alumno->id_preregistro=$request->id_preregistro;
 
@@ -281,9 +277,6 @@ class FichaController extends Controller
       $alumno->Sexo4=$request->Sexo4;
       $alumno->PersonaRegistro=$request->PersonaRegistro;
 
-      //Sede
-      $alumno->CodigoSede=$request->CodigoSede;
-      $alumno->Sede=$request->Sede;
 
       //Foránea
       $alumno->id_preregistro=$request->id_preregistro;
