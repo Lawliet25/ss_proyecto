@@ -13,9 +13,8 @@
                     <option></option>
                     <option>Nombres</option>
                     <option>Apellidos</option>
-                    <option>NIE</option>
-                    <option>Sede</option>
-                    <option value="GradoMatricular">Grado</option>
+                    <option value="NombresEncargado">Encargado</option>
+                    <option value="PersonaRegistro">Persona que registró</option>
                   </select>
                 </div>
                 <div class="form-group col-md-3" style="margin-top:25px;">
@@ -55,7 +54,6 @@
                             <th style="text-align:center">Fecha de nacimiento</th>
                             <th style="text-align:center">Celular</th>
                             <th style="text-align:center">Encargado</th>
-                            <th style="text-align:center">Sede</th>
                             <th style="text-align:center">Persona que registró</th>
                             <th style="text-align:center">Fecha de matrícula</th>
                             <th style="text-align:center">Operaciones</th>
@@ -71,7 +69,6 @@
                     <td>{{$dato->FechaNacimiento}}</td>
                     <td>{{$dato->Celular}}</td>
                     <td>{{$dato->NombresEncargado. ' '.$dato->ApellidosEncargado}}</td>
-                    <td>{{$dato->Sede}}</td>
                     <td>{{$dato->PersonaRegistro}}</td>
                     <td>{{$dato->FechaFR}}</td>
 

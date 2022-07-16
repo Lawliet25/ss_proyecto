@@ -15,6 +15,7 @@
               <option>Nombres</option>
               <option>Apellidos</option>
               <option>NIE</option>
+              <option value="Año">Año de matrícula</option>
             </select>
           </div>
           <div class="form-group col-md-3" style="margin-top:25px;">

@@ -24,7 +24,7 @@
             <div class="form-group col-md-6">
               <label for="inputAddress">Código de sede:</label>
               <select id="Sede" name="CodigoSede" class="form-control">
-                <option>{{old('CodigoSede')}}</option>
+                <option>{{$preregistro->CodigoSede}}</option>
                 <?php
                  $query = $db->prepare("SELECT * FROM sedes");
                  $query->execute();
@@ -40,7 +40,7 @@
             <div class="form-group col-md-6">
               <label for="inputAddress">Nombre de sede:</label>
               <select id="Sede" name="Sede" class="form-control">
-                <option>{{old('Sede')}}</option>
+                <option>{{$preregistro->Sede}}</option>
                 <?php
                  $query = $db->prepare("SELECT * FROM sedes");
                  $query->execute();
@@ -149,7 +149,7 @@
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Jornada:</label>
                 <select class="form-control" name="Jornada">
-                   
+
                     <option>{{$preregistro->Jornada}}</option>
                     <option>LUNES A VIERNES</option>
                     <option>SÁBADO</option>

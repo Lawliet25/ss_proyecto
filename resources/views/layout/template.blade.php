@@ -42,6 +42,9 @@
       option{
         text-transform: uppercase;
       }
+      select{
+        text-transform: uppercase;
+      }
     </style>
     <nav class="navbar navbar-light" style="background-color:#003566;">
         <div class="container-fluid" >

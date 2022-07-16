@@ -23,11 +23,11 @@ class FichaController extends Controller
       $sedes=SedesModel::all();
       $buscar = $request->get('buscarpor');
       $tipo = $request->get('tipo');
-      $tipo2 = DatosAlumno::get('Sede');
+      //$tipo2 = DatosAlumno::get('Sede');
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
                 'preregistro.Seccion', 'preregistro.Modalidad','datosalumnofr.FechaFR', 'preregistro.Turno',
-                'datosalumnofr.PersonaRegistro','datosalumnofr.Sede','preregistro.Grado', 'datosalumnofr.FechaNacimiento',
+                'datosalumnofr.PersonaRegistro','preregistro.Sede','preregistro.Grado', 'datosalumnofr.FechaNacimiento',
                 'datosalumnofr.Celular','datosalumnofr.NombresEncargado','datosalumnofr.ApellidosEncargado')
               ->Buscarpor($tipo, $buscar)
               ->paginate(10);

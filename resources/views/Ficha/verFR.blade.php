@@ -19,48 +19,9 @@
                      <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br>
                    </div>
                     <hr>
-                    <!---SECCION DE SEDE--->
-                    <?php
-                    $usuario = 'root';
-                    $password = '';
-                    $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
-                    ?>
-                    <h3><strong>1.DATOS DE SEDE</strong></h3>
-                    <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputAddress">Código de sede:</label>
-                      <select id="Sede" disabled name="CodigoSede" class="form-control">
-                        <option>{{$alumno->CodigoSede}}</option>
-                        <?php
-                         $query = $db->prepare("SELECT * FROM sedes");
-                         $query->execute();
-                         $data = $query->fetchAll();
 
-                         foreach ($data as $valores):
-                         echo '<option value="'.$valores["CodigoSede"].'">'.$valores["CodigoSede"].'</option>';
-                         endforeach;
-                         ?>
-                     </select>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                      <label for="inputAddress">Nombre de sede:</label>
-                      <select disabled id="Sede" name="Sede" class="form-control">
-                        <option>{{$alumno->Sede}}</option>
-                        <?php
-                         $query = $db->prepare("SELECT * FROM sedes");
-                         $query->execute();
-                         $data = $query->fetchAll();
-
-                         foreach ($data as $valores):
-                         echo '<option value="'.$valores["Sede"].'">'.$valores["Sede"].'</option>';
-                         endforeach;
-                         ?>
-                     </select>
-                    </div>
-                    </div>
                       <!---SECCION DE DATOS PERSONALES--->
-                      <h3><strong>2.DATOS PERSONALES</strong></h3>
+                      <h3><strong>1.DATOS PERSONALES</strong></h3>
 
                      <!---Primera fila"--->
                      <div class="form-row">
@@ -264,7 +225,7 @@
 
 
                        <!---SECCION DE DATOS FAMILIARES--->
-                      <h3><strong>3.DATOS FAMILIARES O RESPONSABLE</strong></h3>
+                      <h3><strong>2.DATOS FAMILIARES O RESPONSABLE</strong></h3>
                       <!---Primera fila"--->
                      <div class="form-row">
                           <div class="form-group col-md-6">
@@ -328,7 +289,7 @@
 
 
                       <!---SECCION DE LOS DATOS DE RESIDENCIA--->
-                      <h3><strong>4.DATOS DE RESIDENCIA</strong></h3>
+                      <h3><strong>3.DATOS DE RESIDENCIA</strong></h3>
 
                       <!---Primera fila"--->
                       <div class="form-row">
@@ -405,7 +366,7 @@
                      <hr>
 
                      <!---SECCION DE LOS DATOS SOBRE SITUACION FAMILIAR--->
-                     <h3><strong>5.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
+                     <h3><strong>4.DATOS SOBRE SITUACION FAMILIAR</strong></h3>
 
                      <!---Primera fila"--->
                      <div class="form-row">
@@ -614,7 +575,7 @@
                       </script>
                       <hr>
                       <!---SECCION DE ESTUDIOS REALIZADOS--->
-                     <h3><strong>6.ESTUDIOS REALIZADOS</strong></h3>
+                     <h3><strong>5.ESTUDIOS REALIZADOS</strong></h3>
 
                      <!---Primera fila--->
                      <div class="form-row">
