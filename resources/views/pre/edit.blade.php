@@ -14,6 +14,46 @@
           <div class="panel-heading">Formulario de preregistro</div>
           <div class="panel-body">
 
+            <!---SECCION DE SEDE--->
+            <?php
+            $usuario = 'root';
+            $password = '';
+            $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
+            ?>
+            <div class="form-row" style="margin-bottom:100px;">
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Código de sede:</label>
+              <select id="Sede" name="CodigoSede" class="form-control">
+                <option>{{old('CodigoSede')}}</option>
+                <?php
+                 $query = $db->prepare("SELECT * FROM sedes");
+                 $query->execute();
+                 $data = $query->fetchAll();
+
+                 foreach ($data as $valores):
+                 echo '<option value="'.$valores["CodigoSede"].'">'.$valores["CodigoSede"].'</option>';
+                 endforeach;
+                 ?>
+             </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Nombre de sede:</label>
+              <select id="Sede" name="Sede" class="form-control">
+                <option>{{old('Sede')}}</option>
+                <?php
+                 $query = $db->prepare("SELECT * FROM sedes");
+                 $query->execute();
+                 $data = $query->fetchAll();
+
+                 foreach ($data as $valores):
+                 echo '<option value="'.$valores["Sede"].'">'.$valores["Sede"].'</option>';
+                 endforeach;
+                 ?>
+             </select>
+            </div>
+            </div>
+
             <!---Primera fila"--->
         <div class="form-group">
           <div class="form-group col-md-6">
