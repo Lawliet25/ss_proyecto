@@ -14,6 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('preregistro', function (Blueprint $table) {
+          $table->string('CodigoSede',50)->nullable();
+          $table->string('Sede',50)->nullable();
           $table->string('Turno',200)->nullable();
           $table->string('Modalidad',200)->nullable();
           $table->string('Jornada',200)->nullable();

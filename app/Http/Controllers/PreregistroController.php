@@ -81,6 +81,10 @@ class PreregistroController extends Controller
       $preregistro->TipoIngreso=$request->TipoIngreso;
       $preregistro->Seccion=$request->Seccion;
 
+      //Sede
+      $preregistro->CodigoSede=$request->CodigoSede;
+      $preregistro->Sede=$request->Sede;
+
       $preregistro->save();
       return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');//Redirecciona a vista index junto con alerta
     }
@@ -149,6 +153,10 @@ class PreregistroController extends Controller
       $preregistro->Jornada=$request->Jornada;
       $preregistro->TipoIngreso=$request->TipoIngreso;
       $preregistro->Seccion=$request->Seccion;
+
+      //Sede
+      $preregistro->CodigoSede=$request->CodigoSede;
+      $preregistro->Sede=$request->Sede;
 
       $request->validate([
         'DocumentoPdf'=>['mimes:pdf']
