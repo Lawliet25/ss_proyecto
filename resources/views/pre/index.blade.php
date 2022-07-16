@@ -84,7 +84,7 @@
 
                     </td>
                     <td>
-                      <a class="btn btn-danger" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registro de ficha</a>
+                      <a class="btn btn-danger" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registrar</a>
                     </td>
                     </tr>
                   @endforeach

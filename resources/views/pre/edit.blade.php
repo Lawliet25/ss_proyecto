@@ -20,7 +20,7 @@
             $password = '';
             $db = new PDO('mysql:host=localhost;dbname=bvudb', $usuario, $password);
             ?>
-            <div class="form-row" style="margin-bottom:100px;">
+            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputAddress">Código de sede:</label>
               <select id="Sede" name="CodigoSede" class="form-control">
@@ -55,7 +55,7 @@
             </div>
 
             <!---Primera fila"--->
-        <div class="form-group">
+        <div class="form-group" style="margin-bottom:168px;">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Nombres</label>
             <input value="{{$preregistro->Nombres}}" type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Digite los nombres">
@@ -67,7 +67,7 @@
         </div>
 
         <!---Segunda fila"--->
-        <div class="form-row">
+        <div class="form-row" style="margin-bottom:268px">
         <div class="form-group col-md-6">
           <label for="inputAddress">Año de inscripción</label>
           <select id="Grado" name="Grado" class="form-control" value="{{$preregistro->Grado}}">
@@ -97,7 +97,7 @@
           <input value="{{$preregistro->NIE}}" type="text" class="form-control" id="NIE" name="NIE" placeholder="Digite el NIE">
         </div>
         </div>
-        <div class="form-row">
+        <div class="form-row" style="margin-bottom:368px">
           <div class="form-group col-md-6">
             <label for="inputCity">Fecha de recepción</label>
             <input value="{{$preregistro->FechaRecepcion}}"  class="form-control" id="FechaRecepcion" name="FechaRecepcion">
@@ -107,7 +107,7 @@
             <input value="{{$preregistro->DUI}}" type="text" class="form-control" id="DUI" name="DUI" placeholder="Digite el DUI">
           </div>
           </div>
-          <div class="form-row">
+          <div class="form-row"  style="margin-bottom:468px">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nombre de quién recibe</label>
               <input value="{{$preregistro->PersonaRecibido}}" type="text" class="form-control" id="PersonaRecibido" name="PersonaRecibido" placeholder="Digite el nombre del recepcionista">
@@ -128,10 +128,11 @@
             </div>
           </div>
           <!---SECCION  DE DATOS MATRICULA--->
+          <hr>
         <h5><i><strong>DATOS DE MATRICULA</strong></i></h5>
 
         <!---Primera fila--->
-        <div class="form-row" style="margin-bottom:100px">
+        <div class="form-row" style="margin-bottom:50px">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Turno:</label>
                 <select class="form-control" name="Turno">
@@ -162,7 +163,7 @@
          </div>
 
          <!---Segunda fila--->
-         <div class="form-row" style="margin-bottom:190px">
+         <div class="form-row" style="margin-bottom:100px">
          <div class="form-group col-md-6">
                 <label for="inputEmail4">Modalidad de atención:</label>
                 <select class="form-control" name="Modalidad">
@@ -196,11 +197,11 @@
                 @enderror
             </div>
          </div>
-         <hr>
+
 
          <!---Tercera fila GRADO A MATRICULAR--->
 
-         <div class="form-row" style="margin-bottom:100px">
+         <div class="form-row" style="margin-bottom:252px">
              <div class="form-group col-md-6">
                 <label for="">Grados disponibles:</label>
                  <select class="form-control" name="Grado">
