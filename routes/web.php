@@ -60,6 +60,7 @@ Route::controller(ReportesController::class)->group(function(){
   Route::get('/reportes/pdf2','pdf2')->name('reportes.pdf2')->middleware('auth');;
 });
 
+Route::get('/exportar/alumnos',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoExport']);
 Route::view('login','login')->name('login')->middleware('guest');;
 Route::view('logout','logout')->name('logout');
 
