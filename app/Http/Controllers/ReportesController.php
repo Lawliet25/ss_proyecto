@@ -16,14 +16,14 @@ class ReportesController extends Controller
      */
     public function index(Request $request)
     {
-      /* Se crea vista index con los componentes de filtro 
+      /* Se crea vista index con los componentes de filtro
       y en la data se hace una consulta join para mostrar los datos en una tabla */
       $buscar = $request->get('buscarpor');
       $tipo = $request->get('tipo');
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
-                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
+                'preregistro.Seccion', 'preregistro.Modalidad','preregistro.DUI', 'preregistro.Turno',
+                'preregistro.Sede','datosalumnofr.Sexo','datosalumnofr.Email','preregistro.Grado')
               ->Buscarpor($tipo, $buscar)
               ->paginate(500);
 
@@ -35,9 +35,9 @@ class ReportesController extends Controller
 
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
-                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '7° grado')
+                'preregistro.Seccion', 'preregistro.Modalidad','preregistro.DUI', 'preregistro.Turno',
+                'preregistro.Sede','datosalumnofr.Sexo','datosalumnofr.Email','preregistro.Grado')
+              ->where('Grado', 'LIKE', '7° grado')
               ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
@@ -49,9 +49,9 @@ class ReportesController extends Controller
 
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
-                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '8° grado')
+                'preregistro.Seccion', 'preregistro.Modalidad','preregistro.DUI', 'preregistro.Turno',
+                'preregistro.Sede','datosalumnofr.Sexo','datosalumnofr.Email','preregistro.Grado')
+              ->where('Grado', 'LIKE', '8° grado')
               ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
@@ -63,12 +63,13 @@ class ReportesController extends Controller
 
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
-                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '9° grado')
+                'preregistro.Seccion', 'preregistro.Modalidad','preregistro.DUI', 'preregistro.Turno',
+                'preregistro.Sede','datosalumnofr.Sexo','datosalumnofr.Email','preregistro.Grado','preregistro.Estado')
+              ->where('Grado', 'LIKE', '9° grado')
               ->paginate(500);
-              $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
-              return $pdf->stream();
+
+                $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
+                return $pdf->stream();
 
     }
     /* Generando pdf de primer año */
@@ -77,10 +78,10 @@ class ReportesController extends Controller
 
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
-                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '1er año')->orWhere('GradoMatricular','LIKE','PRIMER AÑO')
-              ->paginate(1000);
+                'preregistro.Seccion', 'preregistro.Modalidad','preregistro.DUI', 'preregistro.Turno',
+                'preregistro.Sede','datosalumnofr.Sexo','datosalumnofr.Email','preregistro.Grado')
+              ->where('Grado', 'LIKE', 'primer año')
+              ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
     }
@@ -90,10 +91,10 @@ class ReportesController extends Controller
 
       $data = Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
               ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos',
-                'datosalumnofr.Seccion', 'datosalumnofr.Modalidad','preregistro.DUI', 'datosalumnofr.Turno',
-                'datosalumnofr.Sede','datosalumnofr.Sexo','datosalumnofr.Email','datosalumnofr.GradoMatricular')
-              ->where('GradoMatricular', 'LIKE', '2do año')->orWhere('GradoMatricular','LIKE','SEGUNDO AÑO')
-              ->paginate(1000);
+                'preregistro.Seccion', 'preregistro.Modalidad','preregistro.DUI', 'preregistro.Turno',
+                'preregistro.Sede','datosalumnofr.Sexo','datosalumnofr.Email','preregistro.Grado')
+              ->where('Grado', 'LIKE', 'segundo año')
+              ->paginate(500);
               $pdf = PDF::loadView('reportes.pdf',['data'=>$data]);
               return $pdf->stream();
     }

@@ -15,6 +15,8 @@
               <option>Nombres</option>
               <option>Apellidos</option>
               <option>NIE</option>
+              <option>Sede</option>
+              <option value="Año">Año de matrícula</option>
             </select>
           </div>
           <div class="form-group col-md-3" style="margin-top:25px;">
@@ -28,7 +30,7 @@
       </div>
             <div class="row">
 
-                <div class="col-md-11">
+                <div class="col-md-12">
                   <hr>
 
                   @if($buscar)
@@ -83,7 +85,7 @@
 
                     </td>
                     <td>
-                      <a class="btn btn-danger" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registro de ficha</a>
+                      <a class="btn btn-danger" href="{{route('Ficha.create',$preregistro->id)}}" role="button">Registrar</a>
                     </td>
                     </tr>
                   @endforeach
