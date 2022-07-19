@@ -61,6 +61,17 @@ Route::controller(ReportesController::class)->group(function(){
 });
 
 Route::get('/exportar/alumnos',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoExport']);
+//Sede 1
+Route::get('/exportar/alumnosSedes',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport']);
+Route::get('/exportar/alumnosSedes2',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport2']);
+Route::get('/exportar/alumnosSedes3',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport3']);
+Route::get('/exportar/alumnosSedes4',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport4']);
+//Sede 2
+Route::get('/exportar/alumnosSedes11',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport11']);
+Route::get('/exportar/alumnosSedes12',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport12']);
+Route::get('/exportar/alumnosSedes13',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport13']);
+Route::get('/exportar/alumnosSedes14',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport14']);
+
 Route::view('login','login')->name('login')->middleware('guest');;
 Route::view('logout','logout')->name('logout');
 
