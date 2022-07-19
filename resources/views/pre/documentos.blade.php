@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-          
+
             <div class="row">
                 <div class="col-md-10">
                   <h3>Agregar documentos a alumno</h3>
@@ -26,8 +26,8 @@
                         <label for="" class="form-label">Ficha de registro</label>
                         <select id="FichaRegistro" name="FichaRegistro" class="form-control">
                           <option>{{$preregistro->FichaRegistro}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
 
                         </select>
                       </div>
@@ -35,64 +35,64 @@
                         <label for="" class="form-label">Foto de certificado</label>
                         <select id="FotoCertificado" name="FotoCertificado" class="form-control">
                           <option>{{$preregistro->FotoCertificado}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Foto de título</label>
                         <select id="FotoTitulo" name="FotoTitulo" class="form-control">
                           <option>{{$preregistro->FotoTitulo}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Partida de nacimiento</label>
                         <select id="PartidaNacimiento" name="PartidaNacimiento" class="form-control">
                           <option>{{$preregistro->PartidaNacimiento}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Copia de DUI</label>
                         <select id="CopiaDui" name="CopiaDui" class="form-control">
                           <option>{{$preregistro->CopiaDui}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Declaración jurada</label>
                         <select id="DeclaracionJurada" name="DeclaracionJurada" class="form-control">
                           <option>{{$preregistro->DeclaracionJurada}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Copia DUI de responsable</label>
                         <select id="CopiaDuiResponsable" name="CopiaDuiResponsable" class="form-control">
                           <option>{{$preregistro->CopiaDuiResponsable}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Certificado original</label>
                         <select id="CertificadoOriginal" name="CertificadoOriginal" class="form-control">
                           <option>{{$preregistro->CertificadoOriginal}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="formFile" class="form-label">Certificado de notas</label>
                         <select id="CertificadoNotas" name="CertificadoNotas" class="form-control">
                           <option>{{$preregistro->CertificadoNotas}}</option>
-                          <option>Si</option>
-                          <option>No</option>
+                          <option>SÍ</option>
+                          <option>NO</option>
                         </select>
                       </div>
                       <div class="form-group col-md-6">
@@ -144,6 +144,10 @@
                           <option>Activo</option>
                           <option>Inactivo</option>
                         </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Año de matrícula</label>
+                        <input readonly value="{{$preregistro->Año}}" type="text" class="form-control" id="Año" name="Año">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPassword4">Observaciones</label>
