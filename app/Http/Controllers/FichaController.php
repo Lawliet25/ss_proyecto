@@ -121,37 +121,37 @@ class FichaController extends Controller
         $alumno->EspecifiqueConv=$request->EspecifiqueConv;
         $alumno->EspecifiqueEcon=$request->EspecifiqueEcon;
         $alumno->NumFamiliares=$request->NumFamiliares;
-        $alumno->Enfermedades=$request->Enfermedades;
-        $alumno->Medicamentos=$request->Medicamentos;
+        $alumno->Enfermedades=strtoupper($request->Enfermedades);
+        $alumno->Medicamentos=strtoupper($request->Medicamentos);
         $alumno->FechaFR=$request->FechaFR;
 
         //Historial
         $alumno->InstitucionAcademica=$request->InstitucionAcademica;
         $alumno->AñoCursado=$request->AñoCursado;
         $alumno->GradoCursado=$request->GradoCursado;
-        $alumno->CentroEducativo=$request->CentroEducativo;
+        $alumno->CentroEducativo=strtoupper($request->CentroEducativo);
 
         //Encargado
-        $alumno->NombresEncargado=$request->NombresEncargado;
-        $alumno->ApellidosEncargado=$request->ApellidosEncargado;
+        $alumno->NombresEncargado=strtoupper($request->NombresEncargado);
+        $alumno->ApellidosEncargado=strtoupper($request->ApellidosEncargado);
         $alumno->ParentescoEncargado=$request->ParentescoEncargado;
-        $alumno->LugarTrabajoEncargado=$request->LugarTrabajoEncargado;
+        $alumno->LugarTrabajoEncargado=strtoupper($request->LugarTrabajoEncargado);
         $alumno->TelefonoEncargado=$request->TelefonoEncargado;
         $alumno->DUIEncargado=$request->DUIEncargado;
-        $alumno->ProfesionEncargado=$request->ProfesionEncargado;
-        $alumno->DireccionEncargado=$request->DireccionEncargado;
+        $alumno->ProfesionEncargado=strtoupper($request->ProfesionEncargado);
+        $alumno->DireccionEncargado=strtoupper($request->DireccionEncargado);
 
         //Matrícula
-        $alumno->DatosAdicionales=$request->DatosAdicionales;
+        $alumno->DatosAdicionales=strtoupper($request->DatosAdicionales);
         //Residencia
-        $alumno->Direccion=$request->Direccion;
+        $alumno->Direccion=strtoupper($request->Direccion);
         $alumno->Zona=$request->Zona;
         $alumno->TelefonoResidencia=$request->TelefonoResidencia;
         $alumno->TelefonoTrabajo=$request->TelefonoTrabajo;
         $alumno->Celular=$request->Celular;
-        $alumno->Email=$request->Email;
+        $alumno->Email=strtoupper($request->Email);
         $alumno->Departamento=$request->Departamento;
-        $alumno->Municipio=$request->Municipio;
+        $alumno->Municipio=strtoupper($request->Municipio);
 
         //Hijos
         $alumno->CantidadHijos=$request->CantidadHijos;
@@ -163,7 +163,7 @@ class FichaController extends Controller
         $alumno->Sexo3=$request->Sexo3;
         $alumno->Edad4=$request->Edad4;
         $alumno->Sexo4=$request->Sexo4;
-        $alumno->PersonaRegistro=$request->PersonaRegistro;
+        $alumno->PersonaRegistro=strtoupper($request->PersonaRegistro);
 
         //Foránea
         $alumno->id_preregistro=$request->id_preregistro;
@@ -232,38 +232,37 @@ class FichaController extends Controller
       $alumno->EspecifiqueConv=$request->EspecifiqueConv;
       $alumno->EspecifiqueEcon=$request->EspecifiqueEcon;
       $alumno->NumFamiliares=$request->NumFamiliares;
-      $alumno->Enfermedades=$request->Enfermedades;
-      $alumno->Medicamentos=$request->Medicamentos;
+      $alumno->Enfermedades=strtoupper($request->Enfermedades);
+      $alumno->Medicamentos=strtoupper($request->Medicamentos);
       $alumno->FechaFR=$request->FechaFR;
 
       //Historial
       $alumno->InstitucionAcademica=$request->InstitucionAcademica;
       $alumno->AñoCursado=$request->AñoCursado;
       $alumno->GradoCursado=$request->GradoCursado;
-      $alumno->CentroEducativo=$request->CentroEducativo;
+      $alumno->CentroEducativo=strtoupper($request->CentroEducativo);
 
       //Encargado
-      $alumno->NombresEncargado=$request->NombresEncargado;
-      $alumno->ApellidosEncargado=$request->ApellidosEncargado;
+      $alumno->NombresEncargado=strtoupper($request->NombresEncargado);
+      $alumno->ApellidosEncargado=strtoupper($request->ApellidosEncargado);
       $alumno->ParentescoEncargado=$request->ParentescoEncargado;
-      $alumno->LugarTrabajoEncargado=$request->LugarTrabajoEncargado;
+      $alumno->LugarTrabajoEncargado=strtoupper($request->LugarTrabajoEncargado);
       $alumno->TelefonoEncargado=$request->TelefonoEncargado;
       $alumno->DUIEncargado=$request->DUIEncargado;
-      $alumno->ProfesionEncargado=$request->ProfesionEncargado;
-      $alumno->DireccionEncargado=$request->DireccionEncargado;
+      $alumno->ProfesionEncargado=strtoupper($request->ProfesionEncargado);
+      $alumno->DireccionEncargado=strtoupper($request->DireccionEncargado);
 
       //Matrícula
-      $alumno->DatosAdicionales=$request->DatosAdicionales;
-
+      $alumno->DatosAdicionales=strtoupper($request->DatosAdicionales);
       //Residencia
-      $alumno->Direccion=$request->Direccion;
+      $alumno->Direccion=strtoupper($request->Direccion);
       $alumno->Zona=$request->Zona;
       $alumno->TelefonoResidencia=$request->TelefonoResidencia;
       $alumno->TelefonoTrabajo=$request->TelefonoTrabajo;
       $alumno->Celular=$request->Celular;
-      $alumno->Email=$request->Email;
+      $alumno->Email=strtoupper($request->Email);
       $alumno->Departamento=$request->Departamento;
-      $alumno->Municipio=$request->Municipio;
+      $alumno->Municipio=strtoupper($request->Municipio);
 
       //Hijos
       $alumno->CantidadHijos=$request->CantidadHijos;
@@ -275,7 +274,7 @@ class FichaController extends Controller
       $alumno->Sexo3=$request->Sexo3;
       $alumno->Edad4=$request->Edad4;
       $alumno->Sexo4=$request->Sexo4;
-      $alumno->PersonaRegistro=$request->PersonaRegistro;
+      $alumno->PersonaRegistro=strtoupper($request->PersonaRegistro);
 
 
       //Foránea

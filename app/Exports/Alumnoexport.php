@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Models\Preregistro;
+use App\Models\DatosAlumno;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
@@ -13,50 +14,60 @@ class Alumnoexport implements FromCollection,   WithHeadings
     */
     public function collection()
     {
-        return Preregistro::all(
-            'id',
-            'Nombres',
-            'Apellidos',
-            'NIE',
-            'DUI',
-            'Estado',
-            'Grado',
-            'Observacion',
-            'PersonaRecibido',
-            'FechaRecepcion',
-            'DocumentoPdf',
-            'Turno',
-            'Jornada',
-            'Modalidad',
-            'Seccion',
-            'TipoIngreso',
-            'Año',
-            'CodigoSede',
-            'Sede'
-        );
+      return Preregistro::join('datosalumnofr', 'preregistro.id', 'datosalumnofr.id_preregistro')
+              ->select('datosalumnofr.id','preregistro.NIE', 'preregistro.Nombres', 'preregistro.Apellidos', 'preregistro.DUI',
+              'datosalumnofr.Sexo', 'datosalumnofr.IdentidadGenero','datosalumnofr.FechaNacimiento','datosalumnofr.Nacionalidad',
+              'datosalumnofr.EstadoFamiliar','datosalumnofr.MedioTransporte','datosalumnofr.DistanciaSede',
+              'datosalumnofr.Trabaja','datosalumnofr.Retornado',
+              'preregistro.Grado', 'preregistro.Año','preregistro.Sede','preregistro.Seccion','preregistro.Modalidad',
+              'preregistro.Turno', 'preregistro.Jornada', 'preregistro.Estado',
+              'datosalumnofr.NombresEncargado','datosalumnofr.ApellidosEncargado',
+              'datosalumnofr.ParentescoEncargado', 'datosalumnofr.Direccion', 'datosalumnofr.Celular', 'datosalumnofr.Zona',
+              'datosalumnofr.ConvivenciaFamiliar','datosalumnofr.NumFamiliares','datosalumnofr.CantidadHijos',
+              'datosalumnofr.GradoCursado','datosalumnofr.AñoCursado','datosalumnofr.InstitucionAcademica','datosalumnofr.CentroEducativo',
+              'datosalumnofr.FechaFR',
+              )
+              ->get();
     }
 
     public function headings(): array{
         return [
             'id',
+            'NIE',
             'Nombres',
             'Apellidos',
-            'NIE',
             'DUI',
-            'Estado',
+            'Sexo',
+            'Identidad de género',
+            'Fecha de nacimiento',
+            'Nacionalidad',
+            'Estado familiar',
+            'Medio de transporte',
+            'Distancia a sede',
+            'Trabaja',
+            'Retornado',
             'Grado',
-            'Observacion',
-            'PersonaRecibido',
-            'FechaRecepcion',  
-            'DocumentoPdf',
+            'Año',
+            'Sede',
+            'Sección',
+            'Modalidad',
             'Turno',
             'Jornada',
-            'Modalidad',
-            'Seccion',
-            'TipoIngreso',
-            'Año',
-            'CodigoSede',
-            'Sede'
+            'Estado',
+            'Nombres Encargado',
+            'Apellidos Encargado',
+            'Parentesco',
+            'Dirección',
+            'Celular',
+            'Zona',
+            'Convivencia Familiar',
+            'Número de familiares',
+            'Cantidad de hijos',
+            'Grado Cursado',
+            'Año Cursado',
+            'Institucion Académica',
+            'Centro Educativo',
+            'Fecha de registro'
         ];
     }
 }

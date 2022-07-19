@@ -19,7 +19,7 @@
                      <input style="margin-left:10px;" readonly type="text" name="id_preregistro" value="{{$alumno->id_preregistro}}" class="form-control"><br>
                    </div>
                     <hr>
-                    
+
                       <!---SECCION DE DATOS PERSONALES--->
                       <h3><strong>1.DATOS PERSONALES</strong></h3>
 
@@ -325,7 +325,7 @@
                                 $data = $query->fetchAll();
 
                                 foreach ($data as $valores):
-                                echo '<option value="'.$valores["Departamento"].'">'.$valores["Departamento"].'</option>';
+                                echo '<option>'.$valores["Departamento"].'</option>';
                                 endforeach;
                                 ?>
                              </select>

@@ -384,7 +384,7 @@
                                 $data = $query->fetchAll();
 
                                 foreach ($data as $valores):
-                                echo '<option value="'.$valores["id"].'">'.$valores["Departamento"].'</option>';
+                                echo '<option>'.$valores["Departamento"].'</option>';
                                 endforeach;
                                 ?>
                              </select>

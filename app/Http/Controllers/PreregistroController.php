@@ -63,27 +63,27 @@ class PreregistroController extends Controller
       los campos ya validados en base de datos */
       $preregistro= new Preregistro();
 
-      $preregistro->Nombres=$request->Nombres;
-      $preregistro->Apellidos=$request->Apellidos;
+      $preregistro->Nombres=strtoupper($request->Nombres);
+      $preregistro->Apellidos=strtoupper($request->Apellidos);
       $preregistro->NIE=$request->NIE;
       $preregistro->DUI=$request->DUI;
       $preregistro->FechaRecepcion=$request->FechaRecepcion;
-      $preregistro->Estado=$request->Estado;
-      $preregistro->PersonaRecibido=$request->PersonaRecibido;
-      $preregistro->Grado=$request->Grado;
-      $preregistro->Observacion=$request->Observacion;
+      $preregistro->Estado=strtoupper($request->Estado);
+      $preregistro->PersonaRecibido=strtoupper($request->PersonaRecibido);
+      $preregistro->Grado=strtoupper($request->Grado);
+      $preregistro->Observacion=strtoupper($request->Observacion);
       $preregistro->Año=$request->Año;
 
       //matrícula
-      $preregistro->Turno=$request->Turno;
-      $preregistro->Modalidad=$request->Modalidad;
-      $preregistro->Jornada=$request->Jornada;
-      $preregistro->TipoIngreso=$request->TipoIngreso;
-      $preregistro->Seccion=$request->Seccion;
+      $preregistro->Turno=strtoupper($request->Turno);
+      $preregistro->Modalidad=strtoupper($request->Modalidad);
+      $preregistro->Jornada=strtoupper($request->Jornada);
+      $preregistro->TipoIngreso=strtoupper($request->TipoIngreso);
+      $preregistro->Seccion=strtoupper($request->Seccion);
 
       //Sede
       $preregistro->CodigoSede=$request->CodigoSede;
-      $preregistro->Sede=$request->Sede;
+      $preregistro->Sede=strtoupper($request->Sede);
 
       $preregistro->save();
       return redirect()->route('pre.index')->with('status', 'Preregistro ingresado correctamente.');//Redirecciona a vista index junto con alerta
@@ -127,15 +127,16 @@ class PreregistroController extends Controller
       mediante el id y se modifican los campos */
       $preregistro= Preregistro::find($id);
 
-      $preregistro->Nombres=$request->Nombres;
-      $preregistro->Apellidos=$request->Apellidos;
+      $preregistro->Nombres=strtoupper($request->Nombres);
+      $preregistro->Apellidos=strtoupper($request->Apellidos);
       $preregistro->NIE=$request->NIE;
       $preregistro->DUI=$request->DUI;
       $preregistro->FechaRecepcion=$request->FechaRecepcion;
-      $preregistro->Estado=$request->Estado;
-      $preregistro->PersonaRecibido=$request->PersonaRecibido;
-      $preregistro->Grado=$request->Grado;
-      $preregistro->Observacion=$request->Observacion;
+      $preregistro->Estado=strtoupper($request->Estado);
+      $preregistro->PersonaRecibido=strtoupper($request->PersonaRecibido);
+      $preregistro->Grado=strtoupper($request->Grado);
+      $preregistro->Observacion=strtoupper($request->Observacion);
+      $preregistro->Año=$request->Año;
 
       $preregistro->FichaRegistro=$request->FichaRegistro;
       $preregistro->FotoCertificado=$request->FotoCertificado;
@@ -148,15 +149,15 @@ class PreregistroController extends Controller
       $preregistro->CertificadoNotas=$request->CertificadoNotas;
 
       //matrícula
-      $preregistro->Turno=$request->Turno;
-      $preregistro->Modalidad=$request->Modalidad;
-      $preregistro->Jornada=$request->Jornada;
-      $preregistro->TipoIngreso=$request->TipoIngreso;
-      $preregistro->Seccion=$request->Seccion;
+      $preregistro->Turno=strtoupper($request->Turno);
+      $preregistro->Modalidad=strtoupper($request->Modalidad);
+      $preregistro->Jornada=strtoupper($request->Jornada);
+      $preregistro->TipoIngreso=strtoupper($request->TipoIngreso);
+      $preregistro->Seccion=strtoupper($request->Seccion);
 
       //Sede
       $preregistro->CodigoSede=$request->CodigoSede;
-      $preregistro->Sede=$request->Sede;
+      $preregistro->Sede=strtoupper($request->Sede);
 
       $request->validate([
         'DocumentoPdf'=>['mimes:pdf']

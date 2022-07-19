@@ -70,7 +70,7 @@
         <div class="form-row" style="margin-bottom:268px">
         <div class="form-group col-md-6">
           <label for="inputAddress">Año de inscripción</label>
-          <select id="Grado" name="Grado" class="form-control" value="{{$preregistro->Grado}}">
+          <select id="Año" name="Año" class="form-control">
             <option>{{$preregistro->Año}}</option>
             <option>2018</option>
             <option>2019</option>

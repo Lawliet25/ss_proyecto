@@ -34,9 +34,12 @@
               Los resultados para tu búsqueda "{{$buscar}}" son:
               </div>@endif
               <h3>Lista de información de alumnos</h3>
+              <a type="button" class="btn btn-danger" href="../../public/exportar/alumnos">Descargar reporte global
+                <span class="glyphicon glyphicon-download-alt"></span>
+              </a><br><br>
             </div>
             <div class="">
-                <div class="col-md-12">
+                <div class="col-md-13">
                 @if (session('status'))
                   <div class="alert alert-success">
                   <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
