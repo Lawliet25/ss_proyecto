@@ -24,7 +24,7 @@ class AlumnoSedeExport2 implements FromCollection,   WithHeadings
               'datosalumnofr.ConvivenciaFamiliar','datosalumnofr.NumFamiliares','datosalumnofr.CantidadHijos',
               'datosalumnofr.GradoCursado','datosalumnofr.AñoCursado','datosalumnofr.InstitucionAcademica','datosalumnofr.CentroEducativo',
               'datosalumnofr.FechaFR',
-              )->where('Sede', 'LIKE','Rio frio')->where('Año', 'LIKE', '2021')
+              )->where('Sede', 'LIKE','Bachillerato Virtual')->where('Año', 'LIKE', '2021')
               ->get();
 
     }

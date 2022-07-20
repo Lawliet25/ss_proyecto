@@ -52,7 +52,7 @@
                 <td>2023</td>
               </tr>
               <tr>
-                <td> <h4>Río frío</h4> </td>
+                <td> <h4>Bachillerato Virtual</h4> </td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes2"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes3"><span class="glyphicon glyphicon-download-alt"></span></a></td>
@@ -60,13 +60,41 @@
 
               </tr>
               <tr>
-                <td> <h4>Tepetitán</h4> </td>
+                <td> <h4>TNA-UNICEF</h4> </td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes11"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes12"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes13"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes14"><span class="glyphicon glyphicon-download-alt"></span></a></td>
 
               </tr>
+
+              <tr>
+                <td> <h4>TNA- Centro Escolar Las Brisas-Soyapango</h4> </td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes21"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes22"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes23"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes24"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+
+              </tr>
+
+              <tr>
+                <td> <h4>TNA- Complejo Educativo Joaquín Rodezno- San Salvador</h4> </td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes31"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes32"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes33"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes34"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+
+              </tr>
+
+              <tr>
+                <td> <h4>TNA- Centro Escolar Dolores C- Retes- San Miguel</h4> </td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes41"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes42"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes43"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+                <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes44"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+
+              </tr>
+
           </thead>
 
         </table>

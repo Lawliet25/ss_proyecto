@@ -71,6 +71,22 @@ Route::get('/exportar/alumnosSedes11',[App\Http\Controllers\Alumnoexportcontroll
 Route::get('/exportar/alumnosSedes12',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport12']);
 Route::get('/exportar/alumnosSedes13',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport13']);
 Route::get('/exportar/alumnosSedes14',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport14']);
+//Sede 3
+Route::get('/exportar/alumnosSedes11',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport21']);
+Route::get('/exportar/alumnosSedes12',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport22']);
+Route::get('/exportar/alumnosSedes13',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport23']);
+Route::get('/exportar/alumnosSedes14',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport24']);
+//Sede 4
+Route::get('/exportar/alumnosSedes11',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport31']);
+Route::get('/exportar/alumnosSedes12',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport32']);
+Route::get('/exportar/alumnosSedes13',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport33']);
+Route::get('/exportar/alumnosSedes14',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport34']);
+//Sede 5
+Route::get('/exportar/alumnosSedes11',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport41']);
+Route::get('/exportar/alumnosSedes12',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport42']);
+Route::get('/exportar/alumnosSedes13',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport43']);
+Route::get('/exportar/alumnosSedes14',[App\Http\Controllers\Alumnoexportcontroller::class, 'AlumnoSedeExport44']);
+
 
 Route::view('login','login')->name('login')->middleware('guest');;
 Route::view('logout','logout')->name('logout');

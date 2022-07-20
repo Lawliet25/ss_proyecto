@@ -12,7 +12,7 @@
                     <option></option>
                     <option>Nombres</option>
                     <option>Apellidos</option>
-                    <option value="NombresEncargado">Encargado</option>
+                    <option value="NombresEncargado">Nombre Encargado</option>
                     <option value="PersonaRegistro">Persona que registró</option>
                     <option value="FechaFR">Fecha de registro</option>
                   </select>

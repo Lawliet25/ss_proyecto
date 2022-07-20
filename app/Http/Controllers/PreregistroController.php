@@ -19,7 +19,7 @@ class PreregistroController extends Controller
         de alumnos preregistrados */
         $buscar = $request->get('buscarpor');
         $tipo = $request->get('tipo');
-        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->paginate(10);
+        $preregistros = Preregistro::Buscarpor($tipo, $buscar)->orderBy('id','asc')->paginate(10);
         return view('pre.index',['preregistros'=>$preregistros],['buscar'=>$buscar]);
       }
 

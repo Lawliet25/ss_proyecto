@@ -7,7 +7,7 @@ use App\Models\DatosAlumno;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class AlumnoSedeExport implements FromCollection,   WithHeadings
+class AlumnoSedeExport14 implements FromCollection,   WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -26,7 +26,7 @@ class AlumnoSedeExport implements FromCollection,   WithHeadings
               'datosalumnofr.ConvivenciaFamiliar','datosalumnofr.NumFamiliares','datosalumnofr.CantidadHijos',
               'datosalumnofr.GradoCursado','datosalumnofr.AñoCursado','datosalumnofr.InstitucionAcademica','datosalumnofr.CentroEducativo',
               'datosalumnofr.FechaFR',
-              )->where('Sede', 'LIKE','Bachillerato Virtual')->where('Año', 'LIKE', '2020')
+              )->where('Sede', 'LIKE','%Las Brisas%')->where('Año', 'LIKE', '2022')
               ->get();
 
     }
@@ -72,6 +72,5 @@ class AlumnoSedeExport implements FromCollection,   WithHeadings
         ];
     }
 }
-
 
 ?>

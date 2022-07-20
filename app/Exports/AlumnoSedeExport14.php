@@ -26,7 +26,7 @@ class AlumnoSedeExport14 implements FromCollection,   WithHeadings
               'datosalumnofr.ConvivenciaFamiliar','datosalumnofr.NumFamiliares','datosalumnofr.CantidadHijos',
               'datosalumnofr.GradoCursado','datosalumnofr.AñoCursado','datosalumnofr.InstitucionAcademica','datosalumnofr.CentroEducativo',
               'datosalumnofr.FechaFR',
-              )->where('Sede', 'LIKE','Tepetitan')->where('Año', 'LIKE', '2023')
+              )->where('Sede', 'LIKE','TNA-UNICEF')->where('Año', 'LIKE', '2023')
               ->get();
 
     }
