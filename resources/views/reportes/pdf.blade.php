@@ -48,6 +48,7 @@
                 <th>Sección</th>
                 <th>Turno</th>
                 <th>Sede</th>
+                <th>Año</th>
 
             </tr>
         </thead>
@@ -62,6 +63,7 @@
         <td>{{$dato->Seccion}}</td>
         <td>{{$dato->Turno}}</td>
         <td>{{$dato->Sede}}</td>
+        <td>{{$dato->Año}}</td>
 
         </tr>
 
