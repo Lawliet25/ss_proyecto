@@ -7,7 +7,7 @@ use App\Models\DatosAlumno;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class AlumnoSedeExport14 implements FromCollection,   WithHeadings
+class AlumnoSedeExport21 implements FromCollection,   WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection

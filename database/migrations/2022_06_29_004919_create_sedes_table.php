@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sedes', function (Blueprint $table) {
             $table->id();
             $table->string('CodigoSede',50)->nullable();
-            $table->string('Sede',50)->nullable();
+            $table->string('Sede',200)->nullable();
             $table->string('Departamento',50)->nullable();
             $table->string('Municipio',50)->nullable();
             $table->timestamps();

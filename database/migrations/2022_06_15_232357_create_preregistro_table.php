@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('DUI',10)->nullable();
             $table->string('Estado',20);
             $table->string('Grado',20);
-            $table->string('Observacion',20)->nullable();
+            $table->string('Observacion',200)->nullable();
             $table->string('PersonaRecibido',200);
             $table->date('FechaRecepcion');
             $table->string('FichaRegistro')->nullable();
