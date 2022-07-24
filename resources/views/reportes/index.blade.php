@@ -78,7 +78,7 @@
               </tr>
 
               <tr>
-                <td> <h4>TNA- Complejo Educativo Joaquín Rodezno- San Salvador</h4> </td>
+                <td> <h4>TNA- Complejo Educativo Joaquín Rodezno-San Salvador</h4> </td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes31"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes32"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes33"><span class="glyphicon glyphicon-download-alt"></span></a></td>
@@ -87,7 +87,7 @@
               </tr>
 
               <tr>
-                <td> <h4>TNA- Centro Escolar Dolores C- Retes- San Miguel</h4> </td>
+                <td> <h4>TNA- Centro Escolar Dolores C-Retes-San Miguel</h4> </td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes41"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes42"><span class="glyphicon glyphicon-download-alt"></span></a></td>
                 <td><a style="" title="Descargar" class="btn btn-danger btn-circle" href="../../public/exportar/alumnosSedes43"><span class="glyphicon glyphicon-download-alt"></span></a></td>

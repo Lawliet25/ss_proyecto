@@ -6,7 +6,7 @@
 <div class="container">
 
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <h3>Lista de sedes registradas</h3>
                     <a type="button" class="btn btn-primary btn-md" href="{{route('sedes.create')}}">Nueva sede</a>
                 <br><br>
